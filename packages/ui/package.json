@@ -6,7 +6,6 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "license": "MIT",
-  "private": false,
   "type": "module",
   "exports": {
     ".": {
@@ -18,7 +17,8 @@
     "build": "tsup src/index.tsx --format esm,cjs --dts",
     "build-storybook": "storybook build",
     "storybook": "storybook dev -p 6006 --no-open",
-    "watch": "tamagui-build --skip-types --watch"
+    "watch": "tamagui-build --skip-types --watch",
+    "publish": "npm publish --access public"
   },
   "dependencies": {
     "@datepicker-react/hooks": "^2.8.4",

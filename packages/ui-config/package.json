@@ -1,11 +1,11 @@
 {
   "name": "@truststack/ui-config",
   "version": "0.0.1",
-  "private": true,
   "types": "./src",
   "main": "./src/index.tsx",
   "scripts": {
-    "build": "tsup src/index.tsx --format esm,cjs --dts"
+    "build": "tsup src/index.tsx --format esm,cjs --dts",
+    "publish": "npm publish --access public"
   },
   "dependencies": {
     "@tamagui/animations-moti": "1.91.2",
