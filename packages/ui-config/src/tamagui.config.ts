@@ -1,5 +1,6 @@
 import {createTamagui} from "@tamagui/core";
 import {shorthands} from "@tamagui/shorthands";
+import {animations} from "./animations";
 import {fonts} from "./fonts";
 import {media} from "./media-queries";
 import {themes} from "./theme";
@@ -8,6 +9,7 @@ import {tokens} from "./tokens";
 export const config = createTamagui({
   defaultFont: "body",
   onlyAllowShorthands: false,
+  animations,
   shorthands,
   fonts,
   themes,

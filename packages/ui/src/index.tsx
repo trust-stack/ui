@@ -37,22 +37,17 @@ export * from "@tamagui/linear-gradient";
 export * from "@tamagui/toast";
 export * from "tamagui";
 export * from "./Badge";
-export * from "./BannerLayout";
 export * from "./CalloutCard";
 export * from "./Chip";
 export * from "./dimensions";
-export * from "./DocumentMultiPicker";
-export * from "./DocumentPicker";
 export * from "./EditableTitle";
 export * from "./ExtendedFab";
 export * from "./Fab";
-export * from "./FlipCard";
 export * from "./FormField";
 export * from "./Grid";
 export * from "./HoldButton";
 export * from "./hooks";
 export * from "./IconButton";
-export * from "./IFrameWrapper";
 export * from "./ImageCarousel";
 export * from "./Layout";
 export * from "./LineItems";
@@ -81,7 +76,6 @@ export * from "./Tooltip";
 export * from "./useToast";
 export * from "./utils/color";
 export * from "./utils/image";
-export * from "./utils/sort";
 
 // Explicit tamagui overrides
 export {

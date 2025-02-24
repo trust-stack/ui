@@ -5,8 +5,7 @@
   "types": "./src",
   "main": "./src/index.tsx",
   "scripts": {
-    "build": "tamagui-build --skip-types",
-    "watch": "tamagui-build --skip-types --watch"
+    "build": "tsup src/index.tsx --format esm,cjs --dts"
   },
   "dependencies": {
     "@tamagui/animations-moti": "1.91.2",
@@ -21,6 +20,7 @@
     "tamagui": "1.91.2"
   },
   "devDependencies": {
-    "@tamagui/build": "1.91.2"
+    "@tamagui/build": "1.91.2",
+    "tsup": "^8.3.6"
   }
 }
