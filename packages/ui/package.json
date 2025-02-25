@@ -1,11 +1,20 @@
 {
   "name": "@truststack/ui",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "Trust Stack UI library",
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
+  "main": "dist/cjs",
+  "module": "dist/esm",
+  "module:jsx": "dist/jsx",
   "license": "MIT",
+  "types": "types/index.d.ts",
+  "sideEffects": [
+    "*.css"
+  ],
+  "files": [
+    "types",
+    "src",
+    "dist"
+  ],
   "type": "module",
   "exports": {
     ".": {
@@ -14,7 +23,7 @@
     }
   },
   "scripts": {
-    "build": "tsup src/index.tsx --format esm,cjs --dts",
+    "build": "tamagui-build",
     "build-storybook": "storybook build",
     "storybook": "storybook dev -p 6006 --no-open",
     "watch": "tamagui-build --skip-types --watch",
@@ -93,6 +102,5 @@
     "react-dom": "^18.2.0",
     "react-native": "0.74.5",
     "react-native-web": "~0.19.6"
-  },
-  "module:jsx": "src"
+  }
 }

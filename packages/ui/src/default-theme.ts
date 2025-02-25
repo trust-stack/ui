@@ -1,6 +1,4 @@
-import {LightDarkThemes} from "./types";
-
-export const theme: LightDarkThemes = {
+export const theme = {
   light: {
     primary: "rgb(142 73 87)",
     surfaceTint: "rgb(142 73 87)",
