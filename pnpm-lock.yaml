@@ -23,10 +23,22 @@ importers:
       '@tamagui/animate-presence':
         specifier: 1.91.2
         version: 1.91.2(react@18.3.1)
+      '@tamagui/animations-moti':
+        specifier: 1.91.2
+        version: 1.91.2(react-dom@18.3.1(react@18.3.1))(react-native-reanimated@3.10.1(@babel/core@7.26.9)(react-native@0.74.5(@babel/core@7.26.9)(@babel/preset-env@7.26.9(@babel/core@7.26.9))(@types/react@18.3.18)(react@18.3.1))(react@18.3.1))
       '@tamagui/animations-react-native':
         specifier: 1.91.2
         version: 1.91.2(react-native@0.74.5(@babel/core@7.26.9)(@babel/preset-env@7.26.9(@babel/core@7.26.9))(@types/react@18.3.18)(react@18.3.1))(react@18.3.1)
+      '@tamagui/config':
+        specifier: 1.91.2
+        version: 1.91.2(react-dom@18.3.1(react@18.3.1))(react-native-reanimated@3.10.1(@babel/core@7.26.9)(react-native@0.74.5(@babel/core@7.26.9)(@babel/preset-env@7.26.9(@babel/core@7.26.9))(@types/react@18.3.18)(react@18.3.1))(react@18.3.1))(react-native@0.74.5(@babel/core@7.26.9)(@babel/preset-env@7.26.9(@babel/core@7.26.9))(@types/react@18.3.18)(react@18.3.1))(react@18.3.1)
       '@tamagui/core':
+        specifier: 1.91.2
+        version: 1.91.2(react@18.3.1)
+      '@tamagui/font-inter':
+        specifier: 1.91.2
+        version: 1.91.2(react@18.3.1)
+      '@tamagui/font-silkscreen':
         specifier: 1.91.2
         version: 1.91.2(react@18.3.1)
       '@tamagui/get-button-sized':
@@ -47,12 +59,21 @@ importers:
       '@tamagui/lucide-icons':
         specifier: 1.91.2
         version: 1.91.2(react-native-svg@15.2.0(react-native@0.74.5(@babel/core@7.26.9)(@babel/preset-env@7.26.9(@babel/core@7.26.9))(@types/react@18.3.18)(react@18.3.1))(react@18.3.1))(react@18.3.1)
+      '@tamagui/react-native-media-driver':
+        specifier: 1.91.2
+        version: 1.91.2(react-native@0.74.5(@babel/core@7.26.9)(@babel/preset-env@7.26.9(@babel/core@7.26.9))(@types/react@18.3.18)(react@18.3.1))
       '@tamagui/react-native-svg':
         specifier: 1.91.2
         version: 1.91.2
       '@tamagui/sheet':
         specifier: 1.91.2
         version: 1.91.2(@types/react@18.3.18)(react-native@0.74.5(@babel/core@7.26.9)(@babel/preset-env@7.26.9(@babel/core@7.26.9))(@types/react@18.3.18)(react@18.3.1))(react@18.3.1)
+      '@tamagui/shorthands':
+        specifier: 1.91.2
+        version: 1.91.2
+      '@tamagui/themes':
+        specifier: 1.91.2
+        version: 1.91.2
       '@tamagui/toast':
         specifier: 1.91.2
         version: 1.91.2(react-native@0.74.5(@babel/core@7.26.9)(@babel/preset-env@7.26.9(@babel/core@7.26.9))(@types/react@18.3.18)(react@18.3.1))(react@18.3.1)
@@ -68,9 +89,6 @@ importers:
       '@tanstack/react-table':
         specifier: ^8.16.0
         version: 8.21.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@truststack/ui-config':
-        specifier: workspace:*
-        version: link:../ui-config
       '@types/react':
         specifier: ^18.2.0
         version: 18.3.18
@@ -191,56 +209,16 @@ importers:
         version: 8.5.8
       tamagui-loader:
         specifier: 1.91.2
-        version: 1.91.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.7.3)(webpack@5.98.0(@swc/core@1.10.18)(esbuild@0.24.2))
+        version: 1.91.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.7.3)(webpack@5.98.0(@swc/core@1.10.18(@swc/helpers@0.5.15))(esbuild@0.24.2))
       tsup:
         specifier: ^8.3.6
-        version: 8.3.6(@swc/core@1.10.18)(postcss@8.5.3)(typescript@5.7.3)(yaml@2.7.0)
+        version: 8.3.6(@swc/core@1.10.18(@swc/helpers@0.5.15))(postcss@8.5.3)(typescript@5.7.3)(yaml@2.7.0)
       vite:
         specifier: 4.0.0
         version: 4.0.0(@types/node@22.13.5)(terser@5.39.0)
       vite-plugin-svgr:
         specifier: ^4.2.0
         version: 4.3.0(rollup@4.34.8)(typescript@5.7.3)(vite@4.0.0(@types/node@22.13.5)(terser@5.39.0))
-
-  packages/ui-config:
-    dependencies:
-      '@tamagui/animations-moti':
-        specifier: 1.91.2
-        version: 1.91.2(react-dom@18.3.1(react@18.3.1))(react-native-reanimated@3.10.1(@babel/core@7.26.9)(react-native@0.74.5(@babel/core@7.26.9)(@babel/preset-env@7.26.9(@babel/core@7.26.9))(@types/react@18.3.18)(react@18.3.1))(react@18.3.1))
-      '@tamagui/animations-react-native':
-        specifier: 1.91.2
-        version: 1.91.2(react-native@0.74.5(@babel/core@7.26.9)(@babel/preset-env@7.26.9(@babel/core@7.26.9))(@types/react@18.3.18)(react@18.3.1))(react@18.3.1)
-      '@tamagui/config':
-        specifier: 1.91.2
-        version: 1.91.2(react-dom@18.3.1(react@18.3.1))(react-native-reanimated@3.10.1(@babel/core@7.26.9)(react-native@0.74.5(@babel/core@7.26.9)(@babel/preset-env@7.26.9(@babel/core@7.26.9))(@types/react@18.3.18)(react@18.3.1))(react@18.3.1))(react-native@0.74.5(@babel/core@7.26.9)(@babel/preset-env@7.26.9(@babel/core@7.26.9))(@types/react@18.3.18)(react@18.3.1))(react@18.3.1)
-      '@tamagui/core':
-        specifier: 1.91.2
-        version: 1.91.2(react@18.3.1)
-      '@tamagui/font-inter':
-        specifier: 1.91.2
-        version: 1.91.2(react@18.3.1)
-      '@tamagui/font-silkscreen':
-        specifier: 1.91.2
-        version: 1.91.2(react@18.3.1)
-      '@tamagui/react-native-media-driver':
-        specifier: 1.91.2
-        version: 1.91.2(react-native@0.74.5(@babel/core@7.26.9)(@babel/preset-env@7.26.9(@babel/core@7.26.9))(@types/react@18.3.18)(react@18.3.1))
-      '@tamagui/shorthands':
-        specifier: 1.91.2
-        version: 1.91.2
-      '@tamagui/themes':
-        specifier: 1.91.2
-        version: 1.91.2
-      tamagui:
-        specifier: 1.91.2
-        version: 1.91.2(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react-native-web@0.19.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-native@0.74.5(@babel/core@7.26.9)(@babel/preset-env@7.26.9(@babel/core@7.26.9))(@types/react@18.3.18)(react@18.3.1))(react@18.3.1)
-    devDependencies:
-      '@tamagui/build':
-        specifier: 1.91.2
-        version: 1.91.2(typescript@5.7.3)
-      tsup:
-        specifier: ^8.3.6
-        version: 8.3.6(@swc/core@1.10.18)(postcss@8.5.3)(typescript@5.7.3)(yaml@2.7.0)
 
 packages:
 
@@ -11360,12 +11338,12 @@ snapshots:
       has-tostringtag: 1.0.2
       hasown: 2.0.2
 
-  esbuild-loader@3.2.0(webpack@5.98.0(@swc/core@1.10.18)(esbuild@0.24.2)):
+  esbuild-loader@3.2.0(webpack@5.98.0(@swc/core@1.10.18(@swc/helpers@0.5.15))(esbuild@0.24.2)):
     dependencies:
       esbuild: 0.19.12
       get-tsconfig: 4.10.0
       loader-utils: 2.0.4
-      webpack: 5.98.0(@swc/core@1.10.18)(esbuild@0.24.2)
+      webpack: 5.98.0(@swc/core@1.10.18(@swc/helpers@0.5.15))(esbuild@0.24.2)
       webpack-sources: 1.4.3
 
   esbuild-plugin-es5@2.1.1(esbuild@0.19.12):
@@ -13920,13 +13898,13 @@ snapshots:
       string-width: 4.2.3
       strip-ansi: 6.0.1
 
-  tamagui-loader@1.91.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.7.3)(webpack@5.98.0(@swc/core@1.10.18)(esbuild@0.24.2)):
+  tamagui-loader@1.91.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.7.3)(webpack@5.98.0(@swc/core@1.10.18(@swc/helpers@0.5.15))(esbuild@0.24.2)):
     dependencies:
       '@tamagui/cli-color': 1.91.2
       '@tamagui/core': 1.91.2(react@18.3.1)
       '@tamagui/static': 1.91.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.7.3)
       '@tamagui/web': 1.91.2
-      esbuild-loader: 3.2.0(webpack@5.98.0(@swc/core@1.10.18)(esbuild@0.24.2))
+      esbuild-loader: 3.2.0(webpack@5.98.0(@swc/core@1.10.18(@swc/helpers@0.5.15))(esbuild@0.24.2))
       esm-resolve: 1.0.11
       fs-extra: 11.3.0
       loader-utils: 3.3.1
@@ -14031,14 +14009,14 @@ snapshots:
       ansi-escapes: 4.3.2
       supports-hyperlinks: 2.3.0
 
-  terser-webpack-plugin@5.3.11(@swc/core@1.10.18)(esbuild@0.24.2)(webpack@5.98.0(@swc/core@1.10.18)(esbuild@0.24.2)):
+  terser-webpack-plugin@5.3.11(@swc/core@1.10.18(@swc/helpers@0.5.15))(esbuild@0.24.2)(webpack@5.98.0(@swc/core@1.10.18(@swc/helpers@0.5.15))(esbuild@0.24.2)):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.25
       jest-worker: 27.5.1
       schema-utils: 4.3.0
       serialize-javascript: 6.0.2
       terser: 5.39.0
-      webpack: 5.98.0(@swc/core@1.10.18)(esbuild@0.24.2)
+      webpack: 5.98.0(@swc/core@1.10.18(@swc/helpers@0.5.15))(esbuild@0.24.2)
     optionalDependencies:
       '@swc/core': 1.10.18(@swc/helpers@0.5.15)
       esbuild: 0.24.2
@@ -14118,7 +14096,7 @@ snapshots:
 
   tslib@2.8.1: {}
 
-  tsup@8.3.6(@swc/core@1.10.18)(postcss@8.5.3)(typescript@5.7.3)(yaml@2.7.0):
+  tsup@8.3.6(@swc/core@1.10.18(@swc/helpers@0.5.15))(postcss@8.5.3)(typescript@5.7.3)(yaml@2.7.0):
     dependencies:
       bundle-require: 5.1.0(esbuild@0.24.2)
       cac: 6.7.14
@@ -14344,7 +14322,7 @@ snapshots:
 
   webpack-virtual-modules@0.6.2: {}
 
-  webpack@5.98.0(@swc/core@1.10.18)(esbuild@0.24.2):
+  webpack@5.98.0(@swc/core@1.10.18(@swc/helpers@0.5.15))(esbuild@0.24.2):
     dependencies:
       '@types/eslint-scope': 3.7.7
       '@types/estree': 1.0.6
@@ -14366,7 +14344,7 @@ snapshots:
       neo-async: 2.6.2
       schema-utils: 4.3.0
       tapable: 2.2.1
-      terser-webpack-plugin: 5.3.11(@swc/core@1.10.18)(esbuild@0.24.2)(webpack@5.98.0(@swc/core@1.10.18)(esbuild@0.24.2))
+      terser-webpack-plugin: 5.3.11(@swc/core@1.10.18(@swc/helpers@0.5.15))(esbuild@0.24.2)(webpack@5.98.0(@swc/core@1.10.18(@swc/helpers@0.5.15))(esbuild@0.24.2))
       watchpack: 2.4.2
       webpack-sources: 3.2.3
     transitivePeerDependencies:

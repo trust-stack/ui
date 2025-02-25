@@ -18,7 +18,6 @@
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
-      "@truststack/ui-config": ["./packages/ui-config/src"],
       "@truststack/ui": ["./packages/ui/src"]
     },
     "esModuleInterop": true,

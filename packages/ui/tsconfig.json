@@ -1,7 +1,9 @@
 {
   "include": ["./src/**/*.ts", "./src/**/*.tsx"],
   "exclude": ["node_modules", "dist", "**/*.stories.tsx"],
+  "types": ["node", "react"],
   "compilerOptions": {
+    "composite": true,
     "jsx": "react-jsx",
     "outDir": "./dist",
     "baseUrl": "./src",
@@ -9,7 +11,9 @@
     "module": "esnext",
     "target": "esnext",
     "skipLibCheck": true,
-    "allowSyntheticDefaultImports": true,
-    "incremental": false
+    "allowSyntheticDefaultImports": true
+  },
+  "typeAcquisition": {
+    "enable": true
   }
 }

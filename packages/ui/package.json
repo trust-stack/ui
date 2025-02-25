@@ -1,20 +1,60 @@
 {
   "name": "@truststack/ui",
-  "version": "0.0.2",
+  "version": "0.0.7",
   "description": "Trust Stack UI library",
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
+  "main": "dist/cjs",
+  "module": "dist/esm",
+  "module:jsx": "dist/jsx",
+  "source": "src/index.tsx",
   "license": "MIT",
-  "type": "module",
+  "types": "./types/index.d.ts",
+  "sideEffects": [
+    "*.css"
+  ],
+  "files": [
+    "types",
+    "src",
+    "dist"
+  ],
   "exports": {
+    "./package.json": "./package.json",
     ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
+      "react-native": {
+        "import": "./dist/esm/index.native.js",
+        "require": "./dist/cjs/index.native.js"
+      },
+      "types": "./types/index.d.ts",
+      "import": "./dist/esm/index.mjs",
+      "require": "./dist/cjs/index.cjs",
+      "default": "./dist/cjs/index.native.js"
+    },
+    "./native": {
+      "types": "./types/index.d.ts",
+      "import": "./dist/native.mjs",
+      "require": "./dist/native.js",
+      "react-native": "./dist/native.js"
+    },
+    "./native-test": {
+      "types": "./types/index.d.ts",
+      "import": "./dist/test.native.js",
+      "require": "./dist/test.native.js",
+      "react-native": "./dist/test.native.js"
+    },
+    "./inject-styles": {
+      "types": "./types/inject-styles.d.ts",
+      "import": "./dist/esm/inject-styles.mjs",
+      "require": "./dist/cjs/inject-styles.cjs",
+      "react-native": "./dist/cjs/inject-styles.native.js"
+    },
+    "./reactNativeTypes": {
+      "types": "./types/reactNativeTypes.d.ts",
+      "import": "./dist/esm/reactNativeTypes.mjs",
+      "require": "./dist/cjs/reactNativeTypes.cjs",
+      "react-native": "./dist/cjs/reactNativeTypes.native.js"
     }
   },
   "scripts": {
-    "build": "tsup src/index.tsx --format esm,cjs --dts",
+    "build": "tamagui-build",
     "build-storybook": "storybook build",
     "storybook": "storybook dev -p 6006 --no-open",
     "watch": "tamagui-build --skip-types --watch",
@@ -24,22 +64,28 @@
     "@datepicker-react/hooks": "^2.8.4",
     "@hookform/resolvers": "^3.3.4",
     "@tamagui/animate-presence": "1.91.2",
+    "@tamagui/animations-moti": "1.91.2",
     "@tamagui/animations-react-native": "1.91.2",
+    "@tamagui/config": "1.91.2",
     "@tamagui/core": "1.91.2",
+    "@tamagui/font-inter": "1.91.2",
+    "@tamagui/font-silkscreen": "1.91.2",
     "@tamagui/get-button-sized": "1.91.2",
     "@tamagui/get-font-sized": "1.91.2",
     "@tamagui/get-token": "1.91.2",
     "@tamagui/helpers-icon": "1.91.2",
     "@tamagui/linear-gradient": "1.91.2",
     "@tamagui/lucide-icons": "1.91.2",
+    "@tamagui/react-native-media-driver": "1.91.2",
     "@tamagui/react-native-svg": "1.91.2",
     "@tamagui/sheet": "1.91.2",
+    "@tamagui/shorthands": "1.91.2",
+    "@tamagui/themes": "1.91.2",
     "@tamagui/toast": "1.91.2",
     "@tamagui/use-did-finish-ssr": "1.91.2",
     "@tamagui/web": "1.91.2",
     "@tanstack/react-query": "^5.49.2",
     "@tanstack/react-table": "^8.16.0",
-    "@truststack/ui-config": "workspace:*",
     "@types/react": "^18.2.0",
     "change-case": "^4.1.2",
     "d3-shape": "^3.2.0",
@@ -87,6 +133,5 @@
     "react-dom": "^18.2.0",
     "react-native": "0.74.5",
     "react-native-web": "~0.19.6"
-  },
-  "module:jsx": "src"
+  }
 }

@@ -30,7 +30,7 @@ import {useDebounce} from "./utils";
 import type {ViewProps} from "./View";
 import {View} from "./View";
 
-export {config} from "@truststack/ui-config";
+export {config} from "./tamagui.config";
 
 export * from "@tamagui/helpers-icon";
 export * from "@tamagui/linear-gradient";
