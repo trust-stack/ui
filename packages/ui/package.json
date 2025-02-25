@@ -1,12 +1,13 @@
 {
   "name": "@truststack/ui",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Trust Stack UI library",
   "main": "dist/cjs",
   "module": "dist/esm",
   "module:jsx": "dist/jsx",
+  "source": "src/index.tsx",
   "license": "MIT",
-  "types": "types/index.d.ts",
+  "types": "./types/index.d.ts",
   "sideEffects": [
     "*.css"
   ],
@@ -15,13 +16,6 @@
     "src",
     "dist"
   ],
-  "type": "module",
-  "exports": {
-    ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
-    }
-  },
   "scripts": {
     "build": "tamagui-build",
     "build-storybook": "storybook build",
