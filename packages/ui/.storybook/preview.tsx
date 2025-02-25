@@ -3,8 +3,8 @@ import "./styles.css";
 
 import "raf/polyfill";
 
-import {config} from "@truststack/ui-config";
 import {TamaguiProvider, Theme, ToastProvider, ToastViewport} from "../src";
+import {config} from "../src/tamagui.config";
 
 import {Preview} from "@storybook/react";
 import React from "react";

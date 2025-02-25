@@ -45,7 +45,7 @@ const config: StorybookConfig = {
       },
       plugins: [
         tamaguiPlugin({
-          config: "../ui-config/src/tamagui.config.ts",
+          config: "../src/tamagui.config.ts",
           components: ["tamagui"],
           importsWhitelist: ["constants.js", "colors.js"],
           logTimings: true,
