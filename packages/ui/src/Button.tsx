@@ -107,13 +107,6 @@ const ButtonFrame = styled(XStack, {
           backgroundColor: "$warningContainer",
         },
       },
-
-      success: {
-        backgroundColor: "$successVariant",
-        hoverStyle: {
-          backgroundColor: "$onSuccessVariant",
-        },
-      },
     },
     loading: {
       true: {},

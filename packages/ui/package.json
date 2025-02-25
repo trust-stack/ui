@@ -1,110 +1,44 @@
 {
   "name": "@truststack/ui",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Trust Stack UI library",
-  "main": "dist/cjs",
-  "module": "dist/esm",
-  "module:jsx": "dist/jsx",
-  "source": "src/index.tsx",
-  "license": "MIT",
-  "types": "./types/index.d.ts",
-  "sideEffects": [
-    "*.css"
-  ],
-  "files": [
-    "types",
-    "src",
-    "dist"
-  ],
   "exports": {
     "./package.json": "./package.json",
     ".": {
-      "react-native": {
-        "import": "./dist/esm/index.native.js",
-        "require": "./dist/cjs/index.native.js"
-      },
+      "react-native-import": "./dist/esm/index.native.js",
+      "react-native": "./dist/cjs/index.native.js",
       "types": "./types/index.d.ts",
       "import": "./dist/esm/index.mjs",
-      "require": "./dist/cjs/index.cjs",
-      "default": "./dist/cjs/index.native.js"
-    },
-    "./native": {
-      "types": "./types/index.d.ts",
-      "import": "./dist/native.mjs",
-      "require": "./dist/native.js",
-      "react-native": "./dist/native.js"
-    },
-    "./native-test": {
-      "types": "./types/index.d.ts",
-      "import": "./dist/test.native.js",
-      "require": "./dist/test.native.js",
-      "react-native": "./dist/test.native.js"
-    },
-    "./inject-styles": {
-      "types": "./types/inject-styles.d.ts",
-      "import": "./dist/esm/inject-styles.mjs",
-      "require": "./dist/cjs/inject-styles.cjs",
-      "react-native": "./dist/cjs/inject-styles.native.js"
-    },
-    "./reactNativeTypes": {
-      "types": "./types/reactNativeTypes.d.ts",
-      "import": "./dist/esm/reactNativeTypes.mjs",
-      "require": "./dist/cjs/reactNativeTypes.cjs",
-      "react-native": "./dist/cjs/reactNativeTypes.native.js"
+      "require": "./dist/cjs/index.js"
     }
   },
+  "main": "dist/cjs",
+  "module": "dist/esm",
+  "source": "src/index.tsx",
+  "types": "./types/index.d.ts",
   "scripts": {
-    "build": "tamagui-build",
-    "build-storybook": "storybook build",
+    "build": "tamagui-build --bundle-modules",
+    "clean": "tamagui-build clean",
+    "publish": "npm publish --access public",
     "storybook": "storybook dev -p 6006 --no-open",
-    "watch": "tamagui-build --skip-types --watch",
-    "publish": "npm publish --access public"
+    "watch": "tamagui-build --watch"
   },
   "dependencies": {
-    "@datepicker-react/hooks": "^2.8.4",
-    "@hookform/resolvers": "^3.3.4",
-    "@tamagui/animate-presence": "1.91.2",
-    "@tamagui/animations-moti": "1.91.2",
-    "@tamagui/animations-react-native": "1.91.2",
-    "@tamagui/config": "1.91.2",
-    "@tamagui/core": "1.91.2",
-    "@tamagui/font-inter": "1.91.2",
-    "@tamagui/font-silkscreen": "1.91.2",
-    "@tamagui/get-button-sized": "1.91.2",
-    "@tamagui/get-font-sized": "1.91.2",
-    "@tamagui/get-token": "1.91.2",
-    "@tamagui/helpers-icon": "1.91.2",
-    "@tamagui/linear-gradient": "1.91.2",
-    "@tamagui/lucide-icons": "1.91.2",
-    "@tamagui/react-native-media-driver": "1.91.2",
-    "@tamagui/react-native-svg": "1.91.2",
-    "@tamagui/sheet": "1.91.2",
-    "@tamagui/shorthands": "1.91.2",
-    "@tamagui/themes": "1.91.2",
-    "@tamagui/toast": "1.91.2",
-    "@tamagui/use-did-finish-ssr": "1.91.2",
-    "@tamagui/web": "1.91.2",
-    "@tanstack/react-query": "^5.49.2",
+    "@tamagui/animations-react-native": "1.125.17",
+    "@tamagui/core": "1.125.17",
+    "@tamagui/helpers-icon": "1.125.17",
+    "@tamagui/lucide-icons": "1.125.17",
+    "@tamagui/shorthands": "1.125.17",
+    "@tamagui/themes": "1.125.17",
     "@tanstack/react-table": "^8.16.0",
-    "@types/react": "^18.2.0",
     "change-case": "^4.1.2",
-    "d3-shape": "^3.2.0",
     "date-fns": "^2.28.0",
-    "expo-constants": "~16.0.2",
-    "expo-document-picker": "~12.0.2",
-    "expo-linear-gradient": "~13.0.2",
-    "expo-modules-core": "^1.12.25",
-    "formik": "^2.2.9",
-    "lodash": "^4.17.21",
-    "react-hook-form": "^7.51.1",
-    "react-native-barcode-mask": "^1.2.4",
-    "react-native-reanimated": "~3.10.1",
-    "react-native-safe-area-context": "4.10.5",
-    "react-native-signature-canvas": "^4.7.2",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-native": "0.74.5",
     "react-native-svg": "15.2.0",
-    "react-signature-canvas": "^1.0.6",
-    "tamagui": "1.91.2",
-    "yup": "^0.32.9"
+    "react-native-web": "~0.19.6",
+    "tamagui": "1.125.17"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^8.3.5",
@@ -115,23 +49,22 @@
     "@storybook/react": "^8.3.5",
     "@storybook/react-vite": "^8.3.5",
     "@storybook/test": "^8.3.5",
-    "@tamagui/build": "1.91.2",
-    "@tamagui/vite-plugin": "1.91.2",
+    "@tamagui/build": "latest",
+    "@tamagui/vite-plugin": "1.125.17",
+    "@types/react": "^18.2.0",
     "@vitejs/plugin-react": "^4.3.1",
     "raf": "^3.4.1",
     "storybook": "^8.3.5",
-    "tamagui-loader": "1.91.2",
-    "tsup": "^8.3.6",
-    "vite": "4.0.0",
+    "tamagui-loader": "1.125.17",
+    "vite": "^4.2.0",
     "vite-plugin-svgr": "^4.2.0"
   },
-  "peerDependencies": {
-    "expo-barcode-scanner": "~12.5.3",
-    "expo-camera": "~13.4.4",
-    "expo-clipboard": "~4.3.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-native": "0.74.5",
-    "react-native-web": "~0.19.6"
+  "removeSideEffects": "true",
+  "tamagui": {
+    "build": {
+      "skipEnvToMeta": true,
+      "bundle.native": "./src/index.ts",
+      "bundle.native.test": "./src/index.ts"
+    }
   }
 }
