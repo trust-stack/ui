@@ -1,6 +1,6 @@
 {
   "name": "@truststack/ui",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Trust Stack UI library",
   "exports": {
     "./package.json": "./package.json",
@@ -17,7 +17,7 @@
   "source": "src/index.tsx",
   "types": "./types/index.d.ts",
   "scripts": {
-    "build": "tamagui-build --bundle-modules",
+    "build": "tamagui-build",
     "clean": "tamagui-build clean",
     "publish": "npm publish --access public",
     "storybook": "storybook dev -p 6006 --no-open",

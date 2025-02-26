@@ -47,6 +47,7 @@ export * from "./Table";
 export * from "./TagChip";
 export * from "./TextInput";
 export * from "./Tooltip";
+export * from "./TopAppBar";
 export * from "./utils/color";
 export * from "./utils/image";
 export { Alert, Body, Button, Card, Checkbox, CheckboxLabel, DataTable, Dialog, Display, Divider, Headline, Hero, Icon, Label, ListItem, Progress, RadiantCircle, Radio, RadioGroup, Sheet, SheetContent, Spinner, Switch, TabItem, Tabs, TabsContent, Title, Tooltip, useDebounce, View, XStack, YStack, };
