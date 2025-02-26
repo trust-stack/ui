@@ -49,6 +49,7 @@ export * from "./Table";
 export * from "./TagChip";
 export * from "./TextInput";
 export * from "./Tooltip";
+export * from "./TopAppBar";
 export * from "./utils/color";
 export * from "./utils/image";
 
