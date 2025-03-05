@@ -1,15 +1,16 @@
-import {View} from "@tamagui/core";
+import {View, ViewProps} from "@tamagui/core";
 import {Html5Qrcode} from "html5-qrcode";
 import {useEffect} from "react";
 
 export type BarcodeScannerProps = {
   readonly onScan: (code: string) => void;
-  readonly onError: (error: string) => void;
-};
+  readonly onError?: (error: string) => void;
+} & ViewProps;
 
 export function BarcodeScanner({
   onScan,
   onError,
+  ...props
 }: BarcodeScannerProps): JSX.Element {
   useEffect(() => {
     Html5Qrcode.getCameras().then((devices) => {
@@ -42,6 +43,7 @@ export function BarcodeScanner({
       borderRadius={"$shape.corner_m"}
       overflow="hidden"
       position="relative"
+      {...props}
     >
       <View id="qr-code-region" />
       <View

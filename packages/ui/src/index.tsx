@@ -8,10 +8,13 @@ import {Dialog} from "./Dialog";
 import {Divider} from "./Divider";
 import {Icon, IconProps} from "./Icon";
 import {ListItem} from "./List";
+import {Popover} from "./Popover";
 import {Progress} from "./Progress";
 import {RadiantCircle} from "./RadiantCircle";
 import type {RadioGroupProps, RadioProps} from "./Radio";
 import {Radio, RadioGroup} from "./Radio";
+import type {SelectProps} from "./Select";
+import {Select} from "./Select";
 import {Sheet, SheetContent} from "./Sheet";
 import {Spinner} from "./Spinner";
 import {Switch} from "./Switch";
@@ -20,7 +23,6 @@ import {TabItem, Tabs, TabsContent} from "./Tabs";
 import {Tooltip} from "./Tooltip";
 import {Body, Display, Headline, Hero, Label, Title} from "./typography";
 import {useDebounce} from "./utils";
-
 export {config} from "./tamagui.config";
 
 export * from "@tamagui/helpers-icon";
@@ -32,6 +34,8 @@ export * from "./dimensions";
 export * from "./EditableTitle";
 export * from "./ExtendedFab";
 export * from "./Fab";
+export * from "./form/FormInput";
+export * from "./form/FormSelect";
 export * from "./Grid";
 export * from "./hooks";
 export * from "./IconButton";
@@ -53,6 +57,7 @@ export * from "./TopAppBar";
 export * from "./utils/color";
 export * from "./utils/image";
 
+import {FormProvider, useFormContext} from "./form/context";
 // Explicit tamagui overrides
 export {
   Alert,
@@ -65,15 +70,18 @@ export {
   Dialog,
   Display,
   Divider,
+  FormProvider,
   Headline,
   Hero,
   Icon,
   Label,
   ListItem,
+  Popover,
   Progress,
   RadiantCircle,
   Radio,
   RadioGroup,
+  Select,
   Sheet,
   SheetContent,
   Spinner,
@@ -84,6 +92,7 @@ export {
   Title,
   Tooltip,
   useDebounce,
+  useFormContext,
   View,
   XStack,
   YStack,
@@ -97,6 +106,7 @@ export type {
   IconProps,
   RadioGroupProps,
   RadioProps,
+  SelectProps,
 };
 
 export type {
