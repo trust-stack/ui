@@ -17,7 +17,6 @@ const config: StorybookConfig = {
           "expo-document-picker",
           "expo-av",
           "expo-asset",
-          "expo-document-picker",
         ],
       },
     },

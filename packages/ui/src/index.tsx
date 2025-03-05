@@ -26,6 +26,7 @@ export {config} from "./tamagui.config";
 export * from "@tamagui/helpers-icon";
 export * from "tamagui";
 export * from "./Badge";
+export * from "./BarcodeScanner";
 export * from "./Chip";
 export * from "./dimensions";
 export * from "./EditableTitle";

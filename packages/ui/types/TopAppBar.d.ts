@@ -121,7 +121,7 @@ export declare const TopAppBar: import("react").ForwardRefExoticComponent<Omit<i
     }, import("@tamagui/core").StaticConfigPublic];
 } & {
     Props: import("react").ProviderExoticComponent<Partial<{
-        size: string;
+        size: any;
         centered: boolean;
     }> & {
         children?: import("react").ReactNode;
