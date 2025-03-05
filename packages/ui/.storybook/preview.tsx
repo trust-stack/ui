@@ -3,7 +3,7 @@ import "./styles.css";
 
 import "raf/polyfill";
 
-import {TamaguiProvider, Theme, ToastProvider, ToastViewport} from "../src";
+import {TamaguiProvider, Theme} from "../src";
 import {config} from "../src/tamagui.config";
 
 import {Preview} from "@storybook/react";
@@ -25,19 +25,12 @@ const preview: Preview = {
   },
   decorators: [
     (Story) => (
-      <TamaguiProvider
-        config={config}
-        defaultTheme={"provenance"}
-        disableRootThemeClass
-      >
-        <ToastProvider swipeDirection="horizontal" duration={2000}>
-          <SafeAreaProvider>
-            <Theme name={"light"}>
-              <Story />
-            </Theme>
-          </SafeAreaProvider>
-          <ToastViewport />
-        </ToastProvider>
+      <TamaguiProvider config={config} defaultTheme={"light"}>
+        <SafeAreaProvider>
+          <Theme name={"light"}>
+            <Story />
+          </Theme>
+        </SafeAreaProvider>
       </TamaguiProvider>
     ),
   ],

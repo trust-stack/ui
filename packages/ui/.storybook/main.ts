@@ -1,8 +1,5 @@
 import type {StorybookConfig} from "@storybook/react-vite";
-import {tamaguiPlugin} from "@tamagui/vite-plugin";
-import react from "@vitejs/plugin-react";
 import {dirname, join} from "path";
-import svgr from "vite-plugin-svgr";
 
 const config: StorybookConfig = {
   stories: ["../src/**/*.stories.tsx"],
@@ -37,29 +34,36 @@ const config: StorybookConfig = {
     return mergeConfig(config, {
       resolve: {
         alias: {
-          ...config.resolve?.alias,
           "*.svg": "*.svg?react",
-          "react-native$": require.resolve("react-native-web"),
-          "react-native-svg": "react-native-svg-web",
+          "react-native": "react-native-web",
         },
       },
-      plugins: [
-        tamaguiPlugin({
-          config: "../src/tamagui.config.ts",
-          components: ["tamagui"],
-          importsWhitelist: ["constants.js", "colors.js"],
-          logTimings: true,
-          disableExtraction: true,
-          platform: "web",
-        }),
-        svgr({
-          svgrOptions: {
-            icon: true,
+      optimizeDeps: {
+        esbuildOptions: {
+          resolveExtensions: [
+            ".web.js",
+            ".web.jsx",
+            ".web.ts",
+            ".web.tsx",
+            ".mjs",
+            ".js",
+            ".mts",
+            ".ts",
+            ".jsx",
+            ".tsx",
+            ".json",
+          ],
+          loader: {
+            ".js": "jsx",
           },
-          include: "../**/*.svg",
-        }),
-        react(),
-      ],
+        },
+      },
+      define: {
+        "process.env": {},
+      },
+      legacy: {
+        skipWebSocketTokenCheck: true,
+      },
     });
   },
 };

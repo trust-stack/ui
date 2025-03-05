@@ -32,7 +32,6 @@ export * from "./EditableTitle";
 export * from "./ExtendedFab";
 export * from "./Fab";
 export * from "./Grid";
-export * from "./HoldButton";
 export * from "./hooks";
 export * from "./IconButton";
 export * from "./List";

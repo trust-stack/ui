@@ -1,17 +1,10 @@
 import {ComponentProps} from "react";
-import {Pressable, PressableProps} from "react-native";
-import {
-  GetProps,
-  View,
-  createStyledContext,
-  styled,
-  withStaticProperties,
-} from "tamagui";
+import {View, createStyledContext, styled, withStaticProperties} from "tamagui";
 import {Icon} from "./Icon";
 
 const FabContext = createStyledContext({
-  size: "",
-  variant: "",
+  size: "medium",
+  variant: "primary",
 });
 
 const FabFrame = styled(View, {
@@ -39,7 +32,6 @@ const FabFrame = styled(View, {
       secondary: {
         bg: "$secondaryContainer",
       },
-
       tertiary: {
         bg: "$tertiaryContainer",
       },
@@ -68,22 +60,6 @@ const FabFrame = styled(View, {
   },
 });
 
-type Props = GetProps<typeof FabFrame> &
-  Partial<Pick<PressableProps, "onPress">>;
-
-const FabHOC = FabFrame.styleable<Props>(({onPress, ...props}, ref) => {
-  return (
-    <Pressable
-      onPress={props?.disabled ? () => {} : onPress}
-      style={{
-        pointerEvents: props?.disabled ? "none" : "auto",
-      }}
-    >
-      <FabFrame {...props} ref={ref} disabled={props.disabled} />
-    </Pressable>
-  );
-});
-
 const FabIcon = styled(Icon, {
   context: FabContext,
   name: "FabIcon",
@@ -110,8 +86,8 @@ const FabIcon = styled(Icon, {
 });
 
 export const Fab = withStaticProperties(FabFrame, {
-  Icon: FabIcon,
   Props: FabContext.Provider,
+  Icon: FabIcon,
 });
 
 export type FabProps = ComponentProps<typeof Fab>;

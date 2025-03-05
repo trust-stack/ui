@@ -9,7 +9,7 @@ import {Icon} from "./Icon";
 import {Body, Headline, Title} from "./typography";
 
 const TopAppBarContext = createStyledContext({
-  size: "",
+  size: undefined,
   centered: false,
 });
 
@@ -67,6 +67,11 @@ const SmallHeadline = styled(Title, {
   col: "$onSurface",
   marginLeft: 16,
   variants: {
+    size: {
+      small: {
+        size: "large",
+      },
+    },
     centered: {
       true: {
         fg: 1,

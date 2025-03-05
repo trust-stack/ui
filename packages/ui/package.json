@@ -16,6 +16,7 @@
   "module": "dist/esm",
   "source": "src/index.tsx",
   "types": "./types/index.d.ts",
+  "type": "module",
   "scripts": {
     "build": "tamagui-build",
     "clean": "tamagui-build clean",
@@ -36,6 +37,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-native": "0.74.5",
+    "react-native-safe-area-context": "^5.3.0",
     "react-native-svg": "15.2.0",
     "react-native-web": "~0.19.6",
     "tamagui": "1.125.17"
@@ -50,7 +52,7 @@
     "@storybook/react-vite": "^8.3.5",
     "@storybook/test": "^8.3.5",
     "@tamagui/build": "latest",
-    "@tamagui/vite-plugin": "1.125.17",
+    "@tamagui/vite-plugin": "latest",
     "@types/react": "^18.2.0",
     "@vitejs/plugin-react": "^4.3.1",
     "raf": "^3.4.1",
