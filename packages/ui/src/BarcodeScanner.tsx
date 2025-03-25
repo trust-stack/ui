@@ -46,20 +46,6 @@ export function BarcodeScanner({
       {...props}
     >
       <View id="qr-code-region" />
-      <View
-        position="absolute"
-        top="50%"
-        left="50%"
-        transform="translate(-50%, -50%)"
-        width={200}
-        height={200}
-        borderRadius={"$shape.corner_m"}
-        borderWidth={2}
-        borderColor="$surface"
-        style={{
-          boxShadow: "0 0 0 9999px rgba(0, 0, 0, 0.5)",
-        }}
-      />
     </View>
   );
 }
