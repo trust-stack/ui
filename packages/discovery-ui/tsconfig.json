@@ -1,0 +1,27 @@
+{
+  "include": [
+    "./src/**/*.ts",
+    "./src/**/*.tsx",
+    ".storybook/**/*.ts",
+    ".storybook/**/*.tsx"
+  ],
+  "exclude": ["node_modules", "dist", "**/*.stories.tsx"],
+  "types": ["node", "react"],
+  "compilerOptions": {
+    "composite": true,
+    "jsx": "react-jsx",
+    "outDir": "./dist",
+    "baseUrl": "./src",
+    "moduleResolution": "node",
+    "module": "esnext",
+    "target": "esnext",
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "paths": {
+      "@truststack/ui": ["../ui/src"]
+    }
+  },
+  "typeAcquisition": {
+    "enable": true
+  }
+}
