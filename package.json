@@ -10,7 +10,17 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@types/react": "^18.2.0",
     "turbo": "^2.4.2"
+  },
+  "resolutions": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "@tamagui/core": "1.125.32",
+    "@tamagui/web": "1.125.32",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0"
   },
   "packageManager": "pnpm@9.4.0"
 }

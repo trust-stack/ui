@@ -25,10 +25,12 @@
     "watch": "tamagui-build --watch"
   },
   "dependencies": {
-    "@tamagui/lucide-icons": "1.125.17",
+    "@tamagui/lucide-icons": "1.125.32",
     "@truststack/schema": "workspace:*",
     "@truststack/ui": "workspace:*",
-    "react-flow-renderer": "^10.3.17"
+    "elkjs": "^0.10.0",
+    "react-flow-renderer": "^10.3.17",
+    "tamagui": "1.125.17"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^8.3.5",
@@ -42,10 +44,10 @@
     "@tamagui/build": "latest",
     "@tamagui/vite-plugin": "latest",
     "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
     "@vitejs/plugin-react": "^4.3.1",
     "raf": "^3.4.1",
     "storybook": "^8.3.5",
-    "tamagui-loader": "1.125.17",
     "vite": "^4.2.0",
     "vite-plugin-svgr": "^4.2.0"
   },

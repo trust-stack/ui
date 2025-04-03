@@ -1,25 +1,22 @@
 {
-  "include": [
-    "./src/**/*.ts",
-    "./src/**/*.tsx",
-    ".storybook/**/*.ts",
-    ".storybook/**/*.tsx"
-  ],
-  "exclude": ["node_modules", "dist", "**/*.stories.tsx"],
+  "include": ["./src/**/*.ts", "./src/**/*.tsx"],
+  "exclude": ["node_modules", "dist", "./src**/*.stories.tsx"],
   "types": ["node", "react"],
   "compilerOptions": {
     "composite": true,
     "jsx": "react-jsx",
     "outDir": "./dist",
-    "baseUrl": "./src",
+    "baseUrl": "./",
+    "rootDir": "./src",
     "moduleResolution": "node",
     "module": "esnext",
     "target": "esnext",
     "skipLibCheck": true,
     "allowSyntheticDefaultImports": true,
-    "paths": {
-      "@truststack/ui": ["../ui/src"]
-    }
+    "declaration": true,
+    "declarationMap": true,
+    "isolatedModules": true,
+    "esModuleInterop": true
   },
   "typeAcquisition": {
     "enable": true

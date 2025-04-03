@@ -1,4 +1,5 @@
 import {Minus, Plus, Square} from "@tamagui/lucide-icons";
+import {TrustGraph as TTrustGraph} from "@truststack/schema";
 import {IconButton, View, XStack} from "@truststack/ui";
 import {useEffect} from "react";
 import ReactFlow, {
@@ -11,33 +12,29 @@ import ReactFlow, {
   useNodesState,
   useReactFlow,
 } from "react-flow-renderer";
+import {NODE_HEIGHT, NODE_WIDTH, TrustGraphNode} from "./TrustGraphNode";
+import {layoutElements} from "./layout";
 
-export type TrustGraphProps = {};
+export type TrustGraphProps = {
+  readonly graph: TTrustGraph;
+};
 
-export function TrustGraph({}: TrustGraphProps): JSX.Element {
+export function TrustGraph({graph}: TrustGraphProps): JSX.Element {
   const [nodes, setNodes] = useNodesState([]);
   const [edges, setEdges] = useEdgesState([]);
 
   useEffect(() => {
-    if (!data) return;
+    if (!graph) return;
     const nodes: Node[] = [];
     const edges: Edge[] = [];
 
-    data.nodes?.forEach((node) => {
+    graph.nodes?.forEach((node) => {
       nodes.push({
         id: "node-" + node.id,
         data: node,
-        type: node.type,
+        type: "trustGraphNode",
         position: {x: 0, y: 0},
         style: {width: NODE_WIDTH, height: NODE_HEIGHT},
-      });
-    });
-
-    data.edges?.forEach((edge) => {
-      edges.push({
-        id: "edge-" + edge.source + "-" + edge.target,
-        source: "node-" + edge.source,
-        target: "node-" + edge.target,
       });
     });
 
@@ -47,11 +44,11 @@ export function TrustGraph({}: TrustGraphProps): JSX.Element {
       direction: "LEFT",
     }).then(({nodes, edges}) => {
       setNodes(nodes);
-      setEdges(edges);
+      // setEdges(edges);
     });
-  }, [data]);
+  }, [graph]);
 
-  if (!data?.nodes?.length) return <></>;
+  if (!graph?.nodes?.length) return <></>;
 
   return (
     <ReactFlowProvider>
@@ -99,11 +96,5 @@ function Controls(): JSX.Element {
 }
 
 export const nodeTypes = {
-  [TrustGraphNodeType.DCC]: DCCNode,
-  [TrustGraphNodeType.DPP]: DPPNode,
-  [TrustGraphNodeType.DTE]: DTENode,
-  [TrustGraphNodeType.PARTY]: PartyNode,
-  [TrustGraphNodeType.LOCATION]: LocationNode,
-  [TrustGraphNodeType.DFP]: DFPNode,
-  Default: DefaultNode,
+  trustGraphNode: TrustGraphNode,
 };
