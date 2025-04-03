@@ -1,9 +1,10 @@
 import { TrustGraph as TTrustGraph } from "@truststack/schema";
+import { ViewProps } from "@truststack/ui";
 import { TrustGraphNode } from "./TrustGraphNode";
 export type TrustGraphProps = {
-    readonly graph: TTrustGraph;
-};
-export declare function TrustGraph({ graph }: TrustGraphProps): JSX.Element;
+    readonly data: TTrustGraph;
+} & ViewProps;
+export declare function TrustGraph({ data, ...props }: TrustGraphProps): JSX.Element;
 export declare const nodeTypes: {
     trustGraphNode: typeof TrustGraphNode;
 };

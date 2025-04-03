@@ -17,13 +17,23 @@ export default {
 
 type Story = StoryObj<typeof TrustGraph>;
 
-export const Story: Story = {
+export const Simple: Story = {
   name: "DPP",
   args: {
-    graph: {
+    data: {
       id: "1",
       hash: "1",
       nodes: [DTE.args.data, DPP.args.data, DCC.args.data],
+      edges: [
+        {
+          source: "dte",
+          target: "dpp",
+        },
+        {
+          source: "dcc",
+          target: "dpp",
+        },
+      ],
     },
   },
 };

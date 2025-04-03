@@ -1,6 +1,6 @@
 import {Minus, Plus, Square} from "@tamagui/lucide-icons";
 import {TrustGraph as TTrustGraph} from "@truststack/schema";
-import {IconButton, View, XStack} from "@truststack/ui";
+import {IconButton, View, ViewProps, XStack} from "@truststack/ui";
 import {useEffect} from "react";
 import ReactFlow, {
   Background,
@@ -16,19 +16,19 @@ import {NODE_HEIGHT, NODE_WIDTH, TrustGraphNode} from "./TrustGraphNode";
 import {layoutElements} from "./layout";
 
 export type TrustGraphProps = {
-  readonly graph: TTrustGraph;
-};
+  readonly data: TTrustGraph;
+} & ViewProps;
 
-export function TrustGraph({graph}: TrustGraphProps): JSX.Element {
+export function TrustGraph({data, ...props}: TrustGraphProps): JSX.Element {
   const [nodes, setNodes] = useNodesState([]);
   const [edges, setEdges] = useEdgesState([]);
 
   useEffect(() => {
-    if (!graph) return;
+    if (!data) return;
     const nodes: Node[] = [];
     const edges: Edge[] = [];
 
-    graph.nodes?.forEach((node) => {
+    data.nodes?.forEach((node) => {
       nodes.push({
         id: "node-" + node.id,
         data: node,
@@ -38,21 +38,29 @@ export function TrustGraph({graph}: TrustGraphProps): JSX.Element {
       });
     });
 
+    data?.edges?.forEach((edge) => {
+      edges.push({
+        id: edge.source + "-" + edge.target,
+        source: "node-" + edge.source,
+        target: "node-" + edge.target,
+      });
+    });
+
     layoutElements(nodes, edges, {
       nodeWidth: NODE_WIDTH,
       nodeHeight: NODE_HEIGHT,
       direction: "LEFT",
     }).then(({nodes, edges}) => {
       setNodes(nodes);
-      // setEdges(edges);
+      setEdges(edges);
     });
-  }, [graph]);
+  }, [data]);
 
-  if (!graph?.nodes?.length) return <></>;
+  if (!data?.nodes?.length) return <></>;
 
   return (
     <ReactFlowProvider>
-      <View position="relative" width={"100%"} height={"100%"}>
+      <View position="relative" {...props}>
         <View
           zIndex={12}
           position="absolute"

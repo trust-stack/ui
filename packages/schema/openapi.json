@@ -2414,7 +2414,16 @@
       "get": {
         "description": "Get a trust graph by id",
         "operationId": "getTrustGraph",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "The trust graph",
@@ -2466,6 +2475,38 @@
         "summary": "Traverse a trust graph",
         "tags": [
           "TrustGraph"
+        ]
+      }
+    },
+    "/render/discovery/trust-graph/{id}": {
+      "get": {
+        "description": "Render a trust graph",
+        "operationId": "renderTrustGraph",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TrustGraphScreen"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Render a trust graph",
+        "tags": [
+          "Render"
         ]
       }
     }
@@ -4328,6 +4369,23 @@
           "type"
         ]
       },
+      "TrustGraphEdge": {
+        "type": "object",
+        "properties": {
+          "source": {
+            "type": "string",
+            "description": "The source of the trust graph edge"
+          },
+          "target": {
+            "type": "string",
+            "description": "The target of the trust graph edge"
+          }
+        },
+        "required": [
+          "source",
+          "target"
+        ]
+      },
       "TrustGraph": {
         "type": "object",
         "properties": {
@@ -4346,19 +4404,19 @@
               "$ref": "#/components/schemas/TrustGraphNode"
             }
           },
-          "type": {
-            "description": "The type of the trust graph",
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/TrustGraphNodeType"
-              }
-            ]
+          "edges": {
+            "description": "The edges of the trust graph",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TrustGraphEdge"
+            }
           }
         },
         "required": [
           "id",
           "hash",
           "nodes",
+          "edges",
           "type"
         ]
       },
@@ -4372,6 +4430,61 @@
         },
         "required": [
           "identifier"
+        ]
+      },
+      "ScreenHeader": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "The title of the screen",
+            "example": "Screen Title"
+          },
+          "subtitle": {
+            "type": "string",
+            "description": "The subtitle of the screen",
+            "example": "Screen Subtitle"
+          },
+          "size": {
+            "type": "string",
+            "description": "The size of the screen",
+            "example": "small",
+            "enum": [
+              "small",
+              "medium",
+              "large"
+            ]
+          }
+        },
+        "required": [
+          "title",
+          "subtitle",
+          "size"
+        ]
+      },
+      "TrustGraphScreen": {
+        "type": "object",
+        "properties": {
+          "trustGraph": {
+            "description": "The trust graph",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/TrustGraph"
+              }
+            ]
+          },
+          "header": {
+            "description": "The header of the screen",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ScreenHeader"
+              }
+            ]
+          }
+        },
+        "required": [
+          "trustGraph",
+          "header"
         ]
       }
     }

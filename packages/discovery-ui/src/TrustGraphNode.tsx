@@ -161,7 +161,7 @@ export type TrustGraphNodeProps = {
 export function TrustGraphNode({data}: TrustGraphNodeProps): JSX.Element {
   return (
     <Node type={data?.type as any}>
-      <Handle type="source" position={Position.Left} />
+      <Handle type="target" position={Position.Left} />
       <YStack>
         <Node.Title>{renderTrustGraphNodeType(data?.type)}</Node.Title>
 
