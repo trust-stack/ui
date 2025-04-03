@@ -1,6 +1,5 @@
-import type {FillInFont, GenericFont} from "@tamagui/core";
-import {createFont, isWeb} from "@tamagui/core";
-import {createSilkscreenFont} from "@tamagui/font-silkscreen";
+import type {GenericFont} from "tamagui";
+import {createFont, isWeb} from "tamagui";
 
 const size = {
   1: 11,
@@ -23,7 +22,7 @@ const size = {
 
 export const createSerifFont = <A extends GenericFont>(
   font: Partial<A> = {}
-): FillInFont<A, any> => {
+) => {
   return createFont({
     family: isWeb ? "Roboto Serif, -apple-system" : "Roboto Serif",
     size,
@@ -37,7 +36,7 @@ export const createSerifFont = <A extends GenericFont>(
 
 export const createRobotoFont = <A extends GenericFont>(
   font: Partial<A> = {}
-): FillInFont<A, any> => {
+) => {
   return createFont({
     family: isWeb ? "Roboto, -apple-system" : "Roboto",
     size,
@@ -53,5 +52,4 @@ export const fonts = {
   heading: createRobotoFont(),
   body: createRobotoFont(),
   serif: createSerifFont(),
-  silkscreen: createSilkscreenFont(),
 };

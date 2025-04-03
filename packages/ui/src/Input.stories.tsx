@@ -5,7 +5,6 @@ import {RenderStage, RenderVariants} from "./storybook-utils";
 
 export default {
   component: Input,
-  title: "Mui Input",
 } as Meta<typeof Input>;
 
 export const Variants = () => {

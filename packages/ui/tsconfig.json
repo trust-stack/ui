@@ -6,12 +6,17 @@
     "composite": true,
     "jsx": "react-jsx",
     "outDir": "./dist",
-    "baseUrl": "./src",
+    "baseUrl": "./",
+    "rootDir": "./src",
     "moduleResolution": "node",
     "module": "esnext",
     "target": "esnext",
     "skipLibCheck": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "declarationMap": true,
+    "isolatedModules": true,
+    "esModuleInterop": true
   },
   "typeAcquisition": {
     "enable": true
