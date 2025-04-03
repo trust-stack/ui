@@ -48,10 +48,10 @@
   "scripts": {
     "build": "tamagui-build",
     "clean": "tamagui-build clean",
-    "storybook": "storybook dev -p 6006 --no-open",
     "watch": "tamagui-build --watch"
   },
   "dependencies": {
+    "@storybook/react": "^8.6.12",
     "@tamagui/lucide-icons": "1.125.32",
     "@truststack/discovery-ui": "workspace:*",
     "@truststack/render-ui": "workspace:*",
@@ -59,6 +59,9 @@
     "@truststack/theme-ui": "workspace:*",
     "@truststack/ui": "workspace:*",
     "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@tamagui/build": "1.125.17"
   },
   "removeSideEffects": "true",
   "tamagui": {

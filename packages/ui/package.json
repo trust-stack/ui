@@ -3,9 +3,6 @@
   "version": "0.1.0",
   "description": "Trust Stack UI library",
   "type": "module",
-  "publishConfig": {
-    "access": "public"
-  },
   "exports": {
     "./package.json": "./package.json",
     ".": {
@@ -78,23 +75,12 @@
     "yup": "^0.32.9"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^8.3.5",
-    "@storybook/addon-essentials": "^8.3.5",
-    "@storybook/addon-interactions": "^8.3.5",
-    "@storybook/addon-links": "^8.3.5",
-    "@storybook/addon-react-native-web": "^0.0.26",
-    "@storybook/react": "^8.3.5",
-    "@storybook/react-vite": "^8.3.5",
-    "@storybook/test": "^8.3.5",
-    "@tamagui/build": "latest",
-    "@tamagui/vite-plugin": "latest",
-    "@types/react": "^18.2.0",
-    "@vitejs/plugin-react": "^4.3.1",
-    "raf": "^3.4.1",
-    "storybook": "^8.3.5",
-    "tamagui-loader": "1.125.17",
-    "vite": "^4.2.0",
-    "vite-plugin-svgr": "^4.2.0"
+    "@storybook/react": "^8.6.12",
+    "@tamagui/build": "1.125.17",
+    "@types/react": "^18.2.0"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "removeSideEffects": "true",
   "tamagui": {

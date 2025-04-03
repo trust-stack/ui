@@ -48,10 +48,10 @@
   "scripts": {
     "build": "tamagui-build",
     "clean": "tamagui-build clean",
-    "storybook": "storybook dev -p 6006 --no-open",
     "watch": "tamagui-build --watch"
   },
   "dependencies": {
+    "@storybook/react": "^8.6.12",
     "@truststack/schema": "workspace:*",
     "@truststack/ui": "workspace:*",
     "tamagui": "1.125.17"
