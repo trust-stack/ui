@@ -1,8 +1,11 @@
 {
   "name": "@truststack/ui",
-  "version": "0.0.13",
+  "version": "0.1.0",
   "description": "Trust Stack UI library",
   "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
   "exports": {
     "./package.json": "./package.json",
     ".": {
@@ -20,7 +23,6 @@
   "scripts": {
     "build": "tamagui-build",
     "clean": "tamagui-build clean",
-    "publish": "npm publish --access public",
     "watch": "tamagui-build --watch"
   },
   "dependencies": {
