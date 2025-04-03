@@ -46,7 +46,7 @@
     "react-native-web": "~0.19.6",
     "react-native-webview": "^13.13.2",
     "tamagui": "1.125.17",
-    "yup": "link:@hookform/resolvers/yup"
+    "yup": "^0.32.9"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^8.3.5",
