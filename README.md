@@ -52,9 +52,27 @@ $ git add .
 $ git commit -m "feat: your changes description"
 ```
 
-### Publishing Changes
+5. Push your changes and create a pull request to main
 
-The repository uses Changesets for version management and publishing. Here's how to publish changes:
+### Automated Publishing
+
+The repository uses GitHub Actions for automated publishing. When changes are merged to main:
+
+1. The GitHub Action will:
+   - Create a Release Pull Request if there are unpublished changesets
+   - When the PR is merged, it will:
+     - Version the packages
+     - Build all packages
+     - Publish updated packages to npm
+
+2. To publish changes:
+   - Create and merge your feature branch with changesets
+   - The GitHub Action will create a Release PR
+   - Review and merge the Release PR to trigger publishing
+
+### Manual Publishing (Alternative)
+
+If you need to publish manually, you can use these commands:
 
 1. Version the packages:
 ```bash
@@ -85,8 +103,9 @@ This will:
 1. All packages are published as public packages
 2. Do not add individual `publish` scripts to package.json files
 3. Changesets handles all versioning and publishing
-4. Make sure you're logged in to npm (`npm login`) before publishing
+4. Make sure you're logged in to npm (`npm login`) before publishing manually
 5. Ensure you have the right permissions for the `@truststack` scope
+6. For automated publishing, ensure the `NPM_TOKEN` secret is set in GitHub repository settings
 
 ## Development Guidelines
 
@@ -109,7 +128,11 @@ This will:
 ## Troubleshooting
 
 If you encounter publishing issues:
-1. Ensure you're logged in to npm
+1. Ensure you're logged in to npm (for manual publishing)
 2. Check that you have the right permissions
 3. Verify the package.json configurations
 4. Make sure no individual packages have their own publish scripts
+5. For automated publishing:
+   - Check GitHub Actions logs for errors
+   - Verify the `NPM_TOKEN` secret is set correctly
+   - Ensure the Release PR is created and merged properly
