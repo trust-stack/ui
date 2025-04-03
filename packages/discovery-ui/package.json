@@ -28,6 +28,7 @@
     "@tamagui/lucide-icons": "1.125.32",
     "@truststack/schema": "workspace:*",
     "@truststack/ui": "workspace:*",
+    "@truststack/theme-ui": "workspace:*",
     "@truststack/render-ui": "workspace:*",
     "elkjs": "^0.10.0",
     "react-flow-renderer": "^10.3.17",

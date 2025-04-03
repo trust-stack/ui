@@ -1,10 +1,30 @@
 import {Meta, StoryObj} from "@storybook/react/*";
+import {RailLayout} from "@truststack/render-ui";
+import {ThemeProvider} from "@truststack/theme-ui";
+import {theme} from "./__mock__";
 import {Simple} from "./TrustGraph.stories";
 import {TrustGraphScreen} from "./TrustGraphScreen";
 
 export default {
   component: TrustGraphScreen,
   title: "Discovery/TrustGraphScreen",
+  parameters: {
+    layout: "fullscreen",
+  },
+  decorators: [
+    (Story) => (
+      <ThemeProvider
+        theme={{
+          name: "Demo",
+          variables: theme,
+        }}
+      >
+        <RailLayout>
+          <Story />
+        </RailLayout>
+      </ThemeProvider>
+    ),
+  ],
 } as Meta<typeof TrustGraphScreen>;
 
 type Story = StoryObj<typeof TrustGraphScreen>;

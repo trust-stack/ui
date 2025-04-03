@@ -43,6 +43,7 @@ export * from "./IconButton";
 export * from "./List";
 export * from "./ListFooter";
 export * from "./Menu";
+export * from "./NavRail";
 export * from "./NoResults";
 export * from "./render";
 export * from "./ScreenLayout";

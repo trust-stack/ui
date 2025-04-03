@@ -11,36 +11,32 @@ import {
 import {NavItem} from "./NavItem";
 
 type NavRailProps = {
-  readonly children?: React.ReactNode;
   readonly Icon?: React.ReactNode;
   readonly Fab?: React.ReactNode;
-  readonly trailItems?: React.ReactNode;
-  readonly noIcon?: boolean;
-  readonly hideThemeButton?: boolean;
+  readonly TrailItems?: React.ReactNode;
+  readonly Items?: React.ReactNode;
 } & Partial<GetProps<typeof Rail>>;
 
 export function NavRail({
-  children,
+  Items,
   Fab,
   Icon,
-  trailItems,
+  TrailItems,
   noIcon = false,
-  hideThemeButton = false,
   ...props
 }: NavRailProps): JSX.Element {
   return (
     <Rail {...props}>
-      {!noIcon && Icon && <View pt={24}>{Icon}</View>}
       <View h={40} />
       {Fab}
 
       <View h={60} />
 
-      {children}
+      {Items}
 
       <View fg={1} />
 
-      {trailItems}
+      {TrailItems}
     </Rail>
   );
 }
