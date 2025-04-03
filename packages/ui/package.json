@@ -21,7 +21,6 @@
     "build": "tamagui-build",
     "clean": "tamagui-build clean",
     "publish": "npm publish --access public",
-    "storybook": "storybook dev -p 6006 --no-open",
     "watch": "tamagui-build --watch"
   },
   "dependencies": {
