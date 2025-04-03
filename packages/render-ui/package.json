@@ -6,11 +6,39 @@
   "exports": {
     "./package.json": "./package.json",
     ".": {
-      "react-native-import": "./dist/esm/index.native.js",
-      "react-native": "./dist/cjs/index.native.js",
+      "react-native": {
+        "import": "./dist/esm/index.native.js",
+        "require": "./dist/cjs/index.native.js"
+      },
       "types": "./types/index.d.ts",
       "import": "./dist/esm/index.mjs",
-      "require": "./dist/cjs/index.js"
+      "require": "./dist/cjs/index.cjs",
+      "default": "./dist/cjs/index.native.js"
+    },
+    "./react-native-web": {
+      "react-native": "./dist/cjs/react-native-web.native.js",
+      "types": "./types/index.d.ts",
+      "import": "./dist/esm/react-native-web.mjs",
+      "require": "./dist/cjs/react-native-web.cjs"
+    },
+    "./web": {
+      "react-native": {
+        "import": "./dist/esm/index.native.js",
+        "require": "./dist/cjs/index.native.js"
+      },
+      "types": "./types/index.d.ts",
+      "import": "./dist/esm/index.mjs",
+      "require": "./dist/cjs/index.cjs"
+    },
+    "./native": {
+      "types": "./types/index.d.ts",
+      "require": "./dist/native.js",
+      "react-native": "./dist/native.native.js"
+    },
+    "./native-test": {
+      "types": "./types/index.d.ts",
+      "require": "./dist/test.cjs",
+      "react-native": "./dist/test.native.js"
     }
   },
   "main": "dist/cjs",

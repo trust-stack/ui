@@ -1,7 +1,7 @@
 import {Theme as SchemaTheme} from "@truststack/schema";
 import {Theme as TamaguiTheme} from "@truststack/ui";
 import React, {useEffect} from "react";
-import {addTheme} from "./theme";
+import {addTrustTheme} from "./theme";
 
 export type ThemeProviderProps = {
   readonly children: React.ReactNode;
@@ -13,7 +13,7 @@ export function ThemeProvider({
   theme,
 }: ThemeProviderProps): JSX.Element {
   useEffect(() => {
-    addTheme(theme);
+    addTrustTheme(theme);
   }, [theme]);
 
   return <TamaguiTheme name={theme.name as any}>{children}</TamaguiTheme>;
