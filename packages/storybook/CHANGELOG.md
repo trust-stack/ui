@@ -1,5 +1,12 @@
 # trust-stack-ui-storybook
 
+## 0.0.3
+
+### Patch Changes
+
+- Updated dependencies [c8e9fea]
+  - @truststack/ui@0.2.1
+
 ## 0.0.2
 
 ### Patch Changes
