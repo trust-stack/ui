@@ -1,32 +1,32 @@
 {
   "name": "trust-stack-ui",
   "version": "1.0.0",
+  "private": true,
   "description": "",
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "turbo run build",
     "changeset": "changeset",
-    "version-packages": "changeset version",
     "release": "turbo run build && changeset publish",
-    "build": "turbo run build"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "version-packages": "changeset version"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "resolutions": {
+    "@tamagui/core": "1.125.32",
+    "@tamagui/web": "1.125.32",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
   "devDependencies": {
     "@changesets/cli": "^2.27.11",
     "@types/node": "^22.14.0",
     "@types/react": "^18.2.0",
     "turbo": "^2.4.2"
   },
-  "resolutions": {
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "@tamagui/core": "1.125.32",
-    "@tamagui/web": "1.125.32",
-    "@types/react": "^18.2.0",
-    "@types/react-dom": "^18.2.0"
-  },
-  "packageManager": "pnpm@9.4.0",
-  "private": true
+  "packageManager": "pnpm@9.4.0"
 }

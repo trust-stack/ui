@@ -4,7 +4,9 @@
     "paths": {
       "@truststack/ui": ["packages/ui"],
       "@truststack/discovery-ui": ["packages/discovery-ui"],
-      "@truststack/schema": ["packages/schema"]
+      "@truststack/schema": ["packages/schema"],
+      "@truststack/theme-ui": ["packages/theme-ui"],
+      "@truststack/render-ui": ["packages/render-ui"]
     },
     "outDir": "dist",
     "allowJs": false,
