@@ -1,5 +1,11 @@
 # @truststack/ui
 
+## 0.2.1
+
+### Patch Changes
+
+- c8e9fea: Building schema types.
+
 ## 0.2.0
 
 ### Minor Changes
