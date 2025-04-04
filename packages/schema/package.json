@@ -2,13 +2,13 @@
   "name": "@truststack/schema",
   "version": "0.1.0",
   "description": "",
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
   "main": "src/index.ts",
   "scripts": {
     "openapi-ts": "openapi-ts"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "@hey-api/openapi-ts": "^0.66.1"
   }

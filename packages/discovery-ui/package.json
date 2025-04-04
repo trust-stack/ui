@@ -6,11 +6,39 @@
   "exports": {
     "./package.json": "./package.json",
     ".": {
-      "react-native-import": "./dist/esm/index.native.js",
-      "react-native": "./dist/cjs/index.native.js",
+      "react-native": {
+        "import": "./dist/esm/index.native.js",
+        "require": "./dist/cjs/index.native.js"
+      },
       "types": "./types/index.d.ts",
       "import": "./dist/esm/index.mjs",
-      "require": "./dist/cjs/index.js"
+      "require": "./dist/cjs/index.cjs",
+      "default": "./dist/cjs/index.native.js"
+    },
+    "./react-native-web": {
+      "react-native": "./dist/cjs/react-native-web.native.js",
+      "types": "./types/index.d.ts",
+      "import": "./dist/esm/react-native-web.mjs",
+      "require": "./dist/cjs/react-native-web.cjs"
+    },
+    "./web": {
+      "react-native": {
+        "import": "./dist/esm/index.native.js",
+        "require": "./dist/cjs/index.native.js"
+      },
+      "types": "./types/index.d.ts",
+      "import": "./dist/esm/index.mjs",
+      "require": "./dist/cjs/index.cjs"
+    },
+    "./native": {
+      "types": "./types/index.d.ts",
+      "require": "./dist/native.js",
+      "react-native": "./dist/native.native.js"
+    },
+    "./native-test": {
+      "types": "./types/index.d.ts",
+      "require": "./dist/test.cjs",
+      "react-native": "./dist/test.native.js"
     }
   },
   "main": "dist/cjs",
@@ -20,37 +48,23 @@
   "scripts": {
     "build": "tamagui-build",
     "clean": "tamagui-build clean",
-    "storybook": "storybook dev -p 6006 --no-open",
     "watch": "tamagui-build --watch"
   },
   "dependencies": {
     "@tamagui/lucide-icons": "1.125.32",
-    "@truststack/schema": "workspace:*",
-    "@truststack/ui": "workspace:*",
-    "@truststack/theme-ui": "workspace:*",
     "@truststack/render-ui": "workspace:*",
+    "@truststack/schema": "workspace:*",
+    "@truststack/theme-ui": "workspace:*",
+    "@truststack/ui": "workspace:*",
     "elkjs": "^0.10.0",
     "react-flow-renderer": "^10.3.17",
     "tamagui": "1.125.17"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^8.3.5",
-    "@storybook/addon-essentials": "^8.3.5",
-    "@storybook/addon-interactions": "^8.3.5",
-    "@storybook/addon-links": "^8.3.5",
-    "@storybook/addon-react-native-web": "^0.0.26",
-    "@storybook/react": "^8.3.5",
-    "@storybook/react-vite": "^8.3.5",
-    "@storybook/test": "^8.3.5",
-    "@tamagui/build": "latest",
-    "@tamagui/vite-plugin": "latest",
+    "@storybook/react": "^8.6.12",
+    "@tamagui/build": "1.125.32",
     "@types/react": "^18.2.0",
-    "@types/react-dom": "^18.2.0",
-    "@vitejs/plugin-react": "^4.3.1",
-    "raf": "^3.4.1",
-    "storybook": "^8.3.5",
-    "vite": "^4.2.0",
-    "vite-plugin-svgr": "^4.2.0"
+    "@types/react-dom": "^18.2.0"
   },
   "removeSideEffects": "true",
   "tamagui": {

@@ -1,7 +1,7 @@
 {
-  "name": "@truststack/theme-ui",
+  "name": "@truststack/ui-kit",
   "version": "0.1.0",
-  "description": "Trust Stack Theme UI library",
+  "description": "Trust Stack UI Kit",
   "type": "module",
   "exports": {
     "./package.json": "./package.json",
@@ -52,17 +52,20 @@
   },
   "dependencies": {
     "@storybook/react": "^8.6.12",
+    "@tamagui/lucide-icons": "1.125.32",
+    "@truststack/discovery-ui": "workspace:*",
+    "@truststack/render-ui": "workspace:*",
     "@truststack/schema": "workspace:*",
+    "@truststack/theme-ui": "workspace:*",
     "@truststack/ui": "workspace:*",
-    "tamagui": "1.125.17"
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@tamagui/build": "latest"
+    "@tamagui/build": "1.125.17"
   },
   "removeSideEffects": "true",
   "tamagui": {
     "build": {
-      "skipEnvToMeta": true,
       "bundle.native": "./src/index.ts",
       "bundle.native.test": "./src/index.ts"
     }
