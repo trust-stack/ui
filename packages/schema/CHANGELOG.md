@@ -1,5 +1,11 @@
 # @truststack/schema
 
+## 0.1.2
+
+### Patch Changes
+
+- e61be27: Removing enums from schemas and types.
+
 ## 0.1.1
 
 ### Patch Changes

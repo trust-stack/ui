@@ -1,5 +1,16 @@
 # @truststack/discovery-ui
 
+## 0.2.2
+
+### Patch Changes
+
+- e61be27: Removing enums from schemas and types.
+- Updated dependencies [e61be27]
+  - @truststack/schema@0.1.2
+  - @truststack/render-ui@0.2.2
+  - @truststack/theme-ui@0.2.2
+  - @truststack/ui@0.2.2
+
 ## 0.2.1
 
 ### Patch Changes
