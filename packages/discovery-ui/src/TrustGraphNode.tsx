@@ -55,15 +55,15 @@ const Frame = styled(YStack, {
       },
     },
     type: {
-      [TrustGraphNodeType.DCC]: {
+      DCC: {
         backgroundColor: "$infoContainer",
         borderColor: "$info",
       },
-      [TrustGraphNodeType.DTE]: {
+      DTE: {
         backgroundColor: "$infoContainer",
         borderColor: "$info",
       },
-      [TrustGraphNodeType.DPP]: {
+      DPP: {
         backgroundColor: "$infoContainer",
         borderColor: "$info",
       },
@@ -96,13 +96,13 @@ const Title = styled(TTitle, {
       },
     },
     type: {
-      [TrustGraphNodeType.DCC]: {
+      DCC: {
         col: "$onInfoContainer",
       },
-      [TrustGraphNodeType.DTE]: {
+      DTE: {
         col: "$onInfoContainer",
       },
-      [TrustGraphNodeType.DPP]: {
+      DPP: {
         col: "$onInfoContainer",
       },
     },
@@ -129,13 +129,13 @@ const SupportingText = styled(TTitle, {
       },
     },
     type: {
-      [TrustGraphNodeType.DCC]: {
+      DCC: {
         col: "$onInfoContainer",
       },
-      [TrustGraphNodeType.DTE]: {
+      DTE: {
         col: "$onInfoContainer",
       },
-      [TrustGraphNodeType.DPP]: {
+      DPP: {
         col: "$onInfoContainer",
       },
     },

@@ -976,13 +976,7 @@ export type UpdateSchema = {
     };
 };
 
-export enum TrustGraphNodeType {
-    DTE = 'DTE',
-    DCC = 'DCC',
-    DPP = 'DPP',
-    DIA = 'DIA',
-    DFR = 'DFR'
-}
+export type TrustGraphNodeType = 'DTE' | 'DCC' | 'DPP' | 'DIA' | 'DFR';
 
 export type TrustGraphNode = {
     /**

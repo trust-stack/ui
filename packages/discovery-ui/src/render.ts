@@ -2,11 +2,11 @@ import {TrustGraphNodeType} from "@truststack/schema";
 
 export const renderTrustGraphNodeType = (type: TrustGraphNodeType) => {
   switch (type) {
-    case TrustGraphNodeType.DCC:
+    case "DCC":
       return "Conformity Credential";
-    case TrustGraphNodeType.DTE:
+    case "DTE":
       return "Traceability Event";
-    case TrustGraphNodeType.DPP:
+    case "DPP":
       return "Product Passport";
     default:
       return "Trust Graph Node";
