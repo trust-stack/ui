@@ -6,7 +6,6 @@ export default defineConfig({
   plugins: [
     {
       name: "@hey-api/typescript",
-      enums: "typescript",
     },
   ],
 });
