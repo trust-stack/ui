@@ -1,5 +1,14 @@
 # @truststack/theme-ui
 
+## 0.2.1
+
+### Patch Changes
+
+- c8e9fea: Building schema types.
+- Updated dependencies [c8e9fea]
+  - @truststack/schema@0.1.1
+  - @truststack/ui@0.2.1
+
 ## 0.2.0
 
 ### Minor Changes

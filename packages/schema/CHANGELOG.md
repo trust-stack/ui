@@ -1,5 +1,11 @@
 # @truststack/schema
 
+## 0.1.1
+
+### Patch Changes
+
+- c8e9fea: Building schema types.
+
 ## 0.1.0
 
 ### Minor Changes
