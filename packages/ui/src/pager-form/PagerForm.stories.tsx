@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { useForm } from 'react-hook-form';
-import { H4 } from 'tamagui';
+import { H4, View } from 'tamagui';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { FormProvider } from '../form/context';
 import { PlatformDecorator } from '../storybook-utils';
@@ -29,25 +29,9 @@ export default {
 type Story = StoryObj<typeof PagerForm>;
 
 export const Web: Story = {
-    args: {
-        forms: [
-            {
-                title: 'Hello',
-                content: <H4>Hello World</H4>,
-            },
-            {
-                title: 'Good Bye',
-                content: <H4>Good Bye World</H4>,
-            },
-        ],
-    },
-    decorators: [PlatformDecorator('web')],
-};
-
-export const Native: Story = {
     parameters: {
         viewport: {
-            defaultViewport: 'mobile2',
+            defaultViewport: 'fullscreen',
         },
         layout: 'fullscreen',
     },
@@ -63,5 +47,12 @@ export const Native: Story = {
             },
         ],
     },
-    decorators: [PlatformDecorator('ios')],
+    decorators: [
+        (Story) => (
+            <View maxWidth={800}>
+                <Story />
+            </View>
+        ),
+        PlatformDecorator('web'),
+    ],
 };
