@@ -1,17 +1,9 @@
-import { useApolloClient } from '@apollo/client';
-import { ChevronLeft, ChevronRight, Upload, X } from '@tamagui/lucide-icons';
+import { ChevronLeft, ChevronRight, Upload } from '@tamagui/lucide-icons';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { FieldValues } from 'react-hook-form';
-import {
-    Animated,
-    Dimensions,
-    Pressable,
-    RefreshControl,
-    ScrollView,
-} from 'react-native';
+import { Animated, Dimensions, Pressable, ScrollView } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { useRouter } from 'solito/navigation';
 import { View, XStack, useWindowDimensions } from 'tamagui';
 import { Button } from '../Button';
 import { IconButton } from '../IconButton';
@@ -30,16 +22,14 @@ export function PagerForm<TFieldValues extends FieldValues>({
     onSubmit,
     submitting,
     loading,
+    onBack,
 }: PagerFormProps<TFieldValues>): JSX.Element {
     const [width, setWidth] = useState<number>(WIDTH);
-    const [refreshing, setRefreshing] = useState<boolean>(false);
-    const client = useApolloClient();
     const [page, setPage] = useState<number>(0);
     const scrollRef = useRef<ScrollView>();
     const scrollOffsetX = useRef(new Animated.Value(0)).current;
     const { formState, trigger } = useFormContext<TFieldValues>();
     const windowDimensions = useWindowDimensions();
-    const router = useRouter();
     const insets = useSafeAreaInsets();
 
     const forms = useMemo(() => FORMS.filter((f) => !f.hidden), [FORMS]);
@@ -50,13 +40,6 @@ export function PagerForm<TFieldValues extends FieldValues>({
                 y: 0,
                 x: windowDimensions.width * index,
             });
-    };
-
-    const onRefresh = () => {
-        setRefreshing(true);
-        client
-            .refetchQueries({ include: 'active' })
-            .finally(() => setRefreshing(false));
     };
 
     const onNext = () => {
@@ -83,8 +66,8 @@ export function PagerForm<TFieldValues extends FieldValues>({
             <CompactScreen.Header>
                 <TopAppBar backgroundColor={'$surfaceContainerLowest'}>
                     <TopAppBar.TopRail>
-                        <Pressable onPress={() => router.back()}>
-                            <TopAppBar.LeadingIcon icon={X} />
+                        <Pressable onPress={onBack}>
+                            <TopAppBar.LeadingIcon icon={ChevronLeft} />
                         </Pressable>
 
                         <Ticker
@@ -127,12 +110,6 @@ export function PagerForm<TFieldValues extends FieldValues>({
                             key={`sub-form-${index}`}
                             style={{ width }}
                             showsVerticalScrollIndicator={false}
-                            refreshControl={
-                                <RefreshControl
-                                    refreshing={refreshing}
-                                    onRefresh={onRefresh}
-                                />
-                            }
                         >
                             <View padding={'$spacing.margin_compact'}>
                                 {typeof form.content == 'function'

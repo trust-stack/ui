@@ -6,6 +6,7 @@ export type PagerFormProps<TFieldValues extends FieldValues> = {
     readonly onSubmit?: VoidFunction;
     readonly submitting?: boolean;
     readonly loading?: boolean;
+    readonly onBack?: VoidFunction;
 };
 
 export type PageFormProps<TFieldValues extends FieldValues> = {

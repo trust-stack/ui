@@ -1,9 +1,10 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { useForm } from 'react-hook-form';
 import { H4 } from 'tamagui';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { FormProvider } from '../form/context';
 import { PlatformDecorator } from '../storybook-utils';
-import { PagerForm } from './PagerForm.web';
+import { PagerForm } from './PagerForm';
 
 export default {
     component: PagerForm,
@@ -12,12 +13,14 @@ export default {
             const formMethods = useForm();
 
             return (
-                <FormProvider
-                    formMethods={formMethods}
-                    submitHandler={() => {}}
-                >
-                    <Story />
-                </FormProvider>
+                <SafeAreaProvider>
+                    <FormProvider
+                        formMethods={formMethods}
+                        submitHandler={() => {}}
+                    >
+                        <Story />
+                    </FormProvider>
+                </SafeAreaProvider>
             );
         },
     ],
