@@ -13,10 +13,10 @@ export declare const Radio: import("tamagui").TamaguiComponent<import("@tamagui/
         right?: number;
     };
     fullscreen?: boolean;
+    elevate?: boolean;
     hoverTheme?: boolean;
     pressTheme?: boolean;
     focusTheme?: boolean;
-    elevate?: boolean;
     bordered?: number | boolean;
     backgrounded?: boolean;
     radiused?: boolean;
@@ -36,10 +36,10 @@ export declare const Radio: import("tamagui").TamaguiComponent<import("@tamagui/
         right?: number;
     };
     fullscreen?: boolean;
+    elevate?: boolean;
     hoverTheme?: boolean;
     pressTheme?: boolean;
     focusTheme?: boolean;
-    elevate?: boolean;
     bordered?: number | boolean;
     backgrounded?: boolean;
     radiused?: boolean;

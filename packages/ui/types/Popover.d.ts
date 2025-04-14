@@ -269,7 +269,7 @@ export declare const Popover: import("react").ForwardRefExoticComponent<import("
             disableHideBottomOverflow?: boolean;
             adjustPaddingForOffscreenContent?: boolean;
         }>>;
-        Overlay: import("react").MemoExoticComponent<(propsIn: import("tamagui").SheetScopedProps<import("@tamagui/core").GetFinalProps<import("@tamagui/core").TamaguiComponentPropsBaseBase & Omit<import("@tamagui/core").RNTamaguiViewNonStyleProps, "transparent" | "elevation" | keyof import("@tamagui/core").StackStyleBase | "circular" | "inset" | "open" | "unstyled" | "fullscreen" | "hoverTheme" | "pressTheme" | "focusTheme" | "elevate" | "bordered" | "backgrounded" | "radiused" | "padded" | "chromeless"> & import("@tamagui/core").WithThemeValues<import("@tamagui/core").StackStyleBase> & {
+        Overlay: import("react").MemoExoticComponent<(propsIn: import("tamagui").SheetScopedProps<import("@tamagui/core").GetFinalProps<import("@tamagui/core").TamaguiComponentPropsBaseBase & Omit<import("@tamagui/core").RNTamaguiViewNonStyleProps, "transparent" | "elevation" | keyof import("@tamagui/core").StackStyleBase | "circular" | "inset" | "open" | "unstyled" | "fullscreen" | "elevate" | "hoverTheme" | "pressTheme" | "focusTheme" | "bordered" | "backgrounded" | "radiused" | "padded" | "chromeless"> & import("@tamagui/core").WithThemeValues<import("@tamagui/core").StackStyleBase> & {
             elevation?: number | import("tamagui").SizeTokens | undefined;
             inset?: number | import("tamagui").SizeTokens | {
                 top?: number;

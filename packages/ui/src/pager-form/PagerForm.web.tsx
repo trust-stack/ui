@@ -3,7 +3,7 @@ import { FieldValues, useWatch } from 'react-hook-form';
 import { useEffect } from 'react';
 import { useFormContext } from '../form/context';
 import { Button } from '../Button';
-import { Card, CardProps } from '../Card';
+import { Card } from '../Card';
 import { Title } from '../typography';
 import { PageFormProps, PagerFormProps } from './types';
 
@@ -21,11 +21,7 @@ export function PagerForm<TFieldValues extends FieldValues>({
             {forms
                 .filter((f) => !f.hidden)
                 .map((f, index) => (
-                    <PagerCard
-                        width={'100%'}
-                        key={`form-card-${index}`}
-                        {...f}
-                    />
+                    <PagerCard key={`form-card-${index}`} {...f} />
                 ))}
 
             <XStack jc="flex-end">
@@ -47,8 +43,7 @@ function PagerCard<TFieldValues extends FieldValues>({
     id,
     title,
     content,
-    ...props
-}: PageFormProps<TFieldValues> & CardProps): JSX.Element {
+}: PageFormProps<TFieldValues>): JSX.Element {
     let error: boolean;
 
     const {
@@ -75,7 +70,6 @@ function PagerCard<TFieldValues extends FieldValues>({
         <Card
             borderColor={error ? '$warning' : '$success'}
             backgroundColor={'$surfaceContainerLowest'}
-            {...props}
         >
             <Card.Header>
                 <Title size="large">{title}</Title>

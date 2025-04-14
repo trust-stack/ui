@@ -8,5 +8,6 @@ type RenderVariantsProps = {
     readonly children: React.ReactNode;
 };
 export declare function RenderVariants({ title, children, }: RenderVariantsProps): JSX.Element;
+export declare const PlatformDecorator: (platform: "web" | "android" | "ios" | "windows" | "macos") => (Story: any) => import("react/jsx-runtime").JSX.Element;
 export {};
 //# sourceMappingURL=storybook-utils.d.ts.map
