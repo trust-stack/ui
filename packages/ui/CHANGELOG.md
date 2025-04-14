@@ -1,5 +1,11 @@
 # @truststack/ui
 
+## 0.3.0
+
+### Minor Changes
+
+- 640e838: Adding (pager) form components
+
 ## 0.2.2
 
 ### Patch Changes

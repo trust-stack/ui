@@ -1,5 +1,16 @@
 # @truststack/theme-ui
 
+## 0.3.0
+
+### Minor Changes
+
+- 640e838: Adding (pager) form components
+
+### Patch Changes
+
+- Updated dependencies [640e838]
+  - @truststack/ui@0.3.0
+
 ## 0.2.2
 
 ### Patch Changes
