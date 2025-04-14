@@ -1,4 +1,5 @@
 import { H4, XStack, XStackProps } from 'tamagui';
+import { PlatformProvider } from './PlatformContext';
 
 type RenderStageProps = {
     readonly children: React.ReactNode;
@@ -43,3 +44,12 @@ export function RenderVariants({
         </>
     );
 }
+
+export const PlatformDecorator =
+    (platform: 'web' | 'android' | 'ios' | 'windows' | 'macos') => (Story) => {
+        return (
+            <PlatformProvider platform={platform}>
+                <Story />
+            </PlatformProvider>
+        );
+    };
