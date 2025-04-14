@@ -1,5 +1,19 @@
 # @truststack/ui-kit
 
+## 0.3.0
+
+### Minor Changes
+
+- 640e838: Adding (pager) form components
+
+### Patch Changes
+
+- Updated dependencies [640e838]
+  - @truststack/ui@0.3.0
+  - @truststack/discovery-ui@0.3.0
+  - @truststack/render-ui@0.3.0
+  - @truststack/theme-ui@0.3.0
+
 ## 0.2.2
 
 ### Patch Changes
