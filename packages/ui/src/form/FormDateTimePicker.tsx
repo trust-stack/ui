@@ -35,7 +35,11 @@ export function FormDateTimePicker<TFormFields extends FieldValues>({
             render={({ field }) => {
                 if (withNow)
                     return (
-                        <XStack gap="$spacing.form_gap" alignItems="center">
+                        <XStack
+                            gap="$spacing.form_gap"
+                            alignItems="center"
+                            f={1}
+                        >
                             <DateTimePicker
                                 {...props}
                                 disabled={disabled || props?.disabled}

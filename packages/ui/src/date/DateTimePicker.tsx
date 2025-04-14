@@ -15,9 +15,16 @@ import { DatepickerProvider } from './DatePickerProvider';
 import { TimePicker } from './TimePicker';
 import { getLocaleDateTime, isDateValid } from './dateHelper';
 
-export type DateTimePickerProps = Pick<
-    TextFieldProps,
-    'label' | 'disabled' | 'error' | 'loading' | 'supportingText'
+export type DateTimePickerProps = Partial<
+    Pick<
+        TextFieldProps,
+        | 'label'
+        | 'disabled'
+        | 'error'
+        | 'loading'
+        | 'supportingText'
+        | 'variant'
+    >
 > & {
     readonly value?: Date;
     readonly onChange: (date: Date) => void;
@@ -78,7 +85,13 @@ export function DateTimePicker({
     return (
         <DatepickerProvider {...context}>
             <Dialog modal>
-                <Dialog.Trigger fg={1} disabled={props.disabled} padding={0}>
+                <Dialog.Trigger
+                    fg={1}
+                    disabled={props.disabled}
+                    padding={0}
+                    bc="transparent"
+                    bw={0}
+                >
                     <TextField
                         {...props}
                         pointerEvents="none"

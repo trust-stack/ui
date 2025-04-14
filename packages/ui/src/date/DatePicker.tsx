@@ -14,9 +14,11 @@ import { CalendarPicker } from './CalendarPicker';
 import { DatepickerProvider } from './DatePickerProvider';
 import { getLocaleDate } from './dateHelper';
 
-export type DatePickerProps = Pick<
-    TextFieldProps,
-    'label' | 'disabled' | 'error' | 'loading' | 'supportingText'
+export type DatePickerProps = Partial<
+    Pick<
+        TextFieldProps,
+        'label' | 'disabled' | 'error' | 'loading' | 'supportingText'
+    >
 > & {
     readonly value?: Date;
     readonly onChange: (date: Date) => void;
@@ -56,7 +58,13 @@ export function DatePicker({
     return (
         <DatepickerProvider {...context}>
             <Dialog modal open={open} onOpenChange={setOpen}>
-                <Dialog.Trigger fg={1} disabled={props.disabled} padding={0}>
+                <Dialog.Trigger
+                    fg={1}
+                    disabled={props.disabled}
+                    padding={0}
+                    bc="transparent"
+                    bw={0}
+                >
                     <TextField
                         {...props}
                         label={label}

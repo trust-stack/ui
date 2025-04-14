@@ -1,7 +1,9 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta } from '@storybook/react';
+import { YStack } from 'tamagui';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { date, object } from 'yup';
+import { RenderStage } from '../storybook-utils';
 import { FormProvider } from '../form/context';
 import { FormDateTimePicker } from './FormDateTimePicker';
 
@@ -11,28 +13,31 @@ const schema = object({
 
 export default {
     component: FormDateTimePicker,
-    decorators: [
-        (Story) => {
-            const formMethods = useForm({
-                resolver: yupResolver(schema),
-            });
-
-            return (
-                <FormProvider
-                    formMethods={formMethods}
-                    submitHandler={() => {}}
-                >
-                    <Story />
-                </FormProvider>
-            );
-        },
-    ],
-    args: {
-        id: 'test',
-        label: 'Date and Time',
-    },
 } as Meta<typeof FormDateTimePicker>;
 
-type Story = StoryObj<typeof FormDateTimePicker>;
+export const Variants = () => {
+    const formMethods = useForm({
+        resolver: yupResolver(schema),
+    });
 
-export const Default: Story = {};
+    return (
+        <FormProvider formMethods={formMethods} submitHandler={() => {}}>
+            <YStack gap={'$4'}>
+                <RenderStage>
+                    <FormDateTimePicker
+                        id="test"
+                        label="Date and Time"
+                        helperText="Without Now Button"
+                        withNow={false}
+                    />
+                    <FormDateTimePicker
+                        id="test"
+                        label="Date and Time"
+                        helperText="With Now Button"
+                        withNow
+                    />
+                </RenderStage>
+            </YStack>
+        </FormProvider>
+    );
+};

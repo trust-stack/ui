@@ -16,28 +16,24 @@ export const Variants = () => {
                 label="Basic"
                 supportingText="Basic range picker"
                 onChange={() => {}}
-                width={300}
             />
             <DateRangePicker
                 label="Error"
                 error
                 supportingText="This is in an error state"
                 onChange={() => {}}
-                width={300}
             />
             <DateRangePicker
                 label="Loading"
                 supportingText="This is in an loading state"
                 loading
                 onChange={() => {}}
-                width={300}
             />
             <DateRangePicker
                 label="Disabled"
                 disabled
                 supportingText="This is an disabled state"
                 onChange={() => {}}
-                width={300}
             />
         </RenderStage>
     );
