@@ -1,5 +1,11 @@
 # @truststack/ui
 
+## 0.4.0
+
+### Minor Changes
+
+- 708dd6c: Form specific packaging and components, navigation specific packing and components
+
 ## 0.3.0
 
 ### Minor Changes
