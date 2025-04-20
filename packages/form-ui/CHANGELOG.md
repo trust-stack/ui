@@ -1,5 +1,13 @@
 # @truststack/render-ui
 
+## 0.2.1
+
+### Patch Changes
+
+- c42e05c: Resolving imports and exports.
+- Updated dependencies [c42e05c]
+  - @truststack/ui@0.4.1
+
 ## 0.2.0
 
 ### Minor Changes

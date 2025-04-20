@@ -1,5 +1,11 @@
 # @truststack/ui
 
+## 0.4.1
+
+### Patch Changes
+
+- c42e05c: Resolving imports and exports.
+
 ## 0.4.0
 
 ### Minor Changes

@@ -1,5 +1,14 @@
 # @truststack/discovery-ui
 
+## 0.3.2
+
+### Patch Changes
+
+- Updated dependencies [c42e05c]
+  - @truststack/render-ui@0.3.2
+  - @truststack/ui@0.4.1
+  - @truststack/theme-ui@0.3.2
+
 ## 0.3.1
 
 ### Patch Changes
