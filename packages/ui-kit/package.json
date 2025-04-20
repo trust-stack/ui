@@ -54,6 +54,8 @@
     "@storybook/react": "^8.6.12",
     "@tamagui/lucide-icons": "1.125.32",
     "@truststack/discovery-ui": "workspace:*",
+    "@truststack/form-ui": "workspace:*",
+    "@truststack/nav-ui": "workspace:*",
     "@truststack/render-ui": "workspace:*",
     "@truststack/schema": "workspace:*",
     "@truststack/theme-ui": "workspace:*",

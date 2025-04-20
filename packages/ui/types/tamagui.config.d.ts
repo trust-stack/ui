@@ -355,14 +355,14 @@ export declare const config: import("@tamagui/core").TamaguiInternalConfig<{
         9: import("@tamagui/core").Variable<number>;
         1: import("@tamagui/core").Variable<number>;
         10: import("@tamagui/core").Variable<number>;
+        2: import("@tamagui/core").Variable<number>;
+        3: import("@tamagui/core").Variable<number>;
         11: import("@tamagui/core").Variable<number>;
         12: import("@tamagui/core").Variable<number>;
-        2: import("@tamagui/core").Variable<number>;
         true: import("@tamagui/core").Variable<number>;
         4: import("@tamagui/core").Variable<number>;
         8: import("@tamagui/core").Variable<number>;
         6: import("@tamagui/core").Variable<number>;
-        3: import("@tamagui/core").Variable<number>;
         5: import("@tamagui/core").Variable<number>;
         7: import("@tamagui/core").Variable<number>;
     };
@@ -397,11 +397,11 @@ export declare const config: import("@tamagui/core").TamaguiInternalConfig<{
     shadow: {
         0: import("@tamagui/core").Variable<string | number>;
         2: import("@tamagui/core").Variable<string | number>;
+        3: import("@tamagui/core").Variable<string | number>;
         1: import("@tamagui/core").Variable<string | number>;
         true: import("@tamagui/core").Variable<string | number>;
         4: import("@tamagui/core").Variable<string | number>;
         bs_1: import("@tamagui/core").Variable<string | number>;
-        3: import("@tamagui/core").Variable<string | number>;
         5: import("@tamagui/core").Variable<string | number>;
     };
     color: {
@@ -796,14 +796,14 @@ export declare const config: import("@tamagui/core").TamaguiInternalConfig<{
         9: import("@tamagui/core").Variable<import("@tamagui/core").Variable<number>>;
         1: import("@tamagui/core").Variable<import("@tamagui/core").Variable<number>>;
         10: import("@tamagui/core").Variable<import("@tamagui/core").Variable<number>>;
+        2: import("@tamagui/core").Variable<import("@tamagui/core").Variable<number>>;
+        3: import("@tamagui/core").Variable<import("@tamagui/core").Variable<number>>;
         11: import("@tamagui/core").Variable<import("@tamagui/core").Variable<number>>;
         12: import("@tamagui/core").Variable<import("@tamagui/core").Variable<number>>;
-        2: import("@tamagui/core").Variable<import("@tamagui/core").Variable<number>>;
         true: import("@tamagui/core").Variable<import("@tamagui/core").Variable<number>>;
         4: import("@tamagui/core").Variable<import("@tamagui/core").Variable<number>>;
         8: import("@tamagui/core").Variable<import("@tamagui/core").Variable<number>>;
         6: import("@tamagui/core").Variable<import("@tamagui/core").Variable<number>>;
-        3: import("@tamagui/core").Variable<import("@tamagui/core").Variable<number>>;
         5: import("@tamagui/core").Variable<import("@tamagui/core").Variable<number>>;
         7: import("@tamagui/core").Variable<import("@tamagui/core").Variable<number>>;
     };

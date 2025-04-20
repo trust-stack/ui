@@ -1,8 +1,7 @@
-import { KeyboardType } from 'react-native';
-import { TextFieldProps } from './form/TextField';
+import { TextFieldProps } from './TextField';
 export type NumericalInputProps = {
-    readonly onValueChange?: (v: string) => void;
-    readonly keyboardType?: KeyboardType;
-} & Omit<TextFieldProps, 'value'>;
-export declare function NumericalInput({ onValueChange, ...props }: NumericalInputProps): JSX.Element;
+    readonly value?: number;
+    readonly onChange?: (v: number) => void;
+} & Omit<TextFieldProps, 'value' | 'onChangeText'>;
+export declare function NumericalInput({ value, onChange, ...props }: NumericalInputProps): JSX.Element;
 //# sourceMappingURL=NumericalInput.d.ts.map

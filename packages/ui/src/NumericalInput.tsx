@@ -1,25 +1,26 @@
-import { KeyboardType } from 'react-native';
-import { TextField, TextFieldProps } from './form/TextField';
+import { TextField, TextFieldProps } from './TextField';
 
 export type NumericalInputProps = {
-    readonly onValueChange?: (v: string) => void;
-    readonly keyboardType?: KeyboardType;
-} & Omit<TextFieldProps, 'value'>;
+    readonly value?: number;
+    readonly onChange?: (v: number) => void;
+} & Omit<TextFieldProps, 'value' | 'onChangeText'>;
 
 export function NumericalInput({
-    onValueChange = () => {},
+    value,
+    onChange,
     ...props
 }: NumericalInputProps): JSX.Element {
     return (
         <TextField
-            keyboardType="decimal-pad"
             {...props}
+            keyboardType="decimal-pad"
             onChangeText={(e) => {
                 const newValue = e
                     ?.replace(/[^0-9.]/g, '')
                     .replace(/(\..*)\./g, '$1');
-                onValueChange(newValue);
+                onChange && onChange(newValue);
             }}
+            value={value?.toString()}
         />
     );
 }

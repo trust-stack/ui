@@ -1,4 +1,4 @@
-import { TextFieldProps } from "./form/TextField";
+import { TextFieldProps } from "./TextField";
 export type SelectProps<T = string> = {
     readonly options: {
         label: string;
