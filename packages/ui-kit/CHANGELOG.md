@@ -1,5 +1,18 @@
 # @truststack/ui-kit
 
+## 0.4.1
+
+### Patch Changes
+
+- c42e05c: Resolving imports and exports.
+- Updated dependencies [c42e05c]
+  - @truststack/render-ui@0.3.2
+  - @truststack/form-ui@0.2.1
+  - @truststack/nav-ui@0.2.1
+  - @truststack/ui@0.4.1
+  - @truststack/discovery-ui@0.3.2
+  - @truststack/theme-ui@0.3.2
+
 ## 0.4.0
 
 ### Minor Changes

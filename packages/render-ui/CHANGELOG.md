@@ -1,5 +1,14 @@
 # @truststack/render-ui
 
+## 0.3.2
+
+### Patch Changes
+
+- c42e05c: Resolving imports and exports.
+- Updated dependencies [c42e05c]
+  - @truststack/ui@0.4.1
+  - @truststack/theme-ui@0.3.2
+
 ## 0.3.1
 
 ### Patch Changes

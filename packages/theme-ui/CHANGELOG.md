@@ -1,5 +1,12 @@
 # @truststack/theme-ui
 
+## 0.3.2
+
+### Patch Changes
+
+- Updated dependencies [c42e05c]
+  - @truststack/ui@0.4.1
+
 ## 0.3.1
 
 ### Patch Changes
