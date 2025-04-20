@@ -6,7 +6,10 @@
       "@truststack/discovery-ui": ["packages/discovery-ui"],
       "@truststack/schema": ["packages/schema"],
       "@truststack/theme-ui": ["packages/theme-ui"],
-      "@truststack/render-ui": ["packages/render-ui"]
+      "@truststack/render-ui": ["packages/render-ui"],
+      "@truststack/form-ui": ["packages/form-ui"],
+      "@truststack/nav-ui": ["packages/nav-ui"],
+      "@truststack/ui-kit": ["packages/ui-kit"]
     },
     "outDir": "dist",
     "allowJs": false,

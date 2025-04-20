@@ -118,6 +118,43 @@ importers:
         specifier: ^18.2.0
         version: 18.3.6(@types/react@18.3.18)
 
+  packages/nav-ui:
+    dependencies:
+      '@tamagui/lucide-icons':
+        specifier: 1.125.32
+        version: 1.125.32(react-dom@18.2.0(react@18.2.0))(react-native-svg@15.2.0(react-native@0.74.5(@babel/core@7.26.9)(@babel/preset-env@7.26.9(@babel/core@7.26.9))(@types/react@18.3.18)(react@18.2.0))(react@18.2.0))(react-native@0.74.5(@babel/core@7.26.9)(@babel/preset-env@7.26.9(@babel/core@7.26.9))(@types/react@18.3.18)(react@18.2.0))(react@18.2.0)
+      '@truststack/ui':
+        specifier: workspace:*
+        version: link:../ui
+      react:
+        specifier: 18.2.0
+        version: 18.2.0
+      react-dom:
+        specifier: 18.2.0
+        version: 18.2.0(react@18.2.0)
+      react-native:
+        specifier: 0.74.5
+        version: 0.74.5(@babel/core@7.26.9)(@babel/preset-env@7.26.9(@babel/core@7.26.9))(@types/react@18.3.18)(react@18.2.0)
+      solito:
+        specifier: ^4.2.2
+        version: 4.4.1
+      tamagui:
+        specifier: 1.125.17
+        version: 1.125.17(@types/react@18.3.18)(react-dom@18.2.0(react@18.2.0))(react-native@0.74.5(@babel/core@7.26.9)(@babel/preset-env@7.26.9(@babel/core@7.26.9))(@types/react@18.3.18)(react@18.2.0))(react@18.2.0)
+    devDependencies:
+      '@storybook/react':
+        specifier: ^8.6.12
+        version: 8.6.12(@storybook/test@8.6.12(storybook@8.6.12(prettier@2.8.8)))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.12(prettier@2.8.8))(typescript@5.8.2)
+      '@tamagui/build':
+        specifier: 1.125.17
+        version: 1.125.17(@swc/helpers@0.5.15)
+      '@types/react':
+        specifier: ^18.2.0
+        version: 18.3.18
+      '@types/react-dom':
+        specifier: ^18.2.0
+        version: 18.3.6(@types/react@18.3.18)
+
   packages/render-ui:
     dependencies:
       '@tamagui/lucide-icons':
@@ -379,6 +416,12 @@ importers:
       '@truststack/discovery-ui':
         specifier: workspace:*
         version: link:../discovery-ui
+      '@truststack/form-ui':
+        specifier: workspace:*
+        version: link:../form-ui
+      '@truststack/nav-ui':
+        specifier: workspace:*
+        version: link:../nav-ui
       '@truststack/render-ui':
         specifier: workspace:*
         version: link:../render-ui
@@ -5855,6 +5898,9 @@ packages:
 
   snake-case@3.0.4:
     resolution: {integrity: sha512-LAOh4z89bGQvl9pFfNF8V146i7o7/CqFPbqzYgP+yYzDIDeS9HaNFtXABamRW+AQzEVODcvE79ljJ+8a9YSdMg==}
+
+  solito@4.4.1:
+    resolution: {integrity: sha512-5+XtaaOjRPV+q6uV9DruD2VRwtPpoLkZevQW3INGgRpsJNjulbd6JKlHoNeFRAvEJLJNU+nKbtv6Tq2pTxu2Aw==}
 
   source-list-map@2.0.1:
     resolution: {integrity: sha512-qnQ7gVMxGNxsiL4lEuJwe/To8UnK7fAnmbGEEH8RpLouuKbeEm0lhbQVFIrNSuB+G7tVrAlVsZgETT5nljf+Iw==}
@@ -14289,6 +14335,10 @@ snapshots:
     dependencies:
       dot-case: 3.0.4
       tslib: 2.8.1
+
+  solito@4.4.1:
+    dependencies:
+      typescript: 5.7.3
 
   source-list-map@2.0.1: {}
 
