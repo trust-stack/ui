@@ -1,5 +1,21 @@
 # @truststack/ui-kit
 
+## 0.4.0
+
+### Minor Changes
+
+- 708dd6c: Form specific packaging and components, navigation specific packing and components
+
+### Patch Changes
+
+- Updated dependencies [708dd6c]
+  - @truststack/form-ui@0.2.0
+  - @truststack/nav-ui@0.2.0
+  - @truststack/ui@0.4.0
+  - @truststack/discovery-ui@0.3.1
+  - @truststack/render-ui@0.3.1
+  - @truststack/theme-ui@0.3.1
+
 ## 0.3.0
 
 ### Minor Changes
