@@ -1,5 +1,6 @@
+import { NavRailProps } from "@truststack/ui";
 export type RailLayoutProps = {
     readonly children: React.ReactNode;
-};
-export declare function RailLayout({ children }: RailLayoutProps): JSX.Element;
+} & NavRailProps;
+export declare function RailLayout({ children, ...props }: RailLayoutProps): JSX.Element;
 //# sourceMappingURL=RailLayout.d.ts.map

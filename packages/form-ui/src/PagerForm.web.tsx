@@ -1,6 +1,4 @@
-import {Button} from "@truststack/ui/src/Button";
-import {Card} from "@truststack/ui/src/Card";
-import {Title} from "@truststack/ui/src/typography";
+import {Button, Card, Title} from "@truststack/ui";
 import {useEffect} from "react";
 import {FieldValues, useWatch} from "react-hook-form";
 import {XStack, YStack} from "tamagui";

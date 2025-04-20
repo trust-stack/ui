@@ -1,2 +1,2 @@
-export * from "./Breacrumbs";
+export * from "./Breadcrumbs";
 //# sourceMappingURL=index.d.ts.map

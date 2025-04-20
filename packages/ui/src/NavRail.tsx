@@ -10,7 +10,7 @@ import {
 } from "tamagui";
 import {NavItem} from "./NavItem";
 
-type NavRailProps = {
+export type NavRailProps = {
   readonly Icon?: React.ReactNode;
   readonly Fab?: React.ReactNode;
   readonly TrailItems?: React.ReactNode;

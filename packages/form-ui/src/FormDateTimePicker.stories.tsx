@@ -1,43 +1,40 @@
-import { Meta } from '@storybook/react';
-import { YStack } from 'tamagui';
-import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import { date, object } from 'yup';
-import { RenderStage } from '../storybook-utils';
-import { FormProvider } from '../form/context';
-import { FormDateTimePicker } from './FormDateTimePicker';
+import {yupResolver} from "@hookform/resolvers/yup";
+import {Meta} from "@storybook/react";
+import {useForm} from "react-hook-form";
+import {YStack} from "tamagui";
+import {date, object} from "yup";
+import {FormProvider} from "./context";
+import {FormDateTimePicker} from "./FormDateTimePicker";
 
 const schema = object({
-    test: date(),
+  test: date(),
 });
 
 export default {
-    component: FormDateTimePicker,
+  component: FormDateTimePicker,
 } as Meta<typeof FormDateTimePicker>;
 
 export const Variants = () => {
-    const formMethods = useForm({
-        resolver: yupResolver(schema),
-    });
+  const formMethods = useForm({
+    resolver: yupResolver(schema),
+  });
 
-    return (
-        <FormProvider formMethods={formMethods} submitHandler={() => {}}>
-            <YStack gap={'$4'}>
-                <RenderStage>
-                    <FormDateTimePicker
-                        id="test"
-                        label="Date and Time"
-                        helperText="Without Now Button"
-                        withNow={false}
-                    />
-                    <FormDateTimePicker
-                        id="test"
-                        label="Date and Time"
-                        helperText="With Now Button"
-                        withNow
-                    />
-                </RenderStage>
-            </YStack>
-        </FormProvider>
-    );
+  return (
+    <FormProvider formMethods={formMethods} submitHandler={() => {}}>
+      <YStack gap={"$4"}>
+        <FormDateTimePicker
+          id="test"
+          label="Date and Time"
+          helperText="Without Now Button"
+          withNow={false}
+        />
+        <FormDateTimePicker
+          id="test"
+          label="Date and Time"
+          helperText="With Now Button"
+          withNow
+        />
+      </YStack>
+    </FormProvider>
+  );
 };

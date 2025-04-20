@@ -2,7 +2,6 @@ import {Meta, StoryObj} from "@storybook/react";
 import {useForm} from "react-hook-form";
 import {SafeAreaProvider} from "react-native-safe-area-context";
 import {H4, View} from "tamagui";
-import {PlatformDecorator} from "../../ui/src/storybook-utils";
 import {FormProvider} from "./context";
 import {PagerForm} from "./PagerForm";
 
@@ -50,6 +49,5 @@ export const Web: Story = {
         <Story />
       </View>
     ),
-    PlatformDecorator("web"),
   ],
 };
