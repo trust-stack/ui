@@ -355,14 +355,14 @@ export declare const tokens: {
         9: import("tamagui").Variable<number>;
         1: import("tamagui").Variable<number>;
         10: import("tamagui").Variable<number>;
+        2: import("tamagui").Variable<number>;
+        3: import("tamagui").Variable<number>;
         11: import("tamagui").Variable<number>;
         12: import("tamagui").Variable<number>;
-        2: import("tamagui").Variable<number>;
         true: import("tamagui").Variable<number>;
         4: import("tamagui").Variable<number>;
         8: import("tamagui").Variable<number>;
         6: import("tamagui").Variable<number>;
-        3: import("tamagui").Variable<number>;
         5: import("tamagui").Variable<number>;
         7: import("tamagui").Variable<number>;
     };
@@ -397,11 +397,11 @@ export declare const tokens: {
     shadow: {
         0: import("tamagui").Variable<string | number>;
         2: import("tamagui").Variable<string | number>;
+        3: import("tamagui").Variable<string | number>;
         1: import("tamagui").Variable<string | number>;
         true: import("tamagui").Variable<string | number>;
         4: import("tamagui").Variable<string | number>;
         bs_1: import("tamagui").Variable<string | number>;
-        3: import("tamagui").Variable<string | number>;
         5: import("tamagui").Variable<string | number>;
     };
     color: {
@@ -796,14 +796,14 @@ export declare const tokens: {
         9: import("tamagui").Variable<import("tamagui").Variable<number>>;
         1: import("tamagui").Variable<import("tamagui").Variable<number>>;
         10: import("tamagui").Variable<import("tamagui").Variable<number>>;
+        2: import("tamagui").Variable<import("tamagui").Variable<number>>;
+        3: import("tamagui").Variable<import("tamagui").Variable<number>>;
         11: import("tamagui").Variable<import("tamagui").Variable<number>>;
         12: import("tamagui").Variable<import("tamagui").Variable<number>>;
-        2: import("tamagui").Variable<import("tamagui").Variable<number>>;
         true: import("tamagui").Variable<import("tamagui").Variable<number>>;
         4: import("tamagui").Variable<import("tamagui").Variable<number>>;
         8: import("tamagui").Variable<import("tamagui").Variable<number>>;
         6: import("tamagui").Variable<import("tamagui").Variable<number>>;
-        3: import("tamagui").Variable<import("tamagui").Variable<number>>;
         5: import("tamagui").Variable<import("tamagui").Variable<number>>;
         7: import("tamagui").Variable<import("tamagui").Variable<number>>;
     };

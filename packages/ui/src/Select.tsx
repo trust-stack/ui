@@ -6,7 +6,7 @@ import {Divider} from "./Divider";
 import {MenuItem} from "./Menu";
 import {Popover} from "./Popover";
 import {Sheet} from "./Sheet";
-import {TextField, TextFieldProps} from "./form/TextField";
+import {TextField, TextFieldProps} from "./TextField";
 import {Body, Headline} from "./typography";
 
 export type SelectProps<T = string> = {

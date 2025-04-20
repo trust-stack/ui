@@ -1,6 +1,9 @@
-import { IconButtonProps } from '../IconButton';
+import {IconButtonProps} from "./IconButton";
 export type YearPickerProps = {
-    readonly value: number;
+  readonly value: number;
 } & Partial<IconButtonProps>;
-export declare function YearPicker({ value, ...props }: YearPickerProps): JSX.Element;
+export declare function YearPicker({
+  value,
+  ...props
+}: YearPickerProps): JSX.Element;
 //# sourceMappingURL=YearPicker.d.ts.map
