@@ -1,7 +1,7 @@
 import type { IconProps } from "@tamagui/helpers-icon";
 import { FunctionComponent } from "react";
 import { GetProps } from "tamagui";
-type NavRailProps = {
+export type NavRailProps = {
     readonly Icon?: React.ReactNode;
     readonly Fab?: React.ReactNode;
     readonly TrailItems?: React.ReactNode;
