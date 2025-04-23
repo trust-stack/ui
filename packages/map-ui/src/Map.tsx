@@ -1,15 +1,22 @@
 import 'mapbox-gl/dist/mapbox-gl.css';
 import MapGl, { LngLatBoundsLike, MapRef, Marker } from 'react-map-gl/mapbox';
 import { Point } from 'geojson';
-import { useEffect, useRef, useState } from 'react';
+import { ReactNode, useEffect, useRef, useState } from 'react';
 import { useMapbox } from './MapboxProvider';
 
-type MapProps = {
+export type MapProps = {
     readonly markers?: Point[]; // [longitude, latitude][]
+    readonly showMarkers?: boolean;
     readonly padding?: number;
+    readonly children?: ReactNode;
 };
 
-export function Map({ markers, padding = 100 }: MapProps): JSX.Element {
+export function Map({
+    markers,
+    showMarkers = true,
+    padding = 100,
+    children,
+}: MapProps): JSX.Element {
     const mapRef = useRef<MapRef>(null);
     const { token } = useMapbox();
 
@@ -67,14 +74,16 @@ export function Map({ markers, padding = 100 }: MapProps): JSX.Element {
                 setViewport(e.viewState);
             }}
         >
-            {markers?.map((marker, index) => (
-                <Marker
-                    key={`${marker[0]}-${marker[1]}-${index}`}
-                    anchor={'center'}
-                    latitude={marker[1]}
-                    longitude={marker[0]}
-                />
-            ))}
+            {children}
+            {showMarkers &&
+                markers?.map((marker, index) => (
+                    <Marker
+                        key={`${marker[0]}-${marker[1]}-${index}`}
+                        anchor={'center'}
+                        latitude={marker[1]}
+                        longitude={marker[0]}
+                    />
+                ))}
         </MapGl>
     );
 }
