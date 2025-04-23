@@ -25,7 +25,7 @@ type Story = StoryObj<typeof HeatMap>;
 export const Heat: Story = {
     args: {
         layer: 'heatmap',
-        markers: Array.from({ length: 500 }, () => [
+        coordinates: Array.from({ length: 500 }, () => [
             // Australia bounds roughly:
             // Longitude: 113°E to 154°E
             // Latitude: 10°S to 44°S
@@ -38,7 +38,7 @@ export const Heat: Story = {
 export const Marker: Story = {
     args: {
         layer: 'marker',
-        markers: Array.from({ length: 500 }, () => [
+        coordinates: Array.from({ length: 500 }, () => [
             // Australia bounds roughly:
             // Longitude: 113°E to 154°E
             // Latitude: 10°S to 44°S

@@ -5,14 +5,14 @@ import { ReactNode, useEffect, useRef, useState } from 'react';
 import { useMapbox } from './MapboxProvider';
 
 export type MapProps = {
-    readonly markers?: Point[]; // [longitude, latitude][]
+    readonly coordinates?: Point[]; // [longitude, latitude][]
     readonly showMarkers?: boolean;
     readonly padding?: number;
     readonly children?: ReactNode;
 };
 
 export function Map({
-    markers,
+    coordinates,
     showMarkers = true,
     padding = 100,
     children,
@@ -29,9 +29,9 @@ export function Map({
     });
 
     const onLoad = () => {
-        if (!markers?.length || !mapRef.current) return;
+        if (!coordinates?.length || !mapRef.current) return;
 
-        const bounds: LngLatBoundsLike = markers.reduce(
+        const bounds: LngLatBoundsLike = coordinates.reduce(
             (acc, marker) => [
                 Math.min(acc[0], marker[0]),
                 Math.min(acc[1], marker[1]),
@@ -76,12 +76,12 @@ export function Map({
         >
             {children}
             {showMarkers &&
-                markers?.map((marker, index) => (
+                coordinates?.map((coord, index) => (
                     <Marker
-                        key={`${marker[0]}-${marker[1]}-${index}`}
+                        key={`${coord[0]}-${coord[1]}-${index}`}
                         anchor={'center'}
-                        latitude={marker[1]}
-                        longitude={marker[0]}
+                        latitude={coord[1]}
+                        longitude={coord[0]}
                     />
                 ))}
         </MapGl>

@@ -24,7 +24,7 @@ type Story = StoryObj<typeof Map>;
 
 export const WithMarkers: Story = {
     args: {
-        markers: [
+        coordinates: [
             [151.2093, -33.8688], // Sydney
             [144.9631, -37.8136], // Melbourne
             [153.026, -27.4705], // Brisbane

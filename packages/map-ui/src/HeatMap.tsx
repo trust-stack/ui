@@ -11,7 +11,7 @@ type HeatMapProps = {
 
 export function HeatMap({
     layer = 'heatmap',
-    markers,
+    coordinates,
     ...props
 }: HeatMapProps): JSX.Element {
     const mapRef = useRef<MapRef>(null);
@@ -20,23 +20,23 @@ export function HeatMap({
     const heatmapLayer = useHeatMapLayer();
 
     const features: FeatureCollection<Point> = useMemo(() => {
-        if (!markers?.length)
+        if (!coordinates?.length)
             return { type: 'FeatureCollection', features: [] };
 
         return {
             type: 'FeatureCollection',
-            features: markers.map((marker) => {
+            features: coordinates.map((coord) => {
                 return {
                     type: 'Feature',
                     geometry: {
                         type: 'Point',
-                        coordinates: [marker[0], marker[1]],
+                        coordinates: [coord[0], coord[1]],
                     },
                     properties: {},
                 };
             }),
         };
-    }, [markers]);
+    }, [coordinates]);
 
     useEffect(() => {
         mapRef?.current?.on('load', () => {
@@ -49,7 +49,7 @@ export function HeatMap({
     }, [mapRef?.current]);
 
     return (
-        <Map markers={markers} showMarkers={false} {...props}>
+        <Map coordinates={coordinates} showMarkers={false} {...props}>
             {layer == 'marker' && (
                 <Source id={LayerID.SOURCE} type="geojson" data={features}>
                     <Layer {...circlePointLayer} />
