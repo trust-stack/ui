@@ -1,4 +1,3 @@
-import { getTokens } from '@truststack/ui';
 import { Layer, LayerProps, MapRef, Source } from 'react-map-gl/mapbox';
 import { FeatureCollection, Point } from 'geojson';
 import { useEffect, useMemo, useRef } from 'react';
@@ -71,106 +70,102 @@ enum LayerID {
     CIRCLE_POINT = 'circle-point',
 }
 
-const useCirclePointLayer = (): LayerProps => {
-    const tokens = getTokens();
+const CREAM = '#F3F1E6';
+const ORANGE = '#FBAC50';
+const PINK = '#F48999';
 
-    return useMemo(
-        () => ({
-            id: LayerID.CIRCLE_POINT,
-            type: 'circle',
-            source: LayerID.SOURCE,
-            paint: {
-                // Size circle radius by zoom level
-                'circle-radius': [
-                    'interpolate',
-                    ['linear'],
-                    ['zoom'],
-                    6,
-                    8,
-                    10,
-                    12,
-                ],
-                'circle-color': tokens.gmp.pink.val,
-                'circle-stroke-color': tokens.gmp.pink.val,
-            },
-        }),
-        [tokens]
-    );
+const useCirclePointLayer = (): LayerProps => {
+    const layer: LayerProps = {
+        id: LayerID.CIRCLE_POINT,
+        type: 'circle',
+        source: LayerID.SOURCE,
+        paint: {
+            // Size circle radius by zoom level
+            'circle-radius': [
+                'interpolate',
+                ['linear'],
+                ['zoom'],
+                6,
+                8,
+                10,
+                12,
+            ],
+            'circle-color': PINK,
+            'circle-stroke-color': PINK,
+        },
+    };
+    return layer;
 };
 
 const MAX_ZOOM_LEVEL = 9;
 
 const useHeatMapLayer = (): LayerProps => {
-    const tokens = getTokens();
-
-    return useMemo(
-        () => ({
-            id: LayerID.HEATMAP,
-            type: 'heatmap',
-            source: LayerID.SOURCE,
-            maxzoom: MAX_ZOOM_LEVEL,
-            paint: {
-                // Increase the heatmap weight based on frequency and property magnitude
-                'heatmap-weight': [
-                    'interpolate',
-                    ['linear'],
-                    ['get', 'magnitude'],
-                    0,
-                    0,
-                    6,
-                    1,
-                ],
-                // Increase the heatmap color weight weight by zoom level
-                // heatmap-intensity is a multiplier on top of heatmap-weight
-                'heatmap-intensity': [
-                    'interpolate',
-                    ['linear'],
-                    ['zoom'],
-                    0,
-                    1,
-                    9,
-                    3,
-                ],
-                // Color ramp for heatmap.  Domain is 0 (low) to 1 (high).
-                // Begin color ramp at 0-stop with a 0-transparancy color
-                // to create a blur-like effect.
-                'heatmap-color': [
-                    'interpolate',
-                    ['linear'],
-                    ['heatmap-density'],
-                    0,
-                    'rgba(33,102,172,0)',
-                    0.2,
-                    tokens.gmp.orange.val,
-                    0.6,
-                    tokens.gmp.cream.val,
-                    0.8,
-                    'rgb(239,138,98)',
-                    0.9,
-                    tokens.gmp.pink.val,
-                ],
-                // Adjust the heatmap radius by zoom level
-                'heatmap-radius': [
-                    'interpolate',
-                    ['linear'],
-                    ['zoom'],
-                    0,
-                    2,
-                    MAX_ZOOM_LEVEL,
-                    20,
-                ],
-                // Transition from heatmap to circle layer by zoom level
-                'heatmap-opacity': [
-                    'interpolate',
-                    ['linear'],
-                    ['zoom'],
-                    7,
-                    1,
-                    9,
-                    0,
-                ],
-            },
-        }),
-        [tokens]
-    );
+    const layer: LayerProps = {
+        id: LayerID.HEATMAP,
+        type: 'heatmap',
+        source: LayerID.SOURCE,
+        maxzoom: MAX_ZOOM_LEVEL,
+        paint: {
+            // Increase the heatmap weight based on frequency and property magnitude
+            'heatmap-weight': [
+                'interpolate',
+                ['linear'],
+                ['get', 'magnitude'],
+                0,
+                0,
+                6,
+                1,
+            ],
+            // Increase the heatmap color weight weight by zoom level
+            // heatmap-intensity is a multiplier on top of heatmap-weight
+            'heatmap-intensity': [
+                'interpolate',
+                ['linear'],
+                ['zoom'],
+                0,
+                1,
+                9,
+                3,
+            ],
+            // Color ramp for heatmap.  Domain is 0 (low) to 1 (high).
+            // Begin color ramp at 0-stop with a 0-transparancy color
+            // to create a blur-like effect.
+            'heatmap-color': [
+                'interpolate',
+                ['linear'],
+                ['heatmap-density'],
+                0,
+                'rgba(33,102,172,0)',
+                0.2,
+                ORANGE,
+                0.6,
+                CREAM,
+                0.8,
+                'rgb(239,138,98)',
+                0.9,
+                PINK,
+            ],
+            // Adjust the heatmap radius by zoom level
+            'heatmap-radius': [
+                'interpolate',
+                ['linear'],
+                ['zoom'],
+                0,
+                2,
+                MAX_ZOOM_LEVEL,
+                20,
+            ],
+            // Transition from heatmap to circle layer by zoom level
+            'heatmap-opacity': [
+                'interpolate',
+                ['linear'],
+                ['zoom'],
+                7,
+                1,
+                9,
+                0,
+            ],
+        },
+    };
+    return layer;
 };

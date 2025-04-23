@@ -1,8 +1,8 @@
-import 'mapbox-gl/dist/mapbox-gl.css';
-import { Position } from 'geojson';
+import { MapProps } from './Map';
+type HeatMapLayer = 'heatmap' | 'marker';
 type HeatMapProps = {
-    readonly markers?: Position[];
-};
-export declare function HeatMap({ markers }: HeatMapProps): JSX.Element;
+    readonly layer: HeatMapLayer;
+} & MapProps;
+export declare function HeatMap({ layer, markers, ...props }: HeatMapProps): JSX.Element;
 export {};
 //# sourceMappingURL=HeatMap.d.ts.map
