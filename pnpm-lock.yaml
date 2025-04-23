@@ -465,6 +465,9 @@ importers:
       '@truststack/form-ui':
         specifier: workspace:*
         version: link:../form-ui
+      '@truststack/map-ui':
+        specifier: workspace:*
+        version: link:../map-ui
       '@truststack/nav-ui':
         specifier: workspace:*
         version: link:../nav-ui
