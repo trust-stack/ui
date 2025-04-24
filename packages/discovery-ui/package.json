@@ -58,7 +58,8 @@
     "@truststack/ui": "workspace:*",
     "elkjs": "^0.10.0",
     "react-flow-renderer": "^10.3.17",
-    "tamagui": "1.125.17"
+    "tamagui": "1.125.17",
+    "@monaco-editor/react": "^4.7.0"
   },
   "devDependencies": {
     "@storybook/react": "^8.6.12",
