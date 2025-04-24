@@ -1,9 +1,6 @@
 import { Monaco } from "@monaco-editor/react";
-import { getTokens } from "tamagui";
 
 export const registerShacl = (monaco: Monaco) => {
-  const tokens = getTokens();
-
   // Register a new language
   monaco.languages.register({ id: "shacl" });
 
@@ -78,15 +75,6 @@ export const registerShacl = (monaco: Monaco) => {
       { token: "identifier", foreground: "61afef" },
       { token: "string", foreground: "98c379" },
       { token: "type.identifier", foreground: "56b6c2" },
-      // DOMAIN SPECIFIC
-      {
-        token: "type.passport",
-        foreground: "#0000ff",
-      },
-      {
-        token: "type.conformity",
-        foreground: "#00ff00",
-      },
     ],
   });
 
