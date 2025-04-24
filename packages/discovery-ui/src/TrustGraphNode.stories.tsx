@@ -1,4 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react/*";
+import { TrustGraphNodeType } from "@truststack/schema";
 import ReactFlow from "react-flow-renderer";
 import { TrustGraphNode } from "./TrustGraphNode";
 
@@ -19,7 +20,7 @@ type Story = StoryObj<typeof TrustGraphNode>;
 export const DPP: Story = {
   args: {
     data: {
-      type: "DPP",
+      type: TrustGraphNodeType.DPP,
       id: "dpp",
       hash: "dpp",
       raw: {},
@@ -30,7 +31,7 @@ export const DPP: Story = {
 export const DTE: Story = {
   args: {
     data: {
-      type: "DTE",
+      type: TrustGraphNodeType.DTE,
       id: "dte",
       hash: "dte",
       raw: {},
@@ -41,7 +42,7 @@ export const DTE: Story = {
 export const DCC: Story = {
   args: {
     data: {
-      type: "DCC",
+      type: TrustGraphNodeType.DCC,
       id: "dcc",
       hash: "dcc",
       raw: {},
