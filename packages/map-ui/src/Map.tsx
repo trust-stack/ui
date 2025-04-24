@@ -3,11 +3,11 @@ import MapGl, { LngLatBoundsLike, MapRef, Marker } from 'react-map-gl/mapbox';
 import { ReactNode, useEffect, useRef, useState } from 'react';
 import { useMapbox } from './MapboxProvider';
 
-type Coordinate = [number, number];
+type Coordinate = [number, number]; // [longitude, latitude][]
 type MapStyle = 'streets' | 'satellite';
 
 export type MapProps = {
-    readonly coordinates?: Coordinate[]; // [longitude, latitude][]
+    readonly coordinates?: Coordinate[];
     readonly showMarkers?: boolean;
     readonly padding?: number;
     readonly children?: ReactNode;
