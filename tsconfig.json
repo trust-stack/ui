@@ -1,29 +1,30 @@
 {
-  "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@truststack/ui": ["packages/ui"],
-      "@truststack/discovery-ui": ["packages/discovery-ui"],
-      "@truststack/schema": ["packages/schema"],
-      "@truststack/theme-ui": ["packages/theme-ui"],
-      "@truststack/render-ui": ["packages/render-ui"],
-      "@truststack/form-ui": ["packages/form-ui"],
-      "@truststack/nav-ui": ["packages/nav-ui"],
-      "@truststack/ui-kit": ["packages/ui-kit"]
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@truststack/ui": ["packages/ui"],
+            "@truststack/discovery-ui": ["packages/discovery-ui"],
+            "@truststack/schema": ["packages/schema"],
+            "@truststack/theme-ui": ["packages/theme-ui"],
+            "@truststack/render-ui": ["packages/render-ui"],
+            "@truststack/form-ui": ["packages/form-ui"],
+            "@truststack/map-ui": ["packages/map-ui"],
+            "@truststack/nav-ui": ["packages/nav-ui"],
+            "@truststack/ui-kit": ["packages/ui-kit"]
+        },
+        "outDir": "dist",
+        "allowJs": false,
+        "allowSyntheticDefaultImports": true,
+        "forceConsistentCasingInFileNames": true,
+        "experimentalDecorators": false,
+        "emitDecoratorMetadata": false,
+        "esModuleInterop": true,
+        "jsx": "react-jsx",
+        "moduleResolution": "node",
+        "sourceMap": false,
+        "target": "es2020",
+        "types": ["node", "react"],
+        "lib": ["dom", "esnext"]
     },
-    "outDir": "dist",
-    "allowJs": false,
-    "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
-    "experimentalDecorators": false,
-    "emitDecoratorMetadata": false,
-    "esModuleInterop": true,
-    "jsx": "react-jsx",
-    "moduleResolution": "node",
-    "sourceMap": false,
-    "target": "es2020",
-    "types": ["node", "react"],
-    "lib": ["dom", "esnext"]
-  },
-  "exclude": ["test", "dist", "types", "**/__tests__", "node_modules"]
+    "exclude": ["test", "dist", "types", "**/__tests__", "node_modules"]
 }
