@@ -1,11 +1,12 @@
 import 'mapbox-gl/dist/mapbox-gl.css';
 import MapGl, { LngLatBoundsLike, MapRef, Marker } from 'react-map-gl/mapbox';
-import { Point } from 'geojson';
 import { ReactNode, useEffect, useRef, useState } from 'react';
 import { useMapbox } from './MapboxProvider';
 
+type Coordinate = [number, number];
+
 export type MapProps = {
-    readonly coordinates?: Point[]; // [longitude, latitude][]
+    readonly coordinates?: Coordinate[]; // [longitude, latitude][]
     readonly showMarkers?: boolean;
     readonly padding?: number;
     readonly children?: ReactNode;
