@@ -4,12 +4,14 @@ import { ReactNode, useEffect, useRef, useState } from 'react';
 import { useMapbox } from './MapboxProvider';
 
 type Coordinate = [number, number];
+type MapStyle = 'streets' | 'satellite';
 
 export type MapProps = {
     readonly coordinates?: Coordinate[]; // [longitude, latitude][]
     readonly showMarkers?: boolean;
     readonly padding?: number;
     readonly children?: ReactNode;
+    readonly mapStyle?: MapStyle;
 };
 
 export function Map({
@@ -17,6 +19,7 @@ export function Map({
     showMarkers = true,
     padding = 100,
     children,
+    mapStyle = 'streets',
 }: MapProps): JSX.Element {
     const mapRef = useRef<MapRef>(null);
     const { token } = useMapbox();
@@ -78,7 +81,7 @@ export function Map({
                 width: '100%',
                 height: '100%',
             }}
-            mapStyle="mapbox://styles/mapbox/streets-v9"
+            mapStyle={`mapbox://styles/mapbox/${mapStyle}-v9`}
             onMove={(e) => {
                 setViewport(e.viewState);
             }}
