@@ -29,20 +29,28 @@ export function Map({
         pitch: 0,
     });
 
-    const onLoad = () => {
+    const fitBoundsToCoordinates = () => {
         if (!coordinates?.length || !mapRef.current) return;
 
         const bounds: LngLatBoundsLike = coordinates.reduce(
-            (acc, marker) => [
-                Math.min(acc[0], marker[0]),
-                Math.min(acc[1], marker[1]),
-                Math.max(acc[2], marker[0]),
-                Math.max(acc[3], marker[1]),
+            (acc, coord) => [
+                Math.min(acc[0], coord[0]),
+                Math.min(acc[1], coord[1]),
+                Math.max(acc[2], coord[0]),
+                Math.max(acc[3], coord[1]),
             ],
             [Infinity, Infinity, -Infinity, -Infinity]
         );
         mapRef.current.fitBounds(bounds, { padding });
     };
+
+    const onLoad = () => {
+        fitBoundsToCoordinates();
+    };
+
+    useEffect(() => {
+        fitBoundsToCoordinates();
+    }, [coordinates]);
 
     useEffect(() => {
         mapRef?.current?.on('load', () => {
