@@ -52,7 +52,7 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^4.1.3",
-    "@tamagui/lucide-icons": "1.125.32",
+    "@tamagui/lucide-icons": "1.126.4",
     "@truststack/ui": "workspace:*",
     "react": "18.2.0",
     "react-dom": "18.2.0",

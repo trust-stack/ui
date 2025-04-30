@@ -52,7 +52,7 @@
   },
   "dependencies": {
     "@storybook/react": "^8.6.12",
-    "@tamagui/lucide-icons": "1.125.32",
+    "@tamagui/lucide-icons": "1.126.4",
     "@truststack/discovery-ui": "workspace:*",
     "@truststack/form-ui": "workspace:*",
     "@truststack/nav-ui": "workspace:*",
