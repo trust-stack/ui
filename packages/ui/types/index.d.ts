@@ -24,7 +24,6 @@ import { TabItem, Tabs, TabsContent } from "./Tabs";
 import { Tooltip } from "./Tooltip";
 import { Body, Display, Headline, Hero, Label, Title } from "./typography";
 import { useDebounce } from "./utils";
-export * from "@tamagui/helpers-icon";
 export * from "tamagui";
 export * from "./Badge";
 export * from "./BarcodeScanner";

@@ -3,7 +3,7 @@ import {
   START_DATE,
   useDatepicker,
 } from "@datepicker-react/hooks";
-import {Calendar} from "@tamagui/lucide-icons";
+import {Calendar} from "@truststack/icons-ui";
 import {useEffect, useMemo, useState} from "react";
 import {KeyboardAvoidingView} from "react-native";
 import {Adapt, ScrollView, XStack, YStack} from "tamagui";

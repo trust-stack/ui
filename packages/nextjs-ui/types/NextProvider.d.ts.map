@@ -1,0 +1,1 @@
+{"version":3,"file":"NextProvider.d.ts","sourceRoot":"","sources":["../src/NextProvider.tsx"],"names":[],"mappings":"AAAA,OAAO,yBAAyB,CAAC;AACjC,OAAO,uBAAuB,CAAC;AAM/B,MAAM,MAAM,iBAAiB,GAAG;IAC9B,QAAQ,CAAC,QAAQ,EAAE,KAAK,CAAC,SAAS,CAAC;CACpC,CAAC;AAEF,eAAO,MAAM,YAAY,GAAI,cAAY,iBAAiB,4CAgCzD,CAAC"}

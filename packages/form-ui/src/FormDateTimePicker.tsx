@@ -1,4 +1,4 @@
-import {Clock} from "@tamagui/lucide-icons";
+import {Clock} from "@truststack/icons-ui";
 import {DateTimePicker, DateTimePickerProps, IconButton} from "@truststack/ui";
 import {Controller, FieldValues, Path} from "react-hook-form";
 import {View, XStack} from "tamagui";

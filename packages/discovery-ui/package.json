@@ -51,14 +51,14 @@
     "watch": "tamagui-build --watch"
   },
   "dependencies": {
-    "@tamagui/lucide-icons": "1.126.4",
+    "@truststack/icons-ui": "workspace:*",
     "@truststack/render-ui": "workspace:*",
     "@truststack/schema": "workspace:*",
     "@truststack/theme-ui": "workspace:*",
     "@truststack/ui": "workspace:*",
     "elkjs": "^0.10.0",
     "react-flow-renderer": "^10.3.17",
-    "tamagui": "1.125.17"
+    "tamagui": "1.126.4"
   },
   "devDependencies": {
     "@storybook/react": "^8.6.12",
