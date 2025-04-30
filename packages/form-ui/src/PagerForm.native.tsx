@@ -1,4 +1,4 @@
-import {ChevronLeft, ChevronRight, Upload} from "@tamagui/lucide-icons";
+import {ChevronLeft, ChevronRight, Upload} from "@truststack/icons-ui";
 import {
   BottomAppBar,
   Button,

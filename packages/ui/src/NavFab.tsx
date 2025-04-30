@@ -1,4 +1,4 @@
-import {Plus} from "@tamagui/lucide-icons";
+import {Plus} from "@truststack/icons-ui";
 import {Adapt} from "tamagui";
 import {Dialog} from "./Dialog";
 import {Fab} from "./Fab";

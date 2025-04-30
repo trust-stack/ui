@@ -15,8 +15,8 @@
     "version-packages": "changeset version"
   },
   "resolutions": {
-    "@tamagui/core": "1.125.32",
-    "@tamagui/web": "1.125.32",
+    "@tamagui/core": "1.126.4",
+    "@tamagui/web": "1.126.4",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
     "react": "18.2.0",

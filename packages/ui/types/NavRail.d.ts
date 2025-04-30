@@ -1,4 +1,4 @@
-import type { IconProps } from "@tamagui/helpers-icon";
+import type { IconProps } from "@truststack/icons-ui";
 import { FunctionComponent } from "react";
 import { GetProps } from "tamagui";
 export type NavRailProps = {
