@@ -1,5 +1,5 @@
 import {Meta, StoryObj} from "@storybook/react";
-import {Home, List} from "@tamagui/lucide-icons";
+import {Home, List} from "@truststack/icons-ui";
 import {View} from "tamagui";
 import {NavFab} from "./NavFab";
 import {NavRail, NavRailItem} from "./NavRail";

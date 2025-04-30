@@ -1,7 +1,7 @@
 import {yupResolver} from "@hookform/resolvers/yup";
 import {Meta} from "@storybook/react";
+import {YStack} from "@truststack/ui";
 import {useForm} from "react-hook-form";
-import {YStack} from "tamagui";
 import {object, string} from "yup";
 import {FormInput} from "./FormInput";
 import {FormProvider} from "./context";

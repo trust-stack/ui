@@ -1,4 +1,4 @@
-import {ChevronDown, ChevronLeft, ChevronRight} from "@tamagui/lucide-icons";
+import {ChevronDown, ChevronLeft, ChevronRight} from "@truststack/icons-ui";
 import {useState} from "react";
 import {Pressable} from "react-native";
 import {Adapt, Text, XStack, YStack, styled} from "tamagui";

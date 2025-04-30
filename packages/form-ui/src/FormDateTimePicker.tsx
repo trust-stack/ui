@@ -1,7 +1,12 @@
-import {Clock} from "@tamagui/lucide-icons";
-import {DateTimePicker, DateTimePickerProps, IconButton} from "@truststack/ui";
+import {Clock} from "@truststack/icons-ui";
+import {
+  DateTimePicker,
+  DateTimePickerProps,
+  IconButton,
+  View,
+  XStack,
+} from "@truststack/ui";
 import {Controller, FieldValues, Path} from "react-hook-form";
-import {View, XStack} from "tamagui";
 import {useFormContext} from "./context";
 
 export type FormDateTimePickerProps<TFormFields extends FieldValues> = {

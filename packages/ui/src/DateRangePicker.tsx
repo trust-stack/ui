@@ -3,7 +3,7 @@ import {
   START_DATE,
   useDatepicker,
 } from "@datepicker-react/hooks";
-import {Calendar} from "@tamagui/lucide-icons";
+import {Calendar} from "@truststack/icons-ui";
 import {useEffect, useState} from "react";
 import {Adapt} from "tamagui";
 import {CalendarPicker} from "./CalendarPicker";

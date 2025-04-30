@@ -1,7 +1,6 @@
-import {Button, Card, Title} from "@truststack/ui";
+import {Button, Card, Title, XStack, YStack} from "@truststack/ui";
 import {useEffect} from "react";
 import {FieldValues, useWatch} from "react-hook-form";
-import {XStack, YStack} from "tamagui";
 import {useFormContext} from "./context";
 import {PageFormProps, PagerFormProps} from "./PagerForm.types";
 

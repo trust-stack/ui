@@ -1,7 +1,7 @@
+import {View, styled} from "@truststack/ui";
 import {useEffect} from "react";
 import {FieldValues, Path, useFormState, useWatch} from "react-hook-form";
 import {Pressable} from "react-native";
-import {View, styled} from "tamagui";
 import {useFormContext} from "./context";
 
 export const DOT_SIZE = 20;

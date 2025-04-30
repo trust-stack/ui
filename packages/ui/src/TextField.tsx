@@ -1,4 +1,4 @@
-import {IconProps} from "@tamagui/helpers-icon";
+import {IconProps} from "@truststack/icons-ui";
 import {FunctionComponent} from "react";
 import {Input, InputProps} from "./Input";
 
