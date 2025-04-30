@@ -1,6 +1,6 @@
 {
   "name": "@truststack/ui-kit",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "Trust Stack UI Kit",
   "type": "module",
   "exports": {
