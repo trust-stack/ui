@@ -1,4 +1,4 @@
-import {ChevronDown, Info} from "@tamagui/lucide-icons";
+import {ChevronDown, Info} from "@truststack/icons-ui";
 import {
   createContext,
   forwardRef,

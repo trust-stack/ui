@@ -1,5 +1,17 @@
 # @truststack/render-ui
 
+## 0.3.0
+
+### Minor Changes
+
+- e834c29: Bumping tamagui version.
+
+### Patch Changes
+
+- Updated dependencies [e834c29]
+  - @truststack/icons-ui@0.5.0
+  - @truststack/ui@0.5.0
+
 ## 0.2.1
 
 ### Patch Changes

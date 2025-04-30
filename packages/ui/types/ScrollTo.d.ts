@@ -1,5 +1,5 @@
-import { Dispatch, SetStateAction } from 'react';
-import { FlatList, SectionList } from 'react-native';
+import { Dispatch, SetStateAction } from "react";
+import { FlatList, SectionList } from "react-native";
 export type ScrollToProps = {
     readonly listRef: React.RefObject<SectionList> | React.RefObject<FlatList>;
     readonly offset: number;

@@ -1,6 +1,6 @@
 {
   "name": "@truststack/theme-ui",
-  "version": "0.3.2",
+  "version": "0.4.0",
   "description": "Trust Stack Theme UI library",
   "type": "module",
   "exports": {
@@ -54,7 +54,7 @@
     "@storybook/react": "^8.6.12",
     "@truststack/schema": "workspace:*",
     "@truststack/ui": "workspace:*",
-    "tamagui": "1.125.17"
+    "tamagui": "1.126.4"
   },
   "devDependencies": {
     "@tamagui/build": "latest"
