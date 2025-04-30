@@ -1,296 +1,168 @@
-import {ComponentProps} from "react";
-import {
-  Spinner,
-  XStack,
-  createStyledContext,
-  styled,
-  withStaticProperties,
-} from "tamagui";
-import {Icon} from "./Icon";
-import {Label} from "./typography";
+import { ComponentProps, createContext, useContext } from 'react';
+import { Pressable, Text } from 'react-native';
+import { tv } from 'tailwind-variants';
 
-const ButtonContext = createStyledContext({
-  variant: undefined,
-  loading: false,
-  density: "0",
+// Create context for button props
+const ButtonContext = createContext<{
+    variant?: ButtonVariant;
+    density?: ButtonDensity;
+    loading?: boolean;
+}>({});
+
+type ButtonVariant =
+    | 'elevated'
+    | 'filled'
+    | 'filled-error'
+    | 'filled-tonal'
+    | 'outlined'
+    | 'text'
+    | 'tonal'
+    | 'tonal-info'
+    | 'tonal-success'
+    | 'tonal-warning'
+    | 'warning';
+
+type ButtonDensity = '0' | '-1' | '-2' | '-3';
+
+// Base button styles
+const button = tv({
+    base: [
+        'px-4',
+        'items-center',
+        'self-start',
+        'flex-row',
+        'justify-center',
+        'rounded-full',
+        'gap-2',
+        'bg-blue-500',
+    ],
+    variants: {
+        variant: {
+            filled: 'bg-primary active:opacity-80',
+            outlined:
+                'border border-outline bg-transparent active:bg-primary/10',
+            'filled-tonal': 'bg-secondary-container active:opacity-80',
+            'filled-error': 'bg-error-container active:bg-error',
+            tonal: 'bg-secondary-container',
+            'tonal-success': 'bg-success-container active:bg-success',
+            'tonal-warning': 'bg-warning-container active:bg-warning',
+            'tonal-info': 'bg-info-container active:bg-info',
+            elevated: 'bg-surface-container-low shadow-sm bg-blue-500',
+            text: 'bg-transparent active:bg-primary/10',
+            warning: 'bg-warning active:bg-warning-container',
+        },
+        density: {
+            '0': 'h-10',
+            '-1': 'h-9',
+            '-2': 'h-8',
+            '-3': 'h-7',
+        },
+        disabled: {
+            true: 'opacity-40',
+        },
+    },
+    defaultVariants: {
+        variant: 'filled',
+        density: '0',
+    },
 });
 
-const ButtonFrame = styled(XStack, {
-  paddingLeft: 16,
-  paddingRight: 16,
-  name: "Button",
-  context: ButtonContext,
-  alignItems: "center",
-  alignSelf: "flex-start",
-  flexDirection: "row",
-  justifyContent: "center",
-  br: "$shape.corner_full",
-  maxHeight: 40,
-  height: 40,
-
-  gap: 8,
-  cursor: "pointer",
-  hoverStyle: {
-    cur: "pointer",
-    bc: "$primaryContainer",
-  },
-  pressStyle: {
-    // bc: '$backgroundPress',
-  },
-  disabledStyle: {
-    o: 0.4,
-    pe: "none",
-    cursor: "default",
-  },
-
-  variants: {
-    variant: {
-      outlined: {
-        brc: "$outline",
-        btc: "$outline",
-        bbc: "$outline",
-        blc: "$outline",
-        bw: "$border.outline",
-        background: "transparent",
-        hoverStyle: {
-          cur: "pointer",
-          bc: "$primaryContainer",
+// Text styles for button
+const buttonText = tv({
+    base: 'text-base bg-blue-500',
+    variants: {
+        variant: {
+            filled: 'text-on-primary',
+            outlined: 'text-primary',
+            'filled-tonal': 'text-on-secondary-container',
+            'filled-error': 'text-on-error-container',
+            tonal: 'text-on-secondary-container',
+            'tonal-success': 'text-on-success-container hover:text-on-success',
+            'tonal-warning': 'text-on-warning-container hover:text-on-warning',
+            'tonal-info': 'text-on-info-container group-hover:text-on-info',
+            elevated: 'text-primary',
+            text: 'text-primary bg-blue-500',
+            warning: 'text-on-warning hover:text-on-warning-container',
         },
-      },
-      filled: {
-        backgroundColor: "$primary",
-      },
-      "filled-tonal": {
-        backgroundColor: "$secondaryContainer",
-      },
-      "filled-error": {
-        backgroundColor: "$errorContainer",
-        hoverStyle: {
-          backgroundColor: "$error" as any,
-        },
-      },
-      tonal: {
-        bg: "$secondaryContainer",
-      },
-      "tonal-success": {
-        bg: "$successContainer",
-        hoverStyle: {
-          backgroundColor: "$success",
-        },
-      },
-      "tonal-warning": {
-        backgroundColor: "$warningContainer",
-        hoverStyle: {
-          backgroundColor: "$warning",
-        },
-      },
-      "tonal-info": {
-        backgroundColor: "$infoContainer",
-        hoverStyle: {
-          backgroundColor: "$info",
-        },
-      },
-      elevated: {
-        bg: "$surfaceContainerLow",
-        shadowColor: "$shadow_opacity",
-        shadowRadius: "$shadow.1",
-      },
-      text: {
-        bc: "transparent",
-        hoverStyle: {
-          bc: "$primaryContainer",
-        },
-      },
-      warning: {
-        backgroundColor: "$warning",
-        hoverStyle: {
-          backgroundColor: "$warningContainer",
-        },
-      },
     },
-    loading: {
-      true: {},
-      false: {},
-    },
-    density: {
-      "0": {},
-      "-1": {
-        height: 36,
-      },
-      "-2": {
-        height: 32,
-      },
-      "-3": {
-        height: 28,
-      },
-    },
-    shape: {
-      none: {
-        borderRadius: 0,
-      },
-      xs: {
-        borderRadius: "$shape.corner_xs",
-      },
-      sm: {
-        borderRadius: "$shape.corner_sm",
-      },
-      m: {
-        borderRadius: "$shape.corner_m",
-      },
-      l: {
-        borderRadius: "$shape.corner_l",
-      },
-      xl: {
-        borderRadius: "$shape.corner_xl",
-      },
-      full: {
-        borderRadius: "$shape.corner_full",
-      },
-    },
-  } as const,
-  defaultVariants: {
-    variant: "filled",
-    density: "0",
-  },
 });
 
-const ButtonText = styled(Label, {
-  name: "ButtonText",
-  size: "large",
-  context: ButtonContext,
-  variants: {
-    size: {
-      "...fontSize": (name, {font}) => ({
-        fos: font?.size[name],
-      }),
-    },
-    variant: {
-      filled: {
-        col: "$onPrimary",
-      },
-      outlined: {
-        col: "$primary",
-      },
-      "filled-tonal": {
-        col: "$onSecondaryContainer",
-      },
-      "filled-error": {
-        col: "$onErrorContainer",
-      },
-      tonal: {
-        col: "$onSecondaryContainer",
-      },
-      "tonal-success": {
-        col: "$onSuccessContainer",
-        hoverStyle: {
-          col: "$onSuccess",
-        },
-      },
-      "tonal-warning": {
-        col: "$onWarningContainer",
-        hoverStyle: {
-          col: "$onWarning",
-        },
-      },
-      "tonal-info": {
-        col: "$onInfoContainer" as any,
-        "$group-button-hover": {
-          col: "$onInfo",
-        },
-      },
-      elevated: {
-        col: "$primary",
-      },
-      warning: {
-        col: "$onWarning",
-        hoverStyle: {
-          col: "$onWarningContainer",
-        },
-      },
-    },
-  } as const,
-});
+// Icon styles for button
+// const buttonIcon = tv({
+//     base: 'w-[18px] h-[18px]',
+//     variants: {
+//         variant: {
+//             filled: 'text-on-primary',
+//             outlined: 'text-primary',
+//             'filled-tonal': 'text-on-secondary-container',
+//             'filled-error': 'text-on-error-container',
+//             tonal: 'text-on-secondary-container',
+//             'tonal-success': 'text-on-success-container',
+//             'tonal-warning': 'text-on-warning-container',
+//             'tonal-info': 'text-on-info-container group-hover:text-on-info',
+//             elevated: 'text-primary',
+//             warning: 'text-on-warning hover:text-on-warning-container',
+//         },
+//     },
+// });
 
-const ButtonSpinner = styled(Spinner, {
-  name: "ButtonSpinner",
-  context: ButtonContext,
-  variants: {
-    loading: {
-      false: {
-        display: "none",
-      },
-    },
-    variant: {
-      filled: {
-        col: "$onPrimary" as any,
-      },
-      "filled-error": {
-        col: "$onError" as any,
-      },
-      "tonal-warning": {
-        col: "$onWarningContainer" as any,
-      },
-      "tonal-info": {
-        col: "$onInfoContainer" as any,
-      },
-      warning: {
-        col: "$onWarning" as any,
-      },
-    },
-  } as const,
-});
+const ButtonText = ({
+    children,
+    className,
+    ...props
+}: ComponentProps<typeof Text>) => {
+    const { variant } = useContext(ButtonContext);
+    return (
+        <Text className={buttonText({ variant, className })} {...props}>
+            {children}
+        </Text>
+    );
+};
 
-const ButtonIcon = styled(Icon, {
-  context: ButtonContext,
-  name: "ButtonIcon",
-  size: 18,
-  variants: {
-    variant: {
-      filled: {
-        col: "$onPrimary" as any,
-      },
-      outlined: {
-        col: "$primary" as any,
-      },
-      "filled-tonal": {
-        col: "$onSecondaryContainer" as any,
-      },
-      "filled-error": {
-        col: "$onErrorContainer" as any,
-      },
-      tonal: {
-        col: "$onSecondaryContainer" as any,
-      },
-      "tonal-success": {
-        col: "$onSuccessContainer" as any,
-      },
-      "tonal-warning": {
-        col: "$onWarningContainer" as any,
-      },
-      "tonal-info": {
-        col: "$onInfoContainer" as any,
-        "$group-button-hover": {
-          col: "$onInfo" as any,
-        },
-      },
-      elevated: {
-        col: "$primary" as any,
-      },
-      warning: {
-        col: "$onWarning" as any,
-        hoverStyle: {
-          col: "$onWarningContainer" as any,
-        },
-      },
+// const ButtonIcon = ({ className, ...props }) => {
+//     const { variant } = useContext(ButtonContext);
+//     return <View className={buttonIcon({ variant, className })} {...props} />;
+// };
+
+interface ButtonProps extends ComponentProps<typeof Pressable> {
+    variant?: ButtonVariant;
+    density?: ButtonDensity;
+    loading?: boolean;
+    className?: string;
+}
+
+// TODO: Add Icon, Spinner
+export const Button = Object.assign(
+    ({
+        children,
+        variant = 'filled',
+        density = '0',
+        loading,
+        disabled,
+        className,
+        ...props
+    }: ButtonProps) => {
+        return (
+            <ButtonContext.Provider value={{ variant, loading, density }}>
+                <Pressable
+                    disabled={disabled || loading}
+                    className={button({
+                        variant,
+                        density,
+                        disabled: disabled || loading,
+                        className,
+                    })}
+                    {...props}
+                >
+                    {children}
+                </Pressable>
+            </ButtonContext.Provider>
+        );
     },
-  } as const,
-});
+    {
+        Text: ButtonText,
+        // Icon: ButtonIcon,
+    }
+);
 
-export const Button = withStaticProperties(ButtonFrame, {
-  Text: ButtonText,
-  Icon: ButtonIcon,
-  Props: ButtonContext.Provider,
-  Spinner: ButtonSpinner,
-});
-
-export type ButtonProps = ComponentProps<typeof Button>;
+export type { ButtonProps };
