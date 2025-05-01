@@ -4,12 +4,13 @@ import {
 } from "@truststack/schema";
 import {
   createStyledContext,
+  styled,
   Title as TTitle,
   withStaticProperties,
   YStack,
 } from "@truststack/ui";
+import {Fragment} from "react";
 import {Handle, Position} from "react-flow-renderer";
-import {styled} from "tamagui";
 import {renderTrustGraphNodeType} from "./render";
 
 export const NODE_WIDTH = 340;
@@ -159,8 +160,9 @@ export type TrustGraphNodeProps = {
 };
 
 export function TrustGraphNode({data}: TrustGraphNodeProps): JSX.Element {
-  return (
-    <Node type={data?.type as any}>
+  // types here aren't working
+  const Content = (
+    <Fragment>
       <Handle type="target" position={Position.Left} />
       <YStack>
         <Node.Title>{renderTrustGraphNodeType(data?.type)}</Node.Title>
@@ -171,6 +173,8 @@ export function TrustGraphNode({data}: TrustGraphNodeProps): JSX.Element {
         ></Node.SupportingText>
       </YStack>
       <Handle type="source" position={Position.Right} />
-    </Node>
+    </Fragment>
   );
+
+  return <Node type={data?.type as any}>{Content as any}</Node>;
 }

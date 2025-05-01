@@ -1,6 +1,6 @@
-import { Editor, EditorProps } from "@monaco-editor/react";
-import { View } from "tamagui";
-import { registerShacl } from "./shacl-lang";
+import {Editor, EditorProps} from "@monaco-editor/react";
+import {View} from "@truststack/ui";
+import {registerShacl} from "./shacl-lang";
 
 type ShaclEditorProps = {
   readonly value: string;

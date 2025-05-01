@@ -1,5 +1,4 @@
-import {NavRail, NavRailProps} from "@truststack/ui";
-import {ScrollView, XStack} from "tamagui";
+import {NavRail, NavRailProps, ScrollView, XStack} from "@truststack/ui";
 
 export type RailLayoutProps = {
   readonly children: React.ReactNode;
@@ -7,7 +6,7 @@ export type RailLayoutProps = {
 
 export function RailLayout({children, ...props}: RailLayoutProps): JSX.Element {
   return (
-    <XStack h="100%" w="100%" style={{height: "100vh"}}>
+    <XStack height="100%" width="100%" style={{height: "100vh"}}>
       <NavRail {...props} />
       <ScrollView
         flex={1}

@@ -51,21 +51,20 @@
     "watch": "tamagui-build --watch"
   },
   "dependencies": {
-    "@tamagui/next-plugin": "1.126.4",
-    "@tamagui/next-theme": "1.126.4",
+    "@tamagui/next-plugin": "*",
+    "@tamagui/next-theme": "*",
     "@truststack/ui": "workspace:*",
     "next": "14.2.14",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-native": "0.74.5",
-    "tamagui": "1.126.4",
+    "react": "*",
+    "react-dom": "*",
+    "react-native": "*",
     "yup": "^0.32.9"
   },
   "devDependencies": {
     "@storybook/react": "^8.6.12",
-    "@tamagui/build": "1.126.4",
-    "@types/react": "^18.2.0",
-    "@types/react-dom": "^18.2.0"
+    "@tamagui/build": "*",
+    "@types/react": "*",
+    "@types/react-dom": "*"
   },
   "publishConfig": {
     "access": "public"

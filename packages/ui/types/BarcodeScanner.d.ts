@@ -1,4 +1,4 @@
-import { ViewProps } from "@tamagui/core";
+import { ViewProps } from "tamagui";
 export type BarcodeScannerProps = {
     readonly onScan: (code: string) => void;
     readonly onError?: (error: string) => void;

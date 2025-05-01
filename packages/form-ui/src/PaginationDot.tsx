@@ -1,7 +1,7 @@
+import {View, styled} from "@truststack/ui";
 import {useEffect} from "react";
 import {FieldValues, Path, useFormState, useWatch} from "react-hook-form";
 import {Pressable} from "react-native";
-import {View, styled} from "tamagui";
 import {useFormContext} from "./context";
 
 export const DOT_SIZE = 20;
@@ -43,10 +43,11 @@ export function PaginationDot<TFieldValues extends FieldValues>({
 
   return (
     <Pressable onPress={onPress}>
+      {/* @ts-ignore */}
       <Dot
         animation="bouncy"
         scale={active ? 1.8 : 1}
-        bg={error ? "$warning" : "$success"}
+        background={error ? "$warning" : "$success"}
       />
     </Pressable>
   );
@@ -54,7 +55,7 @@ export function PaginationDot<TFieldValues extends FieldValues>({
 
 const Dot = styled(View, {
   name: "PaginationDot",
-  w: DOT_SIZE,
-  h: DOT_SIZE,
-  br: 100,
+  width: DOT_SIZE,
+  height: DOT_SIZE,
+  borderRadius: 100,
 });
