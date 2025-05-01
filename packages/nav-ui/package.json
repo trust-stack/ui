@@ -53,16 +53,16 @@
   "dependencies": {
     "@truststack/icons-ui": "workspace:*",
     "@truststack/ui": "workspace:*",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-native": "0.74.5",
+    "react": "*",
+    "react-dom": "*",
+    "react-native": "*",
     "solito": "^4.2.2"
   },
   "devDependencies": {
     "@storybook/react": "^8.6.12",
-    "@tamagui/build": "1.126.4",
-    "@types/react": "^18.2.0",
-    "@types/react-dom": "^18.2.0"
+    "@tamagui/build": "*",
+    "@types/react": "*",
+    "@types/react-dom": "*"
   },
   "publishConfig": {
     "access": "public"

@@ -131,7 +131,7 @@ export function PagerForm<TFieldValues extends FieldValues>({
             <IconButton.Icon icon={ChevronLeft} />
           </IconButton>
 
-          <XStack ai={"center"} f={1} gap={22} pl={22}>
+          <XStack alignItems="center" flex={1} gap={22} paddingLeft={22}>
             {forms.map((f, index) => (
               <PaginationDot
                 key={`pagination-dot-${index}`}

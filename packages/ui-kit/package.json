@@ -60,10 +60,10 @@
     "@truststack/schema": "workspace:*",
     "@truststack/theme-ui": "workspace:*",
     "@truststack/ui": "workspace:*",
-    "react-dom": "18.2.0"
+    "react-dom": "*"
   },
   "devDependencies": {
-    "@tamagui/build": "1.126.4"
+    "@tamagui/build": "*"
   },
   "removeSideEffects": "true",
   "tamagui": {

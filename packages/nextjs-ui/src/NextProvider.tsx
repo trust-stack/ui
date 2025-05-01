@@ -1,9 +1,9 @@
-import "@tamagui/core/reset.css";
 import "@tamagui/polyfill-dev";
+import "tamagui/reset.css";
 
-import { NextThemeProvider } from "@tamagui/next-theme";
-import { config, TamaguiProvider } from "@truststack/ui";
-import { useServerInsertedHTML } from "next/navigation";
+import {NextThemeProvider} from "@tamagui/next-theme";
+import {config, TamaguiProvider} from "@truststack/ui";
+import {useServerInsertedHTML} from "next/navigation";
 
 export type NextProviderProps = {
   readonly children: React.ReactNode;

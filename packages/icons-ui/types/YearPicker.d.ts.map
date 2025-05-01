@@ -1,1 +1,0 @@
-{"version":3,"file":"YearPicker.d.ts","sourceRoot":"","sources":["../src/YearPicker.tsx"],"names":[],"mappings":"AAQA,OAAO,EAAa,eAAe,EAAC,MAAM,cAAc,CAAC;AAIzD,MAAM,MAAM,eAAe,GAAG;IAC5B,QAAQ,CAAC,KAAK,EAAE,MAAM,CAAC;CACxB,GAAG,OAAO,CAAC,eAAe,CAAC,CAAC;AAE7B,wBAAgB,UAAU,CAAC,EAAC,KAAK,EAAE,GAAG,KAAK,EAAC,EAAE,eAAe,GAAG,GAAG,CAAC,OAAO,CAsG1E"}

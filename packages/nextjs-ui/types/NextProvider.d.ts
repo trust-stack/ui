@@ -1,5 +1,5 @@
-import "@tamagui/core/reset.css";
 import "@tamagui/polyfill-dev";
+import "tamagui/reset.css";
 export type NextProviderProps = {
     readonly children: React.ReactNode;
 };

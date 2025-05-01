@@ -21,7 +21,7 @@ export function PagerForm<TFieldValues extends FieldValues>({
           <PagerCard key={`form-card-${index}`} {...f} />
         ))}
 
-      <XStack jc="flex-end">
+      <XStack justifyContent="flex-end">
         <Button
           variant="tonal-success"
           onPress={onSubmit}
