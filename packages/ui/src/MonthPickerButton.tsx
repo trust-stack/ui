@@ -1,5 +1,5 @@
 import {MonthType} from "@datepicker-react/hooks";
-import {ChevronLeft, ChevronRight} from "@tamagui/lucide-icons";
+import {ChevronLeft, ChevronRight} from "@truststack/icons-ui";
 import {Pressable} from "react-native";
 import {XStack} from "tamagui";
 import {useDatepickerContext} from "./DatePickerProvider";

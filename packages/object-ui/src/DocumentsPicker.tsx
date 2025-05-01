@@ -1,4 +1,4 @@
-import { UploadCloud, X } from "@tamagui/lucide-icons";
+import {UploadCloud, X} from "@truststack/icons-ui";
 import {
   Button,
   ButtonProps,
@@ -9,7 +9,7 @@ import {
   YStack,
 } from "@truststack/ui";
 import * as DocPicker from "expo-document-picker";
-import { Fragment } from "react";
+import {Fragment} from "react";
 
 export type DocumentsPickerProps = {
   readonly onSelect: (documents: DocPicker.DocumentPickerAsset[]) => void;

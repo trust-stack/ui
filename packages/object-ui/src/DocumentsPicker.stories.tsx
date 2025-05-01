@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { YStack } from "tamagui";
-import { DocumentsPicker } from "./DocumentsPicker";
+import type {Meta, StoryObj} from "@storybook/react";
+import {YStack} from "@truststack/ui";
+import {DocumentsPicker} from "./DocumentsPicker";
 
 const meta = {
   title: "Components/DocumentsPicker",

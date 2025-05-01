@@ -1,7 +1,7 @@
 import {Meta, StoryObj} from "@storybook/react";
+import {H4, View} from "@truststack/ui";
 import {useForm} from "react-hook-form";
 import {SafeAreaProvider} from "react-native-safe-area-context";
-import {H4, View} from "tamagui";
 import {FormProvider} from "./context";
 import {PagerForm} from "./PagerForm";
 

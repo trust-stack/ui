@@ -1,3 +1,4 @@
+import {Camera, GalleryHorizontal, ImagePlus, X} from "@truststack/icons-ui";
 import {
   Adapt,
   Button,
@@ -9,17 +10,16 @@ import {
   Text,
   YStack,
 } from "@truststack/ui";
-import { Camera, GalleryHorizontal, ImagePlus, X } from "@tamagui/lucide-icons";
 import * as Picker from "expo-image-picker";
-import { Fragment, useState } from "react";
-import { Alert, Platform, Pressable } from "react-native";
+import {Fragment, useState} from "react";
+import {Alert, Platform, Pressable} from "react-native";
 
 export type ImagePickerProps = {
   readonly onChange: (uri: string, mimeType: string) => void;
   readonly uri?: string;
 };
 
-export function ImagePicker({ onChange, uri }: ImagePickerProps): JSX.Element {
+export function ImagePicker({onChange, uri}: ImagePickerProps): JSX.Element {
   const [open, setOpen] = useState(false);
   const isMobile = Platform.OS !== "web";
 
@@ -148,12 +148,12 @@ const quality = 0.5;
 
 const requestMediaLibraryPermissions = async () => {
   if (Platform.OS === "web") return true;
-  const { status } = await Picker.requestMediaLibraryPermissionsAsync();
+  const {status} = await Picker.requestMediaLibraryPermissionsAsync();
   return status === "granted";
 };
 
 const requestCameraPermissions = async () => {
   if (Platform.OS === "web") return true;
-  const { status } = await Picker.requestCameraPermissionsAsync();
+  const {status} = await Picker.requestCameraPermissionsAsync();
   return status === "granted";
 };

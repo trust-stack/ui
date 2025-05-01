@@ -1,7 +1,7 @@
-import {Meta, StoryObj} from "@storybook/react/*";
-import {TrustGraphNodeType} from "@truststack/schema";
+import { Meta, StoryObj } from "@storybook/react/*";
+import { TrustGraphNodeType } from "@truststack/schema";
 import ReactFlow from "react-flow-renderer";
-import {TrustGraphNode} from "./TrustGraphNode";
+import { TrustGraphNode } from "./TrustGraphNode";
 
 export default {
   component: TrustGraphNode,

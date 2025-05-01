@@ -1,7 +1,4 @@
-// import "@tamagui/core/reset.css";
 import "./styles.css";
-
-// import "raf/polyfill";
 
 import {TamaguiProvider, Theme} from "../../ui/src";
 import {config} from "../../ui/src/tamagui.config";

@@ -1,5 +1,5 @@
-import { UploadCloud } from "@tamagui/lucide-icons";
-import { Button, ButtonProps } from "@truststack/ui";
+import {UploadCloud} from "@truststack/icons-ui";
+import {Button, ButtonProps} from "@truststack/ui";
 import * as DocPicker from "expo-document-picker";
 
 export type DocumentPickerProps = {

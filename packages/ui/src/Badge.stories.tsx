@@ -1,22 +1,22 @@
-import { Meta } from '@storybook/react';
-import { Filter } from '@tamagui/lucide-icons';
-import { Badge } from './Badge';
-import { IconButton } from './IconButton';
-import { RenderStage } from './storybook-utils';
+import {Meta} from "@storybook/react";
+import {Filter} from "@truststack/icons-ui";
+import {Badge} from "./Badge";
+import {IconButton} from "./IconButton";
+import {RenderStage} from "./storybook-utils";
 
 export default {
-    component: Badge,
+  component: Badge,
 } as Meta<typeof Badge>;
 
 export const Variants = () => {
-    return (
-        <RenderStage>
-            <Badge variant="small" visible>
-                <IconButton variant="standard">
-                    <IconButton.Icon Icon={Filter} />
-                </IconButton>
-                <Badge.Indicator />
-            </Badge>
-        </RenderStage>
-    );
+  return (
+    <RenderStage>
+      <Badge variant="small" visible>
+        <IconButton variant="standard">
+          <IconButton.Icon Icon={Filter} />
+        </IconButton>
+        <Badge.Indicator />
+      </Badge>
+    </RenderStage>
+  );
 };

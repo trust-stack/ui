@@ -1,5 +1,5 @@
 import {Meta} from "@storybook/react";
-import {Calendar, Check, Heart, X} from "@tamagui/lucide-icons";
+import {Calendar, Check, Heart, X} from "@truststack/icons-ui";
 import {H1, H2, H3, H4, H5, H6, Paragraph, View, XStack} from "tamagui";
 import {Alert} from "../Alert";
 import {Button} from "../Button";

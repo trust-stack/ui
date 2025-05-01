@@ -2,14 +2,16 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@truststack/ui": ["packages/ui"],
       "@truststack/discovery-ui": ["packages/discovery-ui"],
+      "@truststack/form-ui": ["packages/form-ui"],
+      "@truststack/icons-ui": ["packages/icons-ui"],
+      "@truststack/nav-ui": ["packages/nav-ui"],
+      "@truststack/object-ui": ["packages/object-ui"],
+      "@truststack/render-ui": ["packages/render-ui"],
       "@truststack/schema": ["packages/schema"],
       "@truststack/theme-ui": ["packages/theme-ui"],
-      "@truststack/render-ui": ["packages/render-ui"],
-      "@truststack/form-ui": ["packages/form-ui"],
-      "@truststack/nav-ui": ["packages/nav-ui"],
-      "@truststack/ui-kit": ["packages/ui-kit"]
+      "@truststack/ui-kit": ["packages/ui-kit"],
+      "@truststack/ui": ["packages/ui"]
     },
     "outDir": "dist",
     "allowJs": false,

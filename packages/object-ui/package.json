@@ -51,26 +51,20 @@
     "watch": "tamagui-build --watch"
   },
   "dependencies": {
-    "@tamagui/core": "1.125.17",
-    "@tamagui/helpers-icon": "1.125.17",
-    "@tamagui/lucide-icons": "1.125.17",
-    "@tamagui/shorthands": "1.125.17",
-    "@tamagui/themes": "1.125.17",
     "@truststack/ui": "workspace:*",
-    "@tanstack/react-table": "^8.16.0",
+    "@truststack/icons-ui": "workspace:*",
     "expo": "^52.0.46",
     "expo-document-picker": "~13.0.3",
     "expo-image-picker": "~16.0.6",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-native": "0.74.5",
-    "react-native-web": "~0.19.6",
-    "tamagui": "1.125.17"
+    "react": "*",
+    "react-dom": "*",
+    "react-native": "*",
+    "react-native-web": "~0.19.6"
   },
   "devDependencies": {
     "@storybook/react": "^8.6.12",
-    "@tamagui/build": "1.125.17",
-    "@types/react": "^18.2.0"
+    "@tamagui/build": "*",
+    "@types/react": "*"
   },
   "publishConfig": {
     "access": "public"

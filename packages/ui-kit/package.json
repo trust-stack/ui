@@ -1,6 +1,6 @@
 {
   "name": "@truststack/ui-kit",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "Trust Stack UI Kit",
   "type": "module",
   "exports": {
@@ -51,8 +51,7 @@
     "watch": "tamagui-build --watch"
   },
   "dependencies": {
-    "@storybook/react": "^8.6.12",
-    "@tamagui/lucide-icons": "1.125.32",
+    "@truststack/icons-ui": "workspace:*",
     "@truststack/discovery-ui": "workspace:*",
     "@truststack/form-ui": "workspace:*",
     "@truststack/nav-ui": "workspace:*",
@@ -60,10 +59,11 @@
     "@truststack/schema": "workspace:*",
     "@truststack/theme-ui": "workspace:*",
     "@truststack/ui": "workspace:*",
-    "react-dom": "18.2.0"
+    "@truststack/object-ui": "workspace:*"
   },
   "devDependencies": {
-    "@tamagui/build": "1.125.17"
+    "@tamagui/build": "*",
+    "@storybook/react": "^8.6.12"
   },
   "removeSideEffects": "true",
   "tamagui": {

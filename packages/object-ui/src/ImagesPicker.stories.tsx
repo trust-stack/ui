@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { YStack } from "tamagui";
-import { ImagesPicker } from "./ImagesPicker";
+import type {Meta, StoryObj} from "@storybook/react";
+import {YStack} from "@truststack/ui";
+import {ImagesPicker} from "./ImagesPicker";
 
 const meta = {
   title: "Components/ImagesPicker",
@@ -58,9 +58,9 @@ export const WithInitialImages: Story = {
       console.log("Selected images:", images);
     },
     images: [
-      { uri: "https://picsum.photos/200/300", mimeType: "image/jpeg" },
-      { uri: "https://picsum.photos/300/200", mimeType: "image/jpeg" },
-      { uri: "https://picsum.photos/250/250", mimeType: "image/jpeg" },
+      {uri: "https://picsum.photos/200/300", mimeType: "image/jpeg"},
+      {uri: "https://picsum.photos/300/200", mimeType: "image/jpeg"},
+      {uri: "https://picsum.photos/250/250", mimeType: "image/jpeg"},
     ],
   },
   parameters: {
@@ -83,7 +83,7 @@ export const SingleImage: Story = {
     onChange: (images) => {
       console.log("Selected images:", images);
     },
-    images: [{ uri: "https://picsum.photos/200/300", mimeType: "image/jpeg" }],
+    images: [{uri: "https://picsum.photos/200/300", mimeType: "image/jpeg"}],
   },
   parameters: {
     docs: {
@@ -125,10 +125,10 @@ export const GridLayout: Story = {
       console.log("Selected images:", images);
     },
     images: [
-      { uri: "https://picsum.photos/200/300", mimeType: "image/jpeg" },
-      { uri: "https://picsum.photos/300/200", mimeType: "image/jpeg" },
-      { uri: "https://picsum.photos/250/250", mimeType: "image/jpeg" },
-      { uri: "https://picsum.photos/200/200", mimeType: "image/jpeg" },
+      {uri: "https://picsum.photos/200/300", mimeType: "image/jpeg"},
+      {uri: "https://picsum.photos/300/200", mimeType: "image/jpeg"},
+      {uri: "https://picsum.photos/250/250", mimeType: "image/jpeg"},
+      {uri: "https://picsum.photos/200/200", mimeType: "image/jpeg"},
     ],
   },
   parameters: {
