@@ -51,11 +51,14 @@
     "watch": "tamagui-build --watch"
   },
   "dependencies": {
+    "@tamagui/web": "*",
+    "@tamagui/core": "*",
     "@truststack/icons-ui": "workspace:*",
     "@truststack/render-ui": "workspace:*",
     "@truststack/schema": "workspace:*",
     "@truststack/theme-ui": "workspace:*",
     "@truststack/ui": "workspace:*",
+    "tamagui": "*",
     "elkjs": "^0.10.0",
     "react-flow-renderer": "^10.3.17",
     "@monaco-editor/react": "^4.7.0"

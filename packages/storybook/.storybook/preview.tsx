@@ -3,6 +3,7 @@ import "./styles.css";
 import {TamaguiProvider, Theme} from "../../ui/src";
 import {config} from "../../ui/src/tamagui.config";
 
+import {INITIAL_VIEWPORTS} from "@storybook/addon-viewport";
 import {Preview} from "@storybook/react";
 import React from "react";
 
@@ -17,6 +18,10 @@ const preview: Preview = {
     backgrounds: {
       default: "default",
       values: [{name: "default", value: "#FFF"}],
+    },
+    viewport: {
+      viewports: INITIAL_VIEWPORTS,
+      defaultViewport: "desktop",
     },
   },
   decorators: [

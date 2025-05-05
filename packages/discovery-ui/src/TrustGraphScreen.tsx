@@ -1,10 +1,15 @@
 import {ScreenHeader} from "@truststack/render-ui";
 import {TrustGraphScreen as TTrustGraphScreen} from "@truststack/schema";
-import {Body, ScreenLayout, Title, YStack} from "@truststack/ui";
+import {Body, Divider, ScreenLayout, Title, View, YStack} from "@truststack/ui";
+import {PolicyResultItem, PolicyResultItemProps} from "./PolicyResultItem";
 import {TrustGraph} from "./TrustGraph";
 
+type Data = TTrustGraphScreen & {
+  readonly policyResults: PolicyResultItemProps[];
+};
+
 export type TrustGraphScreenProps = {
-  readonly data: TTrustGraphScreen;
+  readonly data: Data;
 };
 
 export function TrustGraphScreen({data}: TrustGraphScreenProps) {
@@ -18,6 +23,26 @@ export function TrustGraphScreen({data}: TrustGraphScreenProps) {
         </Body>
       </YStack>
       <TrustGraph data={data?.trustGraph} width={"100%"} height={600} />
+
+      <Divider />
+
+      <YStack padding={"$spacing.exp_margin"} gap={20}>
+        <View>
+          <Title size="large">Policies and Constraints</Title>
+          <Body>
+            Policies and constraints that are applied to the Trust Graph.
+          </Body>
+        </View>
+
+        <YStack gap={12}>
+          {data?.policyResults?.map((result, index) => (
+            <PolicyResultItem
+              key={`policy-result-${index}`}
+              data={result.data}
+            />
+          ))}
+        </YStack>
+      </YStack>
     </ScreenLayout>
   );
 }

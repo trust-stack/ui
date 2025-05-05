@@ -2,6 +2,7 @@ import {Meta, StoryObj} from "@storybook/react/*";
 import {RailLayout} from "@truststack/render-ui";
 import {ThemeProvider} from "@truststack/theme-ui";
 import {theme} from "./__mock__";
+import {Failure, Pending, Success} from "./PolicyResultItem.stories";
 import {Simple} from "./TrustGraph.stories";
 import {TrustGraphScreen} from "./TrustGraphScreen";
 
@@ -40,6 +41,11 @@ export const Default: Story = {
       trustGraph: {
         ...Simple.args.data,
       },
+      policyResults: [
+        Success.args as any,
+        Failure.args as any,
+        Pending.args as any,
+      ],
     },
   },
 };
