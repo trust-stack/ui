@@ -1,21 +1,22 @@
 import {
+  createColumnHelper,
+  getCoreRowModel,
+  useReactTable,
+} from "@tanstack/react-table";
+import {Check, Eye, X} from "@truststack/icons-ui";
+import {Breadcrumbs} from "@truststack/nav-ui";
+import {ScreenHeader as TScreenHeader} from "@truststack/schema";
+import {
   DataTable,
   dateToHumanReadableDay,
   Icon,
   IconButton,
   ScreenLayout,
   Table,
-  YStack,
+  TagChip,
+  TopAppBar,
 } from "@truststack/ui";
-import {
-  createColumnHelper,
-  getCoreRowModel,
-  useReactTable,
-} from "@tanstack/react-table";
-import { ScreenHeader as TScreenHeader } from "@truststack/schema";
-import { ScreenHeader } from "@truststack/render-ui";
-import { useMemo } from "react";
-import { X, Check, View, Eye } from "@truststack/icons-ui";
+import {useMemo} from "react";
 
 type TrustGraph = {
   batch: string;
@@ -23,6 +24,7 @@ type TrustGraph = {
   policies: string[];
   s3: number;
   compliant: boolean;
+  declaration: string;
   date: Date;
 };
 
@@ -35,17 +37,23 @@ export type TrustGraphScreenProps = {
   readonly data: Data;
 };
 
-export function TrustGraphsScreen({ data }: TrustGraphScreenProps) {
+export function TrustGraphsScreen({data}: TrustGraphScreenProps) {
   const columns = [
-    columnDef.accessor("batch", {
-      header: () => (
-        <Table.HeaderCell>
-          <Table.HeaderLabel>Batch</Table.HeaderLabel>
-        </Table.HeaderCell>
+    columnDef.accessor("date", {
+      header: () => <Table.HeaderTextCell>Received At</Table.HeaderTextCell>,
+      cell: (info) => (
+        <Table.TextCell adjustsFontSizeToFit numberOfLines={1}>
+          {dateToHumanReadableDay(info.getValue())}
+        </Table.TextCell>
       ),
+    }),
+    columnDef.accessor("batch", {
+      header: () => <Table.HeaderTextCell>Batch</Table.HeaderTextCell>,
       cell: (info) => (
         <Table.Cell>
-          <Table.Text>{`batch: ${info.getValue()}`}</Table.Text>
+          <TagChip color={"secondary"} density="-1">
+            <TagChip.Text>{info.getValue()}</TagChip.Text>
+          </TagChip>
         </Table.Cell>
       ),
     }),
@@ -63,71 +71,60 @@ export function TrustGraphsScreen({ data }: TrustGraphScreenProps) {
         </Table.Cell>
       ),
     }),
-    columnDef.accessor("policies", {
+    columnDef.accessor("declaration", {
       header: () => (
         <Table.HeaderCell>
-          <Table.HeaderLabel>Policies</Table.HeaderLabel>
+          <Table.HeaderLabel>EPR</Table.HeaderLabel>
         </Table.HeaderCell>
       ),
       cell: (info) => (
         <Table.Cell>
-          <Table.Text adjustsFontSizeToFit numberOfLines={2}>
-            {info.getValue().join(", ")}
+          <Table.Text adjustsFontSizeToFit numberOfLines={1}>
+            {info.getValue()}
           </Table.Text>
         </Table.Cell>
       ),
     }),
+
     columnDef.accessor("s3", {
       header: () => (
         <Table.HeaderCell>
-          <Table.HeaderLabel>S3 Emissions</Table.HeaderLabel>
+          <Table.HeaderLabel>S3 (t/co2e)</Table.HeaderLabel>
         </Table.HeaderCell>
       ),
       cell: (info) => (
         <Table.Cell>
           <Table.Text adjustsFontSizeToFit numberOfLines={1}>
-            {info.getValue() + "t/co2e"}
+            {info.getValue()}
           </Table.Text>
         </Table.Cell>
       ),
     }),
-    columnDef.accessor("compliant", {
-      header: () => (
-        <Table.HeaderCell>
-          <Table.HeaderLabel>Compliant</Table.HeaderLabel>
-        </Table.HeaderCell>
-      ),
-      cell: (info) => (
-        <Table.Cell>
-          <Icon
-            color={info.getValue() ? "$success" : "$error"}
-            icon={info.getValue() ? Check : X}
-          />
-        </Table.Cell>
-      ),
+
+    columnDef.accessor("policies", {
+      header: () => <Table.HeaderTextCell>Policies</Table.HeaderTextCell>,
+      cell: (info) => {
+        const row = info.row.original.compliant;
+
+        return (
+          <Table.Cell>
+            <TagChip variant={row ? "success-tonal" : "error-tonal"}>
+              <TagChip.Icon Icon={row ? Check : X} />
+              <TagChip.Text>{info.getValue().join(", ")}</TagChip.Text>
+            </TagChip>
+          </Table.Cell>
+        );
+      },
     }),
-    columnDef.accessor("date", {
-      header: () => (
-        <Table.HeaderCell>
-          <Table.HeaderLabel>Date</Table.HeaderLabel>
-        </Table.HeaderCell>
-      ),
-      cell: (info) => (
-        <Table.Cell>
-          <Table.Text adjustsFontSizeToFit numberOfLines={1}>
-            {dateToHumanReadableDay(info.getValue())}
-          </Table.Text>
-        </Table.Cell>
-      ),
-    }),
+
     columnDef.accessor("actions", {
       header: () => (
-        <Table.HeaderCell>
-          <Table.HeaderLabel>Actions</Table.HeaderLabel>
-        </Table.HeaderCell>
+        <Table.HeaderTextCell align="right" maxWidth={60}>
+          Actions
+        </Table.HeaderTextCell>
       ),
       cell: () => (
-        <Table.Cell>
+        <Table.Cell align="right" maxWidth={60}>
           <IconButton>
             <Icon Icon={Eye} />
           </IconButton>
@@ -147,10 +144,37 @@ export function TrustGraphsScreen({ data }: TrustGraphScreenProps) {
   });
 
   return (
-    <ScreenLayout header={<ScreenHeader data={data?.header} />}>
-      <YStack padding={"$spacing.exp_margin"}>
-        <DataTable table={table} backgroundColor={"transparent"} />
-      </YStack>
+    <ScreenLayout
+      header={
+        <TopAppBar backgroundColor={"transparent"} size="medium">
+          <TopAppBar.TopRail>
+            <TopAppBar.LeadingItemsContainer>
+              <Breadcrumbs
+                items={[
+                  {label: "Home", href: "/"},
+                  {label: "Consignments", href: "/"},
+                ]}
+              />
+            </TopAppBar.LeadingItemsContainer>
+          </TopAppBar.TopRail>
+          <TopAppBar.BottomRail>
+            <TopAppBar.MediumHeadline>
+              Recent Consignments
+            </TopAppBar.MediumHeadline>
+          </TopAppBar.BottomRail>
+        </TopAppBar>
+      }
+    >
+      <DataTable
+        table={table}
+        backgroundColor={"transparent"}
+        pagination={{
+          page: 1,
+          onPageChange: () => {},
+          rowsPerPage: 10,
+          onRowsPerPageChange: () => {},
+        }}
+      />
     </ScreenLayout>
   );
 }

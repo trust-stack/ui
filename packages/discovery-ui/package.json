@@ -59,6 +59,7 @@
     "@truststack/theme-ui": "workspace:*",
     "@truststack/ui": "workspace:*",
     "@truststack/credential-ui": "workspace:*",
+    "@truststack/nav-ui": "workspace:*",
     "tamagui": "*",
     "elkjs": "^0.10.0",
     "react-flow-renderer": "^10.3.17",

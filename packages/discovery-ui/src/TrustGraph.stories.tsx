@@ -1,6 +1,8 @@
-import { Meta, StoryObj } from "@storybook/react";
-import { View } from "@truststack/ui";
-import { TrustGraph } from "./TrustGraph";
+import {Meta, StoryObj} from "@storybook/react";
+import {View} from "@truststack/ui";
+import {TrustGraph} from "./TrustGraph";
+import {dgp} from "./__mocks__/dgp";
+import {ngr} from "./__mocks__/ngr";
 
 export default {
   component: TrustGraph,
@@ -30,7 +32,7 @@ export const Simple: Story = {
           id: "landTitles",
           type: "DPP",
           hash: "landTitles",
-          raw: { label: "Land Titles", description: "Land Titles description" },
+          raw: {label: "Land Titles", description: "Land Titles description"},
         },
         {
           id: "go",
@@ -105,13 +107,14 @@ export const Simple: Story = {
           raw: {
             label: "Digital Grain Passport",
             description: "Digital Grain Passport description",
+            html: dgp as any,
           },
         },
         {
           id: "cibo",
           type: "DPP",
           hash: "cibo",
-          raw: { label: "CIBO", description: "CIBO description" },
+          raw: {label: "CIBO", description: "CIBO description"},
         },
         {
           id: "acmeCalculator",
@@ -154,7 +157,7 @@ export const Simple: Story = {
           id: "dataFarming",
           type: "DPP",
           hash: "dataFarming",
-          raw: { label: "DataFarming", description: "DataFarming description" },
+          raw: {label: "DataFarming", description: "DataFarming description"},
         },
         {
           id: "ngr",
@@ -164,31 +167,15 @@ export const Simple: Story = {
             label: "NGR",
             description: "NGR description",
             issuedAt: "2021-01-01",
-            expiresAt: "2021-01-01",
-            html: `
-              <div style="font-family: sans-serif;">
-                  <h3 style="margin-top:0;">NGR</h3>
-                <p>
-                  This credential certifies the validity of the yield for the specified period. Please review the details below for more information.
-                </p>
-                <ul>
-                  <li><strong>Issued by:</strong> Example Authority</li>
-                  <li><strong>Valid from:</strong> 2024-01-01</li>
-                  <li><strong>Expires on:</strong> 2025-01-01</li>
-                  <li><strong>Status:</strong> <span style="color:green;">Active</span></li>
-                </ul>
-                <p style="font-size:0.9em;color:#666;">
-                  For more details, contact your administrator or visit our <a href="https://example.com">website</a>.
-                </p>
-              </div>
-            `,
+            expiresAt: "2031-01-01",
+            html: ngr as any,
           },
         },
         {
           id: "theNgr",
           type: "DPP",
           hash: "theNgr",
-          raw: { label: "The NGR", description: "The NGR description" },
+          raw: {label: "The NGR", description: "The NGR description"},
         },
         {
           id: "emissionsProfile",
@@ -220,18 +207,18 @@ export const Simple: Story = {
         },
       ],
       edges: [
-        { source: "landTitles", target: "go" },
-        { source: "go", target: "usEpa" },
-        { source: "usEpa", target: "digitalFarmRecord" },
-        { source: "digitalFarmRecord", target: "digitalGrainPassport" },
-        { source: "go", target: "cibo" },
-        { source: "digitalGrainPassport", target: "ngr" },
-        { source: "ngr", target: "theNgr" },
-        { source: "yieldValidity", target: "dataFarming" },
-        { source: "digitalGrainPassport", target: "yieldValidity" },
-        { source: "digitalGrainPassport", target: "emissionsProfile" },
-        { source: "emissionsProfile", target: "acmeCalculator" },
-        { source: "yieldValidity", target: "go" },
+        {source: "landTitles", target: "go"},
+        {source: "go", target: "usEpa"},
+        {source: "usEpa", target: "digitalFarmRecord"},
+        {source: "digitalFarmRecord", target: "digitalGrainPassport"},
+        {source: "go", target: "cibo"},
+        {source: "digitalGrainPassport", target: "ngr"},
+        {source: "ngr", target: "theNgr"},
+        {source: "yieldValidity", target: "dataFarming"},
+        {source: "digitalGrainPassport", target: "yieldValidity"},
+        {source: "digitalGrainPassport", target: "emissionsProfile"},
+        {source: "emissionsProfile", target: "acmeCalculator"},
+        {source: "yieldValidity", target: "go"},
       ],
     },
   },

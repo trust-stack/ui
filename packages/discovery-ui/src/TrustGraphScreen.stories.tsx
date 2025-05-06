@@ -1,12 +1,13 @@
-import { Meta, StoryObj } from "@storybook/react/*";
-import { RailLayout } from "@truststack/render-ui";
-import { ThemeProvider } from "@truststack/theme-ui";
-import { theme } from "./__mock__";
-import { Simple } from "./TrustGraph.stories";
-import { TrustGraphScreen } from "./TrustGraphScreen";
-import { Home } from "@truststack/icons-ui";
-import { NavRailItem } from "@truststack/ui";
-import { Image } from "tamagui";
+import {Meta, StoryObj} from "@storybook/react/*";
+import {BarChart, Home, Sun} from "@truststack/icons-ui";
+import {RailLayout} from "@truststack/render-ui";
+import {ThemeProvider} from "@truststack/theme-ui";
+import {NavRailItem} from "@truststack/ui";
+import {Fragment} from "react/jsx-runtime";
+import {Image} from "tamagui";
+import {theme} from "./__mock__";
+import {Simple} from "./TrustGraph.stories";
+import {TrustGraphScreen} from "./TrustGraphScreen";
 
 const LEX_SHAPE = `// Multiple Rules Example
 rule "Product Origin Verification"
@@ -52,7 +53,13 @@ export default {
               }}
             />
           }
-          Items={<NavRailItem label="Home" icon={Home} active={true} />}
+          Items={
+            <Fragment>
+              <NavRailItem label="Home" icon={Home} />
+              <NavRailItem label="Inventory" icon={BarChart} active={true} />
+              <NavRailItem label="ESG" icon={Sun} />
+            </Fragment>
+          }
         >
           <Story />
         </RailLayout>
@@ -67,8 +74,8 @@ export const Default: Story = {
   args: {
     data: {
       batchNumber: "12345678.1",
-      supplier: "Cargill",
-      date: "2024-05-01",
+      supplier: "Kate McGabe Farms",
+      date: "2025-11-11",
       header: {
         title: "Consignment Summary",
         subtitle: "Processed on the 2nd of April 2025",

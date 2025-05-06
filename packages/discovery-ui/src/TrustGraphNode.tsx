@@ -1,5 +1,5 @@
-import { View } from "@tamagui/web";
-import { CalendarX, Clock, Package, Timer } from "@truststack/icons-ui";
+import {RenderCredential} from "@truststack/credential-ui";
+import {CalendarX, Clock, Eye} from "@truststack/icons-ui";
 import {
   TrustGraphNodeType,
   TrustGraphNode as TTrustGraphNode,
@@ -8,6 +8,7 @@ import {
   createStyledContext,
   Dialog,
   Icon,
+  IconButton,
   Label,
   styled,
   ThemeableStack,
@@ -16,12 +17,11 @@ import {
   XStack,
   YStack,
 } from "@truststack/ui";
-import { Fragment, useState } from "react";
-import { Handle, Position } from "react-flow-renderer";
-import { RenderCredential } from "@truststack/credential-ui";
+import {Fragment, useState} from "react";
+import {Handle, Position} from "react-flow-renderer";
 
-export const NODE_WIDTH = 340;
-export const NODE_HEIGHT = 220;
+export const NODE_WIDTH = 360;
+export const NODE_HEIGHT = 140;
 
 const TrustGraphNodeContext = createStyledContext<{
   type: TrustGraphNodeType | undefined;
@@ -436,59 +436,55 @@ export type TrustGraphNodeProps = {
   readonly data: TTrustGraphNode;
 };
 
-export function TrustGraphNode({ data }: TrustGraphNodeProps): JSX.Element {
-  const [open, setOpen] = useState(false);
-  // types here aren't working
-  const Content = (
-    <Fragment>
-      <Handle type="target" position={Position.Right} />
-      <YStack
-        jc="space-between"
-        flex={1}
-        onPress={() => {
-          data?.type === "DFR" && setOpen(true);
-        }}
-      >
-        <YStack>
-          <Node.Title>{data?.raw.label}</Node.Title>
-          <Node.SupportingText adjustsFontSizeToFit marginBottom={8}>
-            {data?.raw.description}
-          </Node.SupportingText>
-        </YStack>
-
-        {data?.type === "DFR" && (
-          <XStack gap={"$spacing.compact_margin"} marginTop="auto">
-            <Node.Chip variant="success-tonal">
-              <Node.ChipIcon Icon={Clock} />
-              <Node.ChipText>{data?.raw.issuedAt}</Node.ChipText>
-            </Node.Chip>
-            <Node.Chip variant="success-tonal">
-              <Node.ChipIcon Icon={CalendarX} />
-              <Node.ChipText>{data?.raw.expiresAt}</Node.ChipText>
-            </Node.Chip>
-          </XStack>
-        )}
-      </YStack>
-      <Handle type="source" position={Position.Left} />
-    </Fragment>
-  );
+export function TrustGraphNode({data}: TrustGraphNodeProps): JSX.Element {
+  const [openRender, setOpenRender] = useState(false);
 
   return (
     <Fragment>
-      <Node type={data?.type as any}>{Content as any}</Node>
-      <Dialog open={open} onOpenChange={() => setOpen(false)}>
+      <Node type={data?.type as any}>
+        <Fragment>
+          <Handle type="target" position={Position.Right} />
+          <YStack jc="space-between" flex={1}>
+            <XStack justifyContent="space-between">
+              <YStack>
+                <Node.Title>{data?.raw.label}</Node.Title>
+                <Node.SupportingText adjustsFontSizeToFit marginBottom={8}>
+                  {data?.raw.description}
+                </Node.SupportingText>
+              </YStack>
+
+              <IconButton
+                onPress={() => setOpenRender(true)}
+                variant="filled-tonal"
+              >
+                <IconButton.Icon Icon={Eye} />
+              </IconButton>
+            </XStack>
+
+            {data?.type === "DFR" && (
+              <XStack gap={"$spacing.compact_margin"} marginTop="auto">
+                <Node.Chip variant="success-tonal">
+                  <Node.ChipIcon Icon={Clock} />
+                  <Node.ChipText>{data?.raw.issuedAt}</Node.ChipText>
+                </Node.Chip>
+                <Node.Chip variant="success-tonal">
+                  <Node.ChipIcon Icon={CalendarX} />
+                  <Node.ChipText>{data?.raw.expiresAt}</Node.ChipText>
+                </Node.Chip>
+              </XStack>
+            )}
+          </YStack>
+          <Handle type="source" position={Position.Left} />
+        </Fragment>
+      </Node>
+      <Dialog open={openRender} onOpenChange={() => setOpenRender(false)}>
         <Dialog.Portal>
           <Dialog.Overlay />
-          <Dialog.Content>
-            <Dialog.Header>
-              <Dialog.Title>
-                <Dialog.Headline>Credential Details</Dialog.Headline>
-              </Dialog.Title>
-            </Dialog.Header>
-
-            <View>
-              <RenderCredential render={data?.raw.html as any} />
-            </View>
+          <Dialog.Content padding={0}>
+            <RenderCredential
+              render={data?.raw.html as any}
+              style={{maxHeight: "90vh"}}
+            />
           </Dialog.Content>
         </Dialog.Portal>
       </Dialog>

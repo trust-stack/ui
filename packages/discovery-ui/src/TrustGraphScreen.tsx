@@ -1,20 +1,22 @@
-import { ScreenHeader } from "@truststack/render-ui";
-import { TrustGraphScreen as TTrustGraphScreen } from "@truststack/schema";
+import {Calendar, Check, Package, User} from "@truststack/icons-ui";
+import {Breadcrumbs} from "@truststack/nav-ui";
+import {TrustGraphScreen as TTrustGraphScreen} from "@truststack/schema";
 import {
   Body,
-  Chip,
   Dialog,
   Divider,
   ScreenLayout,
+  TagChip,
   Title,
+  TopAppBar,
   View,
+  XStack,
   YStack,
 } from "@truststack/ui";
-import { PolicyResultItem, PolicyResultItemProps } from "./PolicyResultItem";
-import { TrustGraph } from "./TrustGraph";
-import { Calendar, Package, User } from "@truststack/icons-ui";
-import { useState } from "react";
-import { LexShapeRenderer } from "./LexShapeRenderer";
+import {useState} from "react";
+import {LexShapeRenderer} from "./LexShapeRenderer";
+import {PolicyResultItem, PolicyResultItemProps} from "./PolicyResultItem";
+import {TrustGraph} from "./TrustGraph";
 
 type TrustGraphSummery = {
   readonly batchNumber: string;
@@ -33,7 +35,7 @@ export type TrustGraphScreenProps = {
   readonly data: Data;
 };
 
-export function TrustGraphScreen({ data }: TrustGraphScreenProps) {
+export function TrustGraphScreen({data}: TrustGraphScreenProps) {
   const [open, setOpen] = useState<
     | (PolicyResultItemProps & {
         renderLexShape?: string;
@@ -42,35 +44,70 @@ export function TrustGraphScreen({ data }: TrustGraphScreenProps) {
   >(null);
 
   return (
-    <ScreenLayout header={<ScreenHeader data={data?.header} />}>
-      <View
-        flexDirection="row"
-        gap={"$spacing.exp_margin"}
-        padding={"$spacing.exp_margin"}
-      >
-        <Chip variant="filter">
-          <Chip.Icon Icon={Package} />
-          <Chip.Text>{data?.batchNumber}</Chip.Text>
-        </Chip>
+    <ScreenLayout
+      header={
+        <TopAppBar size="medium" backgroundColor="transparent">
+          <TopAppBar.TopRail>
+            <TopAppBar.LeadingItemsContainer>
+              <Breadcrumbs
+                items={[
+                  {
+                    label: "Home",
+                    href: "/",
+                  },
+                  {
+                    label: "Consignments",
+                    href: "/",
+                  },
+                  {
+                    label: "12345678.12",
+                    href: "",
+                  },
+                ]}
+              />
+            </TopAppBar.LeadingItemsContainer>
 
-        <Chip variant="filter">
-          <Chip.Icon Icon={User} />
-          <Chip.Text>{data?.supplier}</Chip.Text>
-        </Chip>
+            <TopAppBar.TrailItemsContainer>
+              <TagChip variant={"success-tonal"}>
+                <TagChip.Icon Icon={Check} />
+                <TagChip.Text>US EPA Compliant</TagChip.Text>
+              </TagChip>
+            </TopAppBar.TrailItemsContainer>
+          </TopAppBar.TopRail>
+          <TopAppBar.BottomRail>
+            <TopAppBar.MediumHeadline>
+              Consignment Summary
+            </TopAppBar.MediumHeadline>
+          </TopAppBar.BottomRail>
+        </TopAppBar>
+      }
+    >
+      <XStack gap={8} padding={"$spacing.exp_margin"}>
+        <TagChip>
+          <TagChip.Icon Icon={Package} />
+          <TagChip.Text>{data?.batchNumber}</TagChip.Text>
+        </TagChip>
 
-        <Chip variant="filter">
-          <Chip.Icon Icon={Calendar} />
-          <Chip.Text>{data?.date}</Chip.Text>
-        </Chip>
-      </View>
+        <TagChip>
+          <TagChip.Icon Icon={User} />
+          <TagChip.Text>{data?.supplier}</TagChip.Text>
+        </TagChip>
+
+        <TagChip>
+          <TagChip.Icon Icon={Calendar} />
+          <TagChip.Text>{data?.date}</TagChip.Text>
+        </TagChip>
+      </XStack>
       <YStack padding={"$spacing.exp_margin"}>
         <Title size="large">Trust Graph</Title>
         <Body>
-          Visualisation of the Trust Graph discovered, and associated
-          information.
+          Below is a visualisation of the Trust Graph discovered, and associated
+          information from the{" "}
+          <Body fontWeight="bold">Digital Grain Passport</Body> presented with
+          this Consignment.
         </Body>
       </YStack>
-      <TrustGraph data={data?.trustGraph} width={"100%"} height={600} />
+      <TrustGraph data={data?.trustGraph} width={"100%"} height={620} />
 
       <Divider />
 

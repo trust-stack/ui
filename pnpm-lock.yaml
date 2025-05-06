@@ -108,6 +108,9 @@ importers:
       '@truststack/icons-ui':
         specifier: workspace:*
         version: link:../icons-ui
+      '@truststack/nav-ui':
+        specifier: workspace:*
+        version: link:../nav-ui
       '@truststack/render-ui':
         specifier: workspace:*
         version: link:../render-ui

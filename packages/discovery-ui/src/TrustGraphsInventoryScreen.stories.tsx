@@ -6,11 +6,11 @@ import {NavRailItem} from "@truststack/ui";
 import {Fragment} from "react/jsx-runtime";
 import {Image} from "tamagui";
 import {theme} from "./__mock__";
-import {TrustGraphsScreen} from "./TrustGraphsScreen";
+import {TrustGraphsInventoryScreen} from "./TrustGraphsInventoryScreen";
 
 export default {
-  component: TrustGraphsScreen,
-  title: "Discovery/TrustGraphsScreen",
+  component: TrustGraphsInventoryScreen,
+  title: "Discovery/TrustGraphsInventoryScreen",
   parameters: {
     layout: "fullscreen",
   },
@@ -46,19 +46,19 @@ export default {
       </ThemeProvider>
     ),
   ],
-} as Meta<typeof TrustGraphsScreen>;
+} as Meta<typeof TrustGraphsInventoryScreen>;
 
-type Story = StoryObj<typeof TrustGraphsScreen>;
+type Story = StoryObj<typeof TrustGraphsInventoryScreen>;
 
 export const Default: Story = {
   args: {
     data: {
       header: {
-        title: "Recent Consignments",
-        subtitle: "Processed on the 2nd of April 2025",
+        title: "Bunker #23",
+        subtitle: "Inventory history for the bunker",
         size: "medium",
       },
-      trustGraphs: [
+      inventoryHistory: [
         {
           batch: "batch:12345678.12",
           supplier: "John Doe",
@@ -73,7 +73,7 @@ export const Default: Story = {
           supplier: "Jane Doe",
           policies: ["US EPA Pathways"],
           s3: 200,
-          compliant: false,
+          compliant: true,
           date: new Date("2024-04-15"),
           declaration: "Canola, Avon",
         },

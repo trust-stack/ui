@@ -8,11 +8,7 @@ export type RenderCredentialProps = {
 
 export function RenderCredential({render, ...props}: RenderCredentialProps) {
   if (Platform.OS === "web") {
-    return (
-      <View {...props}>
-        <View dangerouslySetInnerHTML={{__html: render}} />
-      </View>
-    );
+    return <View {...props} dangerouslySetInnerHTML={{__html: render}} />;
   }
 
   return (
