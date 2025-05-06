@@ -58,10 +58,12 @@
     "@truststack/schema": "workspace:*",
     "@truststack/theme-ui": "workspace:*",
     "@truststack/ui": "workspace:*",
+    "@truststack/credential-ui": "workspace:*",
     "tamagui": "*",
     "elkjs": "^0.10.0",
     "react-flow-renderer": "^10.3.17",
-    "@monaco-editor/react": "^4.7.0"
+    "@monaco-editor/react": "^4.7.0",
+    "@tanstack/react-table": "^8.16.0"
   },
   "devDependencies": {
     "@storybook/react": "^8.6.12",

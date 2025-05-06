@@ -1,5 +1,5 @@
-import {CheckCircle, Clock1, XCircle} from "@truststack/icons-ui";
-import {PolicyResult as TPolicyResult} from "@truststack/schema";
+import { CheckCircle, Clock1, XCircle } from "@truststack/icons-ui";
+import { PolicyResult as TPolicyResult } from "@truststack/schema";
 import {
   Body,
   createStyledContext,
@@ -10,18 +10,22 @@ import {
   XStack,
   YStack,
 } from "@truststack/ui";
-import {useContext} from "react";
+import { useContext } from "react";
 
 export type PolicyResultItemProps = {
   readonly data: Pick<
     TPolicyResult,
     "status" | "policyName" | "policyDescription"
   >;
+  readonly onPress?: () => void;
 };
 
-export function PolicyResultItem({data}: PolicyResultItemProps): JSX.Element {
+export function PolicyResultItem({
+  data,
+  onPress,
+}: PolicyResultItemProps): JSX.Element {
   return (
-    <PolicyResult status={data.status}>
+    <PolicyResult status={data.status} onPress={onPress}>
       <YStack>
         <PolicyResult.Label>{data?.policyName}</PolicyResult.Label>
         <PolicyResult.Description>
@@ -111,7 +115,7 @@ const Description = styled(Body, {
 });
 
 const StatusIcon = (props = {}) => {
-  const {status} = useContext(PolicyResultContext.context);
+  const { status } = useContext(PolicyResultContext.context);
 
   if (status === "PENDING") {
     return <Icon {...props} Icon={Clock1} color="$info" />;

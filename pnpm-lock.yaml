@@ -99,6 +99,12 @@ importers:
       '@tamagui/web':
         specifier: 1.126.4
         version: 1.126.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@tanstack/react-table':
+        specifier: ^8.16.0
+        version: 8.21.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@truststack/credential-ui':
+        specifier: workspace:*
+        version: link:../credential-ui
       '@truststack/icons-ui':
         specifier: workspace:*
         version: link:../icons-ui

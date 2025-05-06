@@ -1,20 +1,68 @@
-import {ScreenHeader} from "@truststack/render-ui";
-import {TrustGraphScreen as TTrustGraphScreen} from "@truststack/schema";
-import {Body, Divider, ScreenLayout, Title, View, YStack} from "@truststack/ui";
-import {PolicyResultItem, PolicyResultItemProps} from "./PolicyResultItem";
-import {TrustGraph} from "./TrustGraph";
+import { ScreenHeader } from "@truststack/render-ui";
+import { TrustGraphScreen as TTrustGraphScreen } from "@truststack/schema";
+import {
+  Body,
+  Chip,
+  Dialog,
+  Divider,
+  ScreenLayout,
+  Title,
+  View,
+  YStack,
+} from "@truststack/ui";
+import { PolicyResultItem, PolicyResultItemProps } from "./PolicyResultItem";
+import { TrustGraph } from "./TrustGraph";
+import { Calendar, Package, User } from "@truststack/icons-ui";
+import { useState } from "react";
+import { LexShapeRenderer } from "./LexShapeRenderer";
 
-type Data = TTrustGraphScreen & {
-  readonly policyResults: PolicyResultItemProps[];
+type TrustGraphSummery = {
+  readonly batchNumber: string;
+  readonly supplier: string;
+  readonly date: string;
 };
+
+type Data = TrustGraphSummery &
+  TTrustGraphScreen & {
+    readonly policyResults: (PolicyResultItemProps & {
+      renderLexShape?: string;
+    })[];
+  };
 
 export type TrustGraphScreenProps = {
   readonly data: Data;
 };
 
-export function TrustGraphScreen({data}: TrustGraphScreenProps) {
+export function TrustGraphScreen({ data }: TrustGraphScreenProps) {
+  const [open, setOpen] = useState<
+    | (PolicyResultItemProps & {
+        renderLexShape?: string;
+      })
+    | null
+  >(null);
+
   return (
     <ScreenLayout header={<ScreenHeader data={data?.header} />}>
+      <View
+        flexDirection="row"
+        gap={"$spacing.exp_margin"}
+        padding={"$spacing.exp_margin"}
+      >
+        <Chip variant="filter">
+          <Chip.Icon Icon={Package} />
+          <Chip.Text>{data?.batchNumber}</Chip.Text>
+        </Chip>
+
+        <Chip variant="filter">
+          <Chip.Icon Icon={User} />
+          <Chip.Text>{data?.supplier}</Chip.Text>
+        </Chip>
+
+        <Chip variant="filter">
+          <Chip.Icon Icon={Calendar} />
+          <Chip.Text>{data?.date}</Chip.Text>
+        </Chip>
+      </View>
       <YStack padding={"$spacing.exp_margin"}>
         <Title size="large">Trust Graph</Title>
         <Body>
@@ -39,10 +87,33 @@ export function TrustGraphScreen({data}: TrustGraphScreenProps) {
             <PolicyResultItem
               key={`policy-result-${index}`}
               data={result.data}
+              onPress={() => {
+                setOpen(result);
+              }}
             />
           ))}
         </YStack>
       </YStack>
+
+      <Dialog open={!!open} onOpenChange={() => setOpen(null)}>
+        <Dialog.Portal>
+          <Dialog.Overlay />
+          <Dialog.Content>
+            <Dialog.Header>
+              <Dialog.Title>
+                <Dialog.Headline>{open?.data.policyName}</Dialog.Headline>
+              </Dialog.Title>
+              <Dialog.SupportingText>
+                {open?.data.policyDescription}
+              </Dialog.SupportingText>
+            </Dialog.Header>
+
+            <View height={400}>
+              <LexShapeRenderer value={open?.renderLexShape} />
+            </View>
+          </Dialog.Content>
+        </Dialog.Portal>
+      </Dialog>
     </ScreenLayout>
   );
 }
