@@ -1,7 +1,7 @@
 {
-  "name": "@truststack/passport-ui",
+  "name": "@truststack/wallet-ui",
   "version": "0.4.0",
-  "description": "Trust Stack Passport UI library",
+  "description": "Trust Stack Wallet UI library",
   "type": "module",
   "exports": {
     "./package.json": "./package.json",
@@ -57,19 +57,18 @@
     "@truststack/render-ui": "workspace:*",
     "@truststack/schema": "workspace:*",
     "@truststack/theme-ui": "workspace:*",
-    "@truststack/form-ui": "workspace:*",
     "@truststack/ui": "workspace:*",
-    "@hookform/resolvers": "*",
+    "@truststack/credential-ui": "workspace:*",
     "tamagui": "*",
-    "react-native": "*",
-    "yup": "*",
-    "react-hook-form": "*"
+    "react-native": "*"
   },
   "devDependencies": {
     "@storybook/react": "^8.6.12",
     "@tamagui/build": "*",
     "@types/react": "*",
-    "@types/react-dom": "*"
+    "@types/react-dom": "*",
+    "msw-storybook-addon": "*",
+    "msw": "*"
   },
   "removeSideEffects": "true",
   "tamagui": {

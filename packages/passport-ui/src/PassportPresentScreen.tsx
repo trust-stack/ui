@@ -1,11 +1,11 @@
 import {
   CheckCircle,
-  ChevronLeft,
   Clock,
   Earth,
   IdCard,
   TreeDeciduous,
 } from "@truststack/icons-ui";
+import {ModalCardScreen} from "@truststack/render-ui";
 import {
   Body,
   Divider,
@@ -13,7 +13,6 @@ import {
   Icon,
   ListItem,
   QrCode,
-  TopAppBar,
   XStack,
   YStack,
   YStackProps,
@@ -32,23 +31,8 @@ export function PassportPresentScreen({
   ...props
 }: PassportPresentScreenProps) {
   return (
-    <YStack backgroundColor={"black"} {...props}>
-      <XStack padding={"$spacing.compact_margin"}>
-        {onBack && (
-          <TopAppBar.LeadingIcon Icon={ChevronLeft} onPress={onBack} />
-        )}
-      </XStack>
-
-      <YStack
-        marginTop={40}
-        flexGrow={1}
-        borderTopLeftRadius={"$shape.corner_xl"}
-        borderTopRightRadius={"$shape.corner_xl"}
-        overflow="hidden"
-        backgroundColor={"$surface"}
-        shadowColor={"$shadow_opacity"}
-        shadowRadius={"$shadow.5"}
-      >
+    <ModalCardScreen onBack={onBack}>
+      <YStack>
         <YStack marginHorizontal={12} marginTop={20}>
           <Headline>{title || "Digital Grain Passport"}</Headline>
         </YStack>
@@ -131,6 +115,6 @@ export function PassportPresentScreen({
           </ListItem>
         </YStack>
       </YStack>
-    </YStack>
+    </ModalCardScreen>
   );
 }

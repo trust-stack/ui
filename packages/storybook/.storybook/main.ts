@@ -3,10 +3,13 @@ import {dirname, join} from "path";
 
 const config: StorybookConfig = {
   stories: [
-    "../../ui/src/**/*.stories.tsx",
     "../../discovery-ui/src/**/*.stories.tsx",
     "../../object-ui/src/**/*.stories.tsx",
     "../../passport-ui/src/**/*.stories.tsx",
+    "../../render-ui/src/**/*.stories.tsx",
+    "../../ui/src/**/*.stories.tsx",
+    "../../wallet-ui/src/**/*.stories.tsx",
+    "../../credential-ui/src/**/*.stories.tsx",
   ],
   addons: [
     getAbsolutePath("@storybook/addon-links"),
