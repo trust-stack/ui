@@ -58,7 +58,7 @@
     "react": "*",
     "react-dom": "*",
     "react-native": "*",
-    "yup": "^0.32.9"
+    "yup": "*"
   },
   "devDependencies": {
     "@storybook/react": "^8.6.12",

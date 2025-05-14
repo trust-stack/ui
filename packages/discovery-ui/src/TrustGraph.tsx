@@ -60,7 +60,7 @@ export function TrustGraph({data, ...props}: TrustGraphProps): JSX.Element {
 
   return (
     <ReactFlowProvider>
-      <View position="relative" {...props}>
+      <View position="relative" width="100%" height="100%" {...props}>
         <View
           zIndex={12}
           position="absolute"

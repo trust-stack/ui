@@ -8,4 +8,5 @@ export * from "./FormSelect";
 export * from "./FormToggle";
 export * from "./PagerForm";
 
+export {useForm} from "react-hook-form";
 export {FormProvider, useFormContext};

@@ -24,7 +24,7 @@ import {TabItem, Tabs, TabsContent} from "./Tabs";
 import {Tooltip} from "./Tooltip";
 import {Body, Display, Headline, Hero, Label, Title} from "./typography";
 import {useDebounce} from "./utils";
-export * from "tamagui";
+
 export * from "./Badge";
 export * from "./BarcodeScanner";
 export * from "./BottomAppBar";
@@ -50,6 +50,7 @@ export * from "./NavRail";
 export * from "./NoResults";
 export * from "./NumericalInput";
 export * from "./PlatformContext";
+export * from "./QrCode";
 export * from "./render";
 export * from "./ScreenLayout";
 export * from "./ScrollTo";
@@ -126,3 +127,5 @@ export type {
   LabelProps,
   TitleProps,
 } from "./typography";
+
+export * from "tamagui";
