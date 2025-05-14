@@ -1,6 +1,6 @@
-import {Meta, StoryObj} from "@storybook/react/*";
+import { Meta, StoryObj } from "@storybook/react/*";
 import ReactFlow from "react-flow-renderer";
-import {TrustGraphNode} from "./TrustGraphNode";
+import { TrustGraphNode } from "./TrustGraphNode";
 
 export default {
   component: TrustGraphNode,
@@ -44,6 +44,17 @@ export const DCC: Story = {
       type: "DCC",
       id: "dcc",
       hash: "dcc",
+      raw: {},
+    },
+  },
+};
+
+export const DFR: Story = {
+  args: {
+    data: {
+      type: "DFR",
+      id: "dfr",
+      hash: "dfr",
       raw: {},
     },
   },

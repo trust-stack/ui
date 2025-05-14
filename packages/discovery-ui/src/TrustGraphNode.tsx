@@ -1,5 +1,5 @@
-import {RenderCredential} from "@truststack/credential-ui";
-import {CalendarX, Clock, Eye} from "@truststack/icons-ui";
+import { RenderCredential } from "@truststack/credential-ui";
+import { CalendarX, Clock, Eye } from "@truststack/icons-ui";
 import {
   TrustGraphNodeType,
   TrustGraphNode as TTrustGraphNode,
@@ -17,8 +17,8 @@ import {
   XStack,
   YStack,
 } from "@truststack/ui";
-import {Fragment, useState} from "react";
-import {Handle, Position} from "react-flow-renderer";
+import { Fragment, useState } from "react";
+import { Handle, Position } from "react-flow-renderer";
 
 export const NODE_WIDTH = 360;
 export const NODE_HEIGHT = 140;
@@ -83,6 +83,10 @@ const Frame = styled(YStack, {
       DPP: {
         backgroundColor: "$infoContainer",
         borderColor: "$info",
+      },
+      DFR: {
+        backgroundColor: "$surfaceContainerLowest",
+        borderColor: "$outline",
       },
     },
     root: {
@@ -436,7 +440,7 @@ export type TrustGraphNodeProps = {
   readonly data: TTrustGraphNode;
 };
 
-export function TrustGraphNode({data}: TrustGraphNodeProps): JSX.Element {
+export function TrustGraphNode({ data }: TrustGraphNodeProps): JSX.Element {
   const [openRender, setOpenRender] = useState(false);
 
   return (
@@ -480,10 +484,10 @@ export function TrustGraphNode({data}: TrustGraphNodeProps): JSX.Element {
       <Dialog open={openRender} onOpenChange={() => setOpenRender(false)}>
         <Dialog.Portal>
           <Dialog.Overlay />
-          <Dialog.Content padding={0}>
+          <Dialog.Content padding={20}>
             <RenderCredential
               render={data?.raw.html as any}
-              style={{maxHeight: "90vh"}}
+              style={{ maxHeight: "90vh" }}
             />
           </Dialog.Content>
         </Dialog.Portal>

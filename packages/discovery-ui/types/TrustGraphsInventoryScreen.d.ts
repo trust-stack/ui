@@ -1,5 +1,5 @@
 import { ScreenHeader as TScreenHeader } from "@truststack/schema";
-type TrustGraph = {
+type InventoryHistory = {
     batch: string;
     supplier: string;
     policies: string[];
@@ -10,11 +10,11 @@ type TrustGraph = {
 };
 type Data = {
     readonly header: TScreenHeader;
-    readonly trustGraphs: TrustGraph[];
+    readonly inventoryHistory: InventoryHistory[];
 };
-export type TrustGraphScreenProps = {
+export type TrustGraphsInventoryScreen = {
     readonly data: Data;
 };
-export declare function TrustGraphsScreen({ data }: TrustGraphScreenProps): import("react/jsx-runtime").JSX.Element;
+export declare function TrustGraphsInventoryScreen({ data }: TrustGraphsInventoryScreen): import("react/jsx-runtime").JSX.Element;
 export {};
-//# sourceMappingURL=TrustGraphsScreen.d.ts.map
+//# sourceMappingURL=TrustGraphsInventoryScreen.d.ts.map
