@@ -1,8 +1,12 @@
 import {Meta, StoryObj} from "@storybook/react";
 import {View} from "@truststack/ui";
 import {TrustGraph} from "./TrustGraph";
+import {cibo} from "./__mocks__/cibo";
 import {dgp} from "./__mocks__/dgp";
+import {emissions} from "./__mocks__/emissions";
+import {go} from "./__mocks__/go";
 import {ngr} from "./__mocks__/ngr";
+import {yieldValidity} from "./__mocks__/yield";
 
 export default {
   component: TrustGraph,
@@ -30,142 +34,93 @@ export const Simple: Story = {
       nodes: [
         {
           id: "landTitles",
-          type: "DPP",
+          type: "DIA",
           hash: "landTitles",
-          raw: {label: "Land Titles", description: "Land Titles description"},
+          raw: {
+            label: "NSW Land Titles",
+            description: "New South Wales Land Titles Register.",
+          },
         },
         {
           id: "go",
-          type: "DFR",
+          type: "DCC",
           hash: "go",
           raw: {
-            label: "GO",
-            description: "GO description",
+            label: "Guarantee of Origin",
+            description: "Evidence of land ownership, or right to operate",
             issuedAt: "2021-01-01",
             expiresAt: "2021-01-01",
-            html: `
-              <div style="font-family: sans-serif;">
-                <h3 style="margin-top:0;">GO</h3>
-                <p>
-                  This credential certifies the validity of the yield for the specified period. Please review the details below for more information.
-                </p>
-                <ul>
-                  <li><strong>Issued by:</strong> Example Authority</li>
-                  <li><strong>Valid from:</strong> 2024-01-01</li>
-                  <li><strong>Expires on:</strong> 2025-01-01</li>
-                  <li><strong>Status:</strong> <span style="color:green;">Active</span></li>
-                </ul>
-                <p style="font-size:0.9em;color:#666;">
-                  For more details, contact your administrator or visit our <a href="https://example.com">website</a>.
-                </p>
-              </div>
-            `,
+            html: go,
           },
         },
         {
           id: "usEpa",
-          type: "DFR",
+          type: "DCC",
           hash: "usEpa",
           raw: {
-            label: "US EPA Deforestation",
-            description: "US EPA Deforestation description",
-
+            label: "Deforestation Assessment",
+            description:
+              "Assessment of land boundaries in GO credential against US EPA requirements.",
             issuedAt: "2021-01-01",
             expiresAt: "2021-01-01",
-            html: `
-                <div style="font-family: sans-serif;">
-                  <h3 style="margin-top:0;">US EPA Deforestation</h3>
-                  <p>
-                    This credential certifies the validity of the yield for the specified period. Please review the details below for more information.
-                  </p>
-                  <ul>
-                    <li><strong>Issued by:</strong> Example Authority</li>
-                    <li><strong>Valid from:</strong> 2024-01-01</li>
-                    <li><strong>Expires on:</strong> 2025-01-01</li>
-                    <li><strong>Status:</strong> <span style="color:green;">Active</span></li>
-                  </ul>
-                  <p style="font-size:0.9em;color:#666;">
-                    For more details, contact your administrator or visit our <a href="https://example.com">website</a>.
-                  </p>
-                </div>
-              `,
-          },
-        },
-        {
-          id: "digitalFarmRecord",
-          type: "DTE",
-          hash: "digitalFarmRecord",
-          raw: {
-            label: "Digital Farm Record",
-            description: "Digital Farm Record description",
+            html: cibo as any,
           },
         },
         {
           id: "digitalGrainPassport",
-          type: "DTE",
+          type: "DPP",
           hash: "digitalGrainPassport",
           raw: {
             label: "Digital Grain Passport",
-            description: "Digital Grain Passport description",
+            description: "Canola passport issued by McKabe Farms.",
             html: dgp as any,
           },
         },
         {
           id: "cibo",
-          type: "DPP",
+          type: "DIA",
           hash: "cibo",
-          raw: {label: "CIBO", description: "CIBO description"},
+          raw: {
+            label: "CIBO Labs",
+            description: "Certified deforestation assessment provider.",
+            raw: cibo as any,
+          },
         },
         {
           id: "acmeCalculator",
-          type: "DPP",
+          type: "DIA",
           hash: "acmeCalculator",
           raw: {
-            label: "ACME Calculator",
-            description: "ACME Calculator description",
+            label: "ACME Emissions Calculator",
+            description: "ACME Emissions Calculator description",
           },
         },
         {
           id: "yieldValidity",
-          type: "DFR",
+          type: "DCC",
           hash: "yieldValidity",
           raw: {
             label: "Yield Validity",
-            description: "Yield Validity description",
+            description:
+              "Assessment of crop production and yield validity for given production areas.",
             issuedAt: "2021-01-01",
             expiresAt: "2021-01-01",
-            html: `
-              <div style="font-family: sans-serif;">
-                <h3 style="margin-top:0;">Yield Validity</h3>
-                <p>
-                  This credential certifies the validity of the yield for the specified period. Please review the details below for more information.
-                </p>
-                <ul>
-                  <li><strong>Issued by:</strong> Example Authority</li>
-                  <li><strong>Valid from:</strong> 2024-01-01</li>
-                  <li><strong>Expires on:</strong> 2025-01-01</li>
-                  <li><strong>Status:</strong> <span style="color:green;">Active</span></li>
-                </ul>
-                <p style="font-size:0.9em;color:#666;">
-                  For more details, contact your administrator or visit our <a href="https://example.com">website</a>.
-                </p>
-              </div>
-            `,
+            html: yieldValidity,
           },
         },
         {
           id: "dataFarming",
-          type: "DPP",
+          type: "DIA",
           hash: "dataFarming",
           raw: {label: "DataFarming", description: "DataFarming description"},
         },
         {
           id: "ngr",
-          type: "DFR",
+          type: "DCC",
           hash: "ngr",
           raw: {
-            label: "NGR",
-            description: "NGR description",
+            label: "National Grower Registration",
+            description: "Registration of grower against the NGR.",
             issuedAt: "2021-01-01",
             expiresAt: "2031-01-01",
             html: ngr as any,
@@ -173,45 +128,31 @@ export const Simple: Story = {
         },
         {
           id: "theNgr",
-          type: "DPP",
+          type: "DIA",
           hash: "theNgr",
-          raw: {label: "The NGR", description: "The NGR description"},
+          raw: {
+            label: "National Grower Register",
+            description: "Trusted register of grower business identification.",
+          },
         },
         {
           id: "emissionsProfile",
-          type: "DFR",
+          type: "DCC",
           hash: "emissionsProfile",
           raw: {
             label: "Emissions Profile",
-            description: "Emissions Profile description",
+            description: "Assessment of production emissions at a unit level.",
             issuedAt: "2021-01-01",
             expiresAt: "2021-01-01",
-            html: `
-            <div style="font-family: sans-serif;">
-              <h3 style="margin-top:0;">Emissions Profile</h3>
-              <p>
-                This credential certifies the validity of the yield for the specified period. Please review the details below for more information.
-              </p>
-              <ul>
-                <li><strong>Issued by:</strong> Example Authority</li>
-                <li><strong>Valid from:</strong> 2024-01-01</li>
-                <li><strong>Expires on:</strong> 2025-01-01</li>
-                <li><strong>Status:</strong> <span style="color:green;">Active</span></li>
-              </ul>
-              <p style="font-size:0.9em;color:#666;">
-                For more details, contact your administrator or visit our <a href="https://example.com">website</a>.
-              </p>
-            </div>
-          `,
+            html: emissions,
           },
         },
       ],
       edges: [
         {source: "landTitles", target: "go"},
         {source: "go", target: "usEpa"},
-        {source: "usEpa", target: "digitalFarmRecord"},
-        {source: "digitalFarmRecord", target: "digitalGrainPassport"},
-        {source: "go", target: "cibo"},
+        {source: "usEpa", target: "digitalGrainPassport"},
+        {source: "usEpa", target: "cibo"},
         {source: "digitalGrainPassport", target: "ngr"},
         {source: "ngr", target: "theNgr"},
         {source: "yieldValidity", target: "dataFarming"},

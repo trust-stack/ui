@@ -60,7 +60,7 @@ export function TrustGraphScreen({data}: TrustGraphScreenProps) {
                     href: "/",
                   },
                   {
-                    label: "12345678.12",
+                    label: "12605496.1",
                     href: "",
                   },
                 ]}

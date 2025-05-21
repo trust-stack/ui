@@ -73,8 +73,8 @@ type Story = StoryObj<typeof TrustGraphScreen>;
 export const Default: Story = {
   args: {
     data: {
-      batchNumber: "12345678.1",
-      supplier: "Kate McGabe Farms",
+      batchNumber: "12605496.1",
+      supplier: "McGabe Farms",
       date: "2025-11-11",
       header: {
         title: "Consignment Summary",
@@ -88,18 +88,27 @@ export const Default: Story = {
         {
           data: {
             status: "SUCCESS",
-            policyName: "US EPA Deforestation Assesment",
+            policyName: "US EPA Deforestation Assessment",
             policyDescription:
-              "Valid deforestation certified found, issued by CIBO labs, with evidence from Land Titles of ownership",
+              "Valid deforestation certified found, issued by CIBO labs, with evidence from Land Titles of ownership.",
           },
           renderLexShape: LEX_SHAPE,
         },
         {
           data: {
             status: "SUCCESS",
-            policyName: "ISCC Canola Assessment",
+            policyName: "Valid Yield",
             policyDescription:
-              "Valid deforestation certified found, issued by CIBO labs, with evidence from Land Titles of ownership",
+              "Evidence of a yield validity assessment is present and issued by a relevant authority.",
+          },
+          renderLexShape: LEX_SHAPE,
+        },
+        {
+          data: {
+            status: "SUCCESS",
+            policyName: "Land Ownership or Control",
+            policyDescription:
+              "Evidence producer owns or has the right to operate this land, as certified by NSW Land Titles. ",
           },
           renderLexShape: LEX_SHAPE,
         },
@@ -108,7 +117,7 @@ export const Default: Story = {
             status: "SUCCESS",
             policyName: "Emissions Profile",
             policyDescription:
-              "Valid emissions profile found, issued by AIA calculator.",
+              "Valid emissions profile found, issued by ACME calculator.",
           },
           renderLexShape: LEX_SHAPE,
         },

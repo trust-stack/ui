@@ -46,14 +46,12 @@ export function TrustGraph({data, ...props}: TrustGraphProps): JSX.Element {
       });
     });
 
-    layoutElements(nodes, edges, {
+    const result = layoutElements(nodes, edges, {
       nodeWidth: NODE_WIDTH,
       nodeHeight: NODE_HEIGHT,
-      direction: "LEFT",
-    }).then(({nodes, edges}) => {
-      setNodes(nodes);
-      setEdges(edges);
     });
+    setNodes(result.nodes);
+    setEdges(result.edges);
   }, [data]);
 
   if (!data?.nodes?.length) return <></>;

@@ -1,5 +1,5 @@
 import {RenderCredential} from "@truststack/credential-ui";
-import {CalendarX, Clock, Eye} from "@truststack/icons-ui";
+import {Eye, User} from "@truststack/icons-ui";
 import {
   TrustGraphNodeType,
   TrustGraphNode as TTrustGraphNode,
@@ -49,6 +49,7 @@ const Frame = styled(YStack, {
   padding: "$spacing.card_body_2",
   borderRadius: "$shape.corner_sm",
   borderColor: "$outline",
+  backgroundColor: "$primaryContainer",
   borderWidth: 3,
   animateOnly: ["transform"],
   animation: "slow",
@@ -81,8 +82,12 @@ const Frame = styled(YStack, {
         borderColor: "$success",
       },
       DPP: {
-        backgroundColor: "$infoContainer",
-        borderColor: "$info",
+        backgroundColor: "$primaryContainer",
+        borderColor: "$primary",
+      },
+      DIA: {
+        backgroundColor: "$tertiaryContainer",
+        borderColor: "$tertiary",
       },
     },
     root: {
@@ -120,7 +125,10 @@ const Title = styled(TTitle, {
         col: "$onInfoContainer",
       },
       DPP: {
-        col: "$onInfoContainer",
+        col: "$onPrimaryContainer",
+      },
+      DIA: {
+        col: "$onTertiaryContainer",
       },
     },
     root: {
@@ -153,7 +161,10 @@ const SupportingText = styled(TTitle, {
         col: "$onInfoContainer",
       },
       DPP: {
-        col: "$onInfoContainer",
+        col: "$onPrimaryContainer",
+      },
+      DIA: {
+        col: "$onTertiaryContainer",
       },
     },
     root: {
@@ -438,43 +449,68 @@ export type TrustGraphNodeProps = {
 
 export function TrustGraphNode({data}: TrustGraphNodeProps): JSX.Element {
   const [openRender, setOpenRender] = useState(false);
-
+  const type = data?.type;
   return (
     <Fragment>
       <Node type={data?.type as any}>
         <Fragment>
-          <Handle type="target" position={Position.Right} />
-          <YStack jc="space-between" flex={1}>
+          <YStack jc="space-between" flex={1} position="relative">
+            <Handle
+              type="target"
+              position={Position.Right}
+              style={{
+                top: NODE_HEIGHT / 2,
+                left: NODE_WIDTH / 2,
+                position: "absolute",
+                width: 0,
+                height: 0,
+              }}
+            />
             <XStack justifyContent="space-between">
-              <YStack>
+              <YStack maxWidth={NODE_WIDTH - 80}>
                 <Node.Title>{data?.raw.label}</Node.Title>
                 <Node.SupportingText adjustsFontSizeToFit marginBottom={8}>
                   {data?.raw.description}
                 </Node.SupportingText>
               </YStack>
 
-              <IconButton
-                onPress={() => setOpenRender(true)}
-                variant="filled-tonal"
-              >
-                <IconButton.Icon Icon={Eye} />
-              </IconButton>
+              {type == "DIA" && (
+                <IconButton variant="filled-tertiary">
+                  <IconButton.Icon Icon={User} />
+                </IconButton>
+              )}
+
+              {type == "DCC" && (
+                <IconButton
+                  onPress={() => setOpenRender(true)}
+                  variant="filled-tonal"
+                >
+                  <IconButton.Icon Icon={Eye} />
+                </IconButton>
+              )}
+
+              {type == "DPP" && (
+                <IconButton
+                  onPress={() => setOpenRender(true)}
+                  variant="filled-tonal"
+                >
+                  <IconButton.Icon Icon={Eye} />
+                </IconButton>
+              )}
             </XStack>
 
-            {data?.type === "DFR" && (
-              <XStack gap={"$spacing.compact_margin"} marginTop="auto">
-                <Node.Chip variant="success-tonal">
-                  <Node.ChipIcon Icon={Clock} />
-                  <Node.ChipText>{data?.raw.issuedAt}</Node.ChipText>
-                </Node.Chip>
-                <Node.Chip variant="success-tonal">
-                  <Node.ChipIcon Icon={CalendarX} />
-                  <Node.ChipText>{data?.raw.expiresAt}</Node.ChipText>
-                </Node.Chip>
-              </XStack>
-            )}
+            <Handle
+              type="source"
+              position={Position.Left}
+              style={{
+                top: NODE_HEIGHT / 2,
+                left: NODE_WIDTH / 2,
+                position: "absolute",
+                width: 0,
+                height: 0,
+              }}
+            />
           </YStack>
-          <Handle type="source" position={Position.Left} />
         </Fragment>
       </Node>
       <Dialog open={openRender} onOpenChange={() => setOpenRender(false)}>
@@ -483,7 +519,7 @@ export function TrustGraphNode({data}: TrustGraphNodeProps): JSX.Element {
           <Dialog.Content padding={0}>
             <RenderCredential
               render={data?.raw.html as any}
-              style={{maxHeight: "90vh"}}
+              style={{width: "480px", height: "800px"}}
             />
           </Dialog.Content>
         </Dialog.Portal>

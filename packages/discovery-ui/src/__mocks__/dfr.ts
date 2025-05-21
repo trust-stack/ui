@@ -1,4 +1,4 @@
-export const dgp = `
+export const dfr = `
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,10 +8,9 @@ export const dgp = `
     <link
         href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
         rel="stylesheet">
-    <title>Digital Grain Passport</title>
+    <title>Digital Facility Record</title>
     <style>
         :root {
-            --image-src: url('https://gatton.uq.edu.au/files/5621/Science%20Soil-Constraints%20181029%20-%20Pic%201.jpg');
             --highlight: #D4A017;
             --primary-orange: #E49B0F;
             --primary-orange-light: #F3D88C;
@@ -45,10 +44,10 @@ export const dgp = `
         .header {}
 
         .header-image {
-            background-image: linear-gradient(248.36deg, rgba(228, 155, 15, 0.70) 7.6%, rgba(212, 160, 23, 0.80) 70.52%), var(--image-src);
+            background-image: linear-gradient(248.36deg, rgba(228, 155, 15, 0.70) 7.6%, rgba(212, 160, 23, 0.80) 70.52%);
             background-size: cover;
             background-position: center;
-            height: 232px;
+            height: 100px;
             position: relative;
             border-radius: 12px 12px 0 0;
             background-color: var(--primary-orange);
@@ -59,7 +58,7 @@ export const dgp = `
             top: 25px;
             left: 15px;
             font-weight: 500;
-            font-size: 16px;
+            font-size: 24px;
             line-height: 22px;
             color: var(--white);
         }
@@ -81,7 +80,6 @@ export const dgp = `
             padding: 12px 16px 16px 16px;
             background-color: var(--primary-orange-bg);
             display: grid;
-            grid-template-columns: 1fr 1fr;
             grid-auto-flow: row;
             row-gap: 12px;
             border-radius: 0 0 12px 12px;
@@ -99,10 +97,6 @@ export const dgp = `
             line-height: 15.25px;
             font-weight: 500;
             text-decoration: none;
-        }
-
-        .header-batch-item svg path {
-            fill: var(--primary-orange);
         }
 
         section {
@@ -210,10 +204,10 @@ export const dgp = `
         }
 
         .score-name {
-            font-size: 24px;
+            font-size: 16px;
             font-weight: 400;
             line-height: 17.44px;
-            color: var(--highlight);
+            color: var(--gray-600);
         }
 
         .mission-score-title {
@@ -372,6 +366,12 @@ export const dgp = `
 
         .declaration-title {
             font-size: 20px;
+            font-weight: 700;
+            line-height: 21.8px;
+        }
+
+        .declaration-subtitle {
+            font-size: 16px;
             font-weight: 700;
             line-height: 21.8px;
         }
@@ -538,6 +538,33 @@ export const dgp = `
             text-underline-offset: 3px;
             color: var(--gray-700);
         }
+
+        .other-identifiers-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 8px;
+        }
+
+        .other-identifiers-table th {
+            text-align: left;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--gray-600);
+            padding: 8px 12px;
+            border-bottom: 1px solid var(--gray-400);
+        }
+
+        .other-identifiers-table td {
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--gray-700);
+            padding: 8px 12px;
+            border-bottom: 1px solid var(--gray-400);
+        }
+
+        .other-identifiers-table tr:last-child td {
+            border-bottom: none;
+        }
     </style>
 </head>
 
@@ -545,94 +572,62 @@ export const dgp = `
     <div class="mobile">
         <header class="header">
             <div class="header-image">
-                <p class="header-image-top-left">DIGITAL GRAIN PASSPORT</p>
-                <div class="header-image-bottom-left">
-                    <h1>CANOLA</h1>
-                </div>
+                <p class="header-image-top-left">DIGITAL FARM RECORD</p>
             </div>
             <div class="header-batch">
                 <div class="header-batch-item">
-                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M2.45 3.5C2.17152 3.5 1.90445 3.38938 1.70754 3.19246C1.51062 2.99555 1.4 2.72848 1.4 2.45C1.4 2.17152 1.51062 1.90445 1.70754 1.70754C1.90445 1.51062 2.17152 1.4 2.45 1.4C2.72848 1.4 2.99555 1.51062 3.19246 1.70754C3.38938 1.90445 3.5 2.17152 3.5 2.45C3.5 2.72848 3.38938 2.99555 3.19246 3.19246C2.99555 3.38938 2.72848 3.5 2.45 3.5ZM13.587 6.706L7.287 0.406C7.035 0.154 6.685 0 6.3 0H1.4C0.623 0 0 0.623 0 1.4V6.3C0 6.685 0.154 7.035 0.413 7.287L6.706 13.587C6.965 13.839 7.315 14 7.7 14C8.085 14 8.435 13.839 8.687 13.587L13.587 8.687C13.846 8.435 14 8.085 14 7.7C14 7.308 13.839 6.958 13.587 6.706Z"
-                            fill="#1F5A95" />
-                    </svg>
-                    <a>Batch: 12605496.1</a>
+                    <a>2170 Adelargo Road, Warraderry,
+                        2810</a>
                 </div>
             </div>
         </header>
 
-        <section>
-            <h2 class="section-title">Grain Details</h2>
-            <div class="table">
-                <div class="table-item">
-                    <div class="item-title">Grain Type</div>
-                    <div class="item-value">CANOLA</div>
-                </div>
-                <div class="table-item">
-                    <div class="item-title">Variety</div>
-                    <div class="item-value">Hyola Regiment XC (TF/CL)</div>
-                </div>
-                <div class="table-item">
-                    <div class="item-title">Season</div>
-                    <div class="item-value">25/26</div>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h2 class="section-title">Origin Information</h2>
-            <div class="table">
-                <div class="table-item">
-                    <div class="item-title">Producer</div>
-                    <div class="item-value">Luke-McCabe</div>
-                </div>
-                <div class="table-item">
-                    <div class="item-title">NGR Number</div>
-                    <div class="item-value">12605496</div>
-                </div>
-            </div>
-        </section>
-
-        <section class="emission-score-card">
-            <h3 class="mission-score-title">Emissions Scorecard</h3>
-            <p class="mission-score-description">The Emissions Scorecard gives a clear snapshot of the product's
-                greenhouse gas (GHG) emissions performance, providing a single indicator to assess its overall
-                environmental impact.</p>
-            <div class="score">
-                <p class="score-unit">
-                    0.33kg CO2e
-                </p>
-                
-                <p class="score-name">per kg of crop</p>
-            </div>
-            <div class="table">
-                <div class="table-item"> <span class="item-title">Scope includes</span>
-                    <p class="item-value">Scope 1, 2, 3</p>
-                </div>
-                <div class="table-item"> <span class="item-title">Primary sourced ratio*</span>
-                    <p class="item-value">95% primary
-                        sources</p>
-                </div>
-                <div class="table-item"> <span class="item-title">Reporting standard</span>
-                    <div class="item-value"> <a href="https://piccc.org.au/resources/Tools.html"
-                            class="blue-bottom-line-thick">G-GAF Calculator</a>
+        <section class="declarations">
+            <div class="declaration-title">Operated By</div>
+            <div class="cards-conformities">
+                <div class="table">
+                    <div class="table-item">
+                        <div class="item-title">Operator Name</div>
+                        <div class="item-value">
+                            McGabe Farms
+                        </div>
+                    </div>
+                    <div class="table-item">
+                        <div class="item-title">Operator ID</div>
+                        <div class="item-value">13242674</div>
+                    </div>
+                    <div class="table-item">
+                        <div class="item-title">Operator ID Scheme</div>
+                        <div class="item-value">National Grower Register</div>
                     </div>
                 </div>
-                <div class="table-item"> <span class="item-title">Issue date</span>
-                    <p class="item-value">2025-01-01</p>
-                </div>
+            </div>
 
-                <div class="table-item"> <span class="item-title">Evidence</span>
-                    <a href="/output/emissions.html" class="blue-bottom-line-thick">
-                        <p class="item-value">Emissions Profile Credential</p>
-                    </a>
-                </div>
+            <div class="declaration-subtitle">Other Identifiers</div>
+            <div class="cards-conformities">
+                <table class="other-identifiers-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>ID</th>
+                            <th>Scheme</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>McGabe Farms</td>
+                            <td>13242674</td>
+                            <td>National Grower Register</td>
+                        </tr>
+                        <tr>
+                            <td>McGabe Farms</td>
+                            <td>SA1234567</td>
+                            <td>Property Identification Code</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-            <div class="annotation"> <span>*</span>
-                <p>The Primary Sourced Ratio shows the percentage of scope 3 emissions data that is directly
-                    collected from actual sources, rather than being based on estimates.</p>
-            </div>
+
         </section>
 
         <section class="declarations">
@@ -670,9 +665,15 @@ export const dgp = `
                                     class="blue-bottom-line-thick">CIBO Labs</a>
                             </div>
                         </div>
-                        
+                        <div class="table-item">
+                            <div class="item-title">Deforestation</div>
+                            <div class="item-value">
+                                120m2
+                                <div class="annotation">Score: A | Accuracy 0.01</div>
+                            </div>
+                        </div>
                     </div>
-                    <a href="/output/cibo.html" class="cards-traceability">
+                    <a href="https://www.google.com" class="cards-traceability">
                         <div class="frame-5">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -690,7 +691,6 @@ export const dgp = `
                         </svg>
                     </a>
                 </div>
-           
             </div>
         </section>
 
@@ -700,7 +700,7 @@ export const dgp = `
                 <div class="table">
                     <div class="table-item">
                         <div class="item-title">Issued Date</div>
-                        <div class="item-value">2025-04-13</div>
+                        <div class="item-value">2024-03-15</div>
                     </div>
                     <div class="table-item">
                         <div class="item-title">Issuer</div>
@@ -711,8 +711,6 @@ export const dgp = `
         </section>
     </div>
 </body>
-
-</html>
 
 </html>
 `;
