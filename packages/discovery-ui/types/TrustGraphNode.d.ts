@@ -1,6 +1,6 @@
 import { TrustGraphNode as TTrustGraphNode } from "@truststack/schema";
-export declare const NODE_WIDTH = 340;
-export declare const NODE_HEIGHT = 220;
+export declare const NODE_WIDTH = 360;
+export declare const NODE_HEIGHT = 140;
 export type TrustGraphNodeProps = {
     readonly data: TTrustGraphNode;
 };

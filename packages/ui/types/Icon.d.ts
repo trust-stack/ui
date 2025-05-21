@@ -6,7 +6,7 @@ type Props = {
     readonly icon?: FunctionComponent<TIconProps>;
     readonly ContainerProps?: ViewProps;
 } & Partial<Omit<TIconProps, "Icon" | "icon">>;
-export declare const Icon: import("tamagui").TamaguiComponent<Props, TamaguiElement, import("@tamagui/core").RNTamaguiViewNonStyleProps & TamaguiElement, import("@tamagui/core").StackStyleBase, {}, {}>;
+export declare const Icon: import("tamagui").TamaguiComponent<Props, TamaguiElement, import("@tamagui/core").RNTamaguiViewNonStyleProps & TamaguiElement, import("@tamagui/web").StackStyleBase, {}, {}>;
 export type IconProps = GetProps<typeof Icon>;
 export {};
 //# sourceMappingURL=Icon.d.ts.map

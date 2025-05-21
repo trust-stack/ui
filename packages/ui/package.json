@@ -51,14 +51,15 @@
         "watch": "tamagui-build --watch"
     },
     "dependencies": {
-        "@tamagui/shorthands": "*",
-        "@tamagui/themes": "*",
-        "@tamagui/core": "*",
-        "@tamagui/animations-react-native": "*",
         "@datepicker-react/hooks": "^2.8.4",
         "@floating-ui/react": "0.27.4",
-        "@truststack/icons-ui": "workspace:*",
+        "@tamagui/animations-react-native": "*",
+        "@tamagui/core": "*",
+        "@tamagui/shorthands": "*",
+        "@tamagui/themes": "*",
+        "@tamagui/web": "*",
         "@tanstack/react-table": "^8.16.0",
+        "@truststack/icons-ui": "workspace:*",
         "change-case": "^4.1.2",
         "date-fns": "^2.28.0",
         "html5-qrcode": "^2.3.8",
@@ -68,6 +69,7 @@
         "react-native-svg": "15.2.0",
         "react-native-web": "~0.19.6",
         "react-native-webview": "^13.13.2",
+        "react-qr-code": "^2.0.15",
         "tamagui": "*"
     },
     "devDependencies": {

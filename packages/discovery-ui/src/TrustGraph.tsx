@@ -46,21 +46,19 @@ export function TrustGraph({data, ...props}: TrustGraphProps): JSX.Element {
       });
     });
 
-    layoutElements(nodes, edges, {
+    const result = layoutElements(nodes, edges, {
       nodeWidth: NODE_WIDTH,
       nodeHeight: NODE_HEIGHT,
-      direction: "LEFT",
-    }).then(({nodes, edges}) => {
-      setNodes(nodes);
-      setEdges(edges);
     });
+    setNodes(result.nodes);
+    setEdges(result.edges);
   }, [data]);
 
   if (!data?.nodes?.length) return <></>;
 
   return (
     <ReactFlowProvider>
-      <View position="relative" {...props}>
+      <View position="relative" width="100%" height="100%" {...props}>
         <View
           zIndex={12}
           position="absolute"

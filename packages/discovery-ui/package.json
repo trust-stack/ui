@@ -51,18 +51,26 @@
     "watch": "tamagui-build --watch"
   },
   "dependencies": {
+    "@monaco-editor/react": "^4.7.0",
+    "@tamagui/core": "*",
+    "@tamagui/web": "*",
+    "@tanstack/react-table": "^8.16.0",
+    "@truststack/credential-ui": "workspace:*",
     "@truststack/icons-ui": "workspace:*",
+    "@truststack/nav-ui": "workspace:*",
     "@truststack/render-ui": "workspace:*",
     "@truststack/schema": "workspace:*",
     "@truststack/theme-ui": "workspace:*",
     "@truststack/ui": "workspace:*",
+    "d3-force": "^3.0.0",
     "elkjs": "^0.10.0",
     "react-flow-renderer": "^10.3.17",
-    "@monaco-editor/react": "^4.7.0"
+    "tamagui": "*"
   },
   "devDependencies": {
     "@storybook/react": "^8.6.12",
     "@tamagui/build": "*",
+    "@types/d3-force": "^3.0.10",
     "@types/react": "*",
     "@types/react-dom": "*"
   },

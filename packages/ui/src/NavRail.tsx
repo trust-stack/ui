@@ -1,6 +1,6 @@
-import type {IconProps} from "@truststack/icons-ui";
-import {FunctionComponent} from "react";
-import {Pressable} from "react-native";
+import type { IconProps } from "@truststack/icons-ui";
+import { FunctionComponent } from "react";
+import { Pressable } from "react-native";
 import {
   GetProps,
   ThemeableStack,
@@ -8,7 +8,7 @@ import {
   styled,
   withStaticProperties,
 } from "tamagui";
-import {NavItem} from "./NavItem";
+import { NavItem } from "./NavItem";
 
 export type NavRailProps = {
   readonly Icon?: React.ReactNode;
@@ -28,6 +28,8 @@ export function NavRail({
   return (
     <Rail {...props}>
       <View h={40} />
+      {Icon}
+
       {Fab}
 
       <View h={60} />
