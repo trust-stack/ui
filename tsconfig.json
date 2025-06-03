@@ -6,7 +6,6 @@
       "@truststack/form-ui": ["packages/form-ui"],
       "@truststack/icons-ui": ["packages/icons-ui"],
       "@truststack/nav-ui": ["packages/nav-ui"],
-      "@truststack/object-ui": ["packages/object-ui"],
       "@truststack/render-ui": ["packages/render-ui"],
       "@truststack/schema": ["packages/schema"],
       "@truststack/theme-ui": ["packages/theme-ui"],

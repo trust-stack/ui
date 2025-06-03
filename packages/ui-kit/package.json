@@ -51,6 +51,7 @@
     "watch": "tamagui-build --watch"
   },
   "dependencies": {
+    "@storybook/react": "^8.6.12",
     "@truststack/icons-ui": "workspace:*",
     "@truststack/discovery-ui": "workspace:*",
     "@truststack/form-ui": "workspace:*",
@@ -59,11 +60,10 @@
     "@truststack/schema": "workspace:*",
     "@truststack/theme-ui": "workspace:*",
     "@truststack/ui": "workspace:*",
-    "@truststack/object-ui": "workspace:*"
+    "react-dom": "*"
   },
   "devDependencies": {
-    "@tamagui/build": "*",
-    "@storybook/react": "^8.6.12"
+    "@tamagui/build": "*"
   },
   "removeSideEffects": "true",
   "tamagui": {
