@@ -1,5 +1,5 @@
-import { XStack, YStack } from "tamagui";
-import { Divider } from "./Divider";
+import {XStack, YStack} from "tamagui";
+import {Divider} from "./Divider";
 
 export type ScreenLayoutProps = {
   readonly children: React.ReactNode;
@@ -22,8 +22,7 @@ export function ScreenLayout({
       >
         {header && (
           <YStack>
-            {header}
-            <Divider />
+            {header} <Divider />
           </YStack>
         )}
         {children}
