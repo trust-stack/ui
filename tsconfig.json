@@ -9,6 +9,7 @@
       "@truststack/object-ui": ["packages/object-ui"],
       "@truststack/render-ui": ["packages/render-ui"],
       "@truststack/schema": ["packages/schema"],
+      "@truststack/engine-ui": ["packages/engine-ui"],
       "@truststack/theme-ui": ["packages/theme-ui"],
       "@truststack/ui-kit": ["packages/ui-kit"],
       "@truststack/ui": ["packages/ui"]

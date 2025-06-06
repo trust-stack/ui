@@ -1,11 +1,12 @@
-import type { StorybookConfig } from "@storybook/react-vite";
-import { dirname, join } from "path";
+import type {StorybookConfig} from "@storybook/react-vite";
+import {dirname, join} from "path";
 
 const config: StorybookConfig = {
   stories: [
     "../../ui/src/**/*.stories.tsx",
     "../../discovery-ui/src/**/*.stories.tsx",
     "../../object-ui/src/**/*.stories.tsx",
+    "../../engine-ui/src/**/*.stories.tsx",
   ],
   addons: [
     getAbsolutePath("@storybook/addon-links"),
@@ -33,7 +34,7 @@ const config: StorybookConfig = {
     options: {},
   },
   async viteFinal(config) {
-    const { mergeConfig } = await import("vite");
+    const {mergeConfig} = await import("vite");
     return mergeConfig(config, {
       resolve: {
         alias: {

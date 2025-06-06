@@ -1,4 +1,5 @@
 export * from "@truststack/discovery-ui";
+export * from "@truststack/engine-ui";
 export * from "@truststack/form-ui";
 export * from "@truststack/nav-ui";
 export * from "@truststack/object-ui";
