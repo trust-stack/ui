@@ -1,5 +1,5 @@
 {
-    "name": "@truststack/sdui",
+    "name": "@truststack/engine-ui",
     "version": "0.0.1",
     "description": "Schema-Driven UI",
     "type": "module",

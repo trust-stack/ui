@@ -58,7 +58,7 @@
         "@truststack/object-ui": "workspace:*",
         "@truststack/render-ui": "workspace:*",
         "@truststack/schema": "workspace:*",
-        "@truststack/sdui": "workspace:*",
+        "@truststack/engine-ui": "workspace:*",
         "@truststack/theme-ui": "workspace:*",
         "@truststack/ui": "workspace:*"
     },
