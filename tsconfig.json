@@ -1,31 +1,32 @@
 {
-  "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@truststack/discovery-ui": ["packages/discovery-ui"],
-      "@truststack/form-ui": ["packages/form-ui"],
-      "@truststack/icons-ui": ["packages/icons-ui"],
-      "@truststack/nav-ui": ["packages/nav-ui"],
-      "@truststack/object-ui": ["packages/object-ui"],
-      "@truststack/render-ui": ["packages/render-ui"],
-      "@truststack/schema": ["packages/schema"],
-      "@truststack/theme-ui": ["packages/theme-ui"],
-      "@truststack/ui-kit": ["packages/ui-kit"],
-      "@truststack/ui": ["packages/ui"]
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@truststack/discovery-ui": ["packages/discovery-ui"],
+            "@truststack/form-ui": ["packages/form-ui"],
+            "@truststack/icons-ui": ["packages/icons-ui"],
+            "@truststack/nav-ui": ["packages/nav-ui"],
+            "@truststack/object-ui": ["packages/object-ui"],
+            "@truststack/render-ui": ["packages/render-ui"],
+            "@truststack/schema": ["packages/schema"],
+            "@truststack/sdui": ["packages/sdui"],
+            "@truststack/theme-ui": ["packages/theme-ui"],
+            "@truststack/ui-kit": ["packages/ui-kit"],
+            "@truststack/ui": ["packages/ui"]
+        },
+        "outDir": "dist",
+        "allowJs": false,
+        "allowSyntheticDefaultImports": true,
+        "forceConsistentCasingInFileNames": true,
+        "experimentalDecorators": false,
+        "emitDecoratorMetadata": false,
+        "esModuleInterop": true,
+        "jsx": "react-jsx",
+        "moduleResolution": "node",
+        "sourceMap": false,
+        "target": "es2020",
+        "types": ["node", "react"],
+        "lib": ["dom", "esnext"]
     },
-    "outDir": "dist",
-    "allowJs": false,
-    "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
-    "experimentalDecorators": false,
-    "emitDecoratorMetadata": false,
-    "esModuleInterop": true,
-    "jsx": "react-jsx",
-    "moduleResolution": "node",
-    "sourceMap": false,
-    "target": "es2020",
-    "types": ["node", "react"],
-    "lib": ["dom", "esnext"]
-  },
-  "exclude": ["test", "dist", "types", "**/__tests__", "node_modules"]
+    "exclude": ["test", "dist", "types", "**/__tests__", "node_modules"]
 }
