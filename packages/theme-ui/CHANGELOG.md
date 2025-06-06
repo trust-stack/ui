@@ -1,5 +1,15 @@
 # @truststack/theme-ui
 
+## 0.4.1
+
+### Patch Changes
+
+- b69966c: @truststack/object-ui package, tamagui version consolidation.
+- Updated dependencies [b69966c]
+- Updated dependencies [381d4cc]
+- Updated dependencies [c97ece2]
+  - @truststack/ui@0.5.1
+
 ## 0.4.0
 
 ### Minor Changes
