@@ -1,5 +1,15 @@
 # @truststack/ui
 
+## 0.5.1
+
+### Patch Changes
+
+- b69966c: @truststack/object-ui package, tamagui version consolidation.
+- 381d4cc: UI component error
+- c97ece2: Adding engine-ui to monorepo.
+- Updated dependencies [b69966c]
+  - @truststack/icons-ui@0.5.1
+
 ## 0.5.0
 
 ### Minor Changes
