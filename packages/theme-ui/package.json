@@ -1,6 +1,6 @@
 {
   "name": "@truststack/theme-ui",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Trust Stack Theme UI library",
   "type": "module",
   "exports": {
