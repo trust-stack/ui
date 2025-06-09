@@ -1,6 +1,6 @@
 {
   "name": "@truststack/nav-ui",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Trust Stack Navigation UI library",
   "type": "module",
   "exports": {
