@@ -249,3 +249,13 @@ export const mock: PagerForm = {
         },
     },
 };
+
+export const extensionSchema = {
+    $schema: 'https://json-schema.org/draft/2020-12/schema',
+    type: 'object',
+    properties: {
+        thisIsANumber: { type: 'number' },
+        thisIsAString: { type: 'string' },
+    },
+    required: ['thisIsAString'],
+};
