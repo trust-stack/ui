@@ -4,7 +4,8 @@ export type ExtensionFormContentBuilderProps = {
 };
 export declare function ExtensionFormContentBuilder({ schema, onChange, }: ExtensionFormContentBuilderProps): import("react/jsx-runtime").JSX.Element;
 type Property = {
-    type: 'number' | 'string';
+    type: 'number' | 'string' | 'boolean';
+    description?: string;
 };
 type Properties = {
     [key: string]: Property;

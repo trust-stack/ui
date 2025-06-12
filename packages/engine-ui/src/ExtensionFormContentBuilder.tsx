@@ -1,5 +1,6 @@
 import { YStack, toCapitalCase } from '@truststack/ui';
 import {
+    FormCheckbox,
     FormInput,
     FormNumericalInput,
     FormProvider,
@@ -59,7 +60,10 @@ type FormFieldProps = {
 };
 
 function FormField({ property, required }: FormFieldProps) {
-    const isRequired = required.includes(property.key);
+    const isRequired = useMemo(
+        () => required.includes(property.key),
+        [required, property.key]
+    );
 
     switch (property.value.type) {
         case 'number':
@@ -80,13 +84,23 @@ function FormField({ property, required }: FormFieldProps) {
                     required={isRequired}
                 />
             );
+        case 'boolean':
+            return (
+                <FormCheckbox
+                    id={property.key}
+                    key={property.key}
+                    label={toCapitalCase(property.value.description)}
+                    required={isRequired}
+                />
+            );
         default:
             <></>;
     }
 }
 
 type Property = {
-    type: 'number' | 'string';
+    type: 'number' | 'string' | 'boolean';
+    description?: string;
 };
 
 type Properties = {

@@ -10,6 +10,10 @@ export declare const extensionSchema: {
         thisIsAString: {
             type: string;
         };
+        thisIsACheckbox: {
+            type: string;
+            description: string;
+        };
     };
     required: string[];
 };

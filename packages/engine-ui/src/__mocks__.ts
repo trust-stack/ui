@@ -256,6 +256,7 @@ export const extensionSchema = {
     properties: {
         thisIsANumber: { type: 'number' },
         thisIsAString: { type: 'string' },
+        thisIsACheckbox: { type: 'boolean', description: 'This is a checkbox' },
     },
     required: ['thisIsAString'],
 };
