@@ -96,7 +96,7 @@ function FormField({ property, required }: FormFieldProps) {
                 <FormCheckbox
                     id={property.key}
                     key={property.key}
-                    label={toCapitalCase(property.value.description)}
+                    label={property.value.description}
                     required={isRequired}
                 />
             );
