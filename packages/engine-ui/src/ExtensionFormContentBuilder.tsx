@@ -9,15 +9,15 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { buildYup } from 'schema-to-yup';
 
-export type ExtensionFormBuilderProps = {
+export type ExtensionFormContentBuilderProps = {
     readonly schema: ExtensionSchema;
     readonly onChange?: (values: any) => void;
 };
 
-export function ExtensionFormBuilder({
+export function ExtensionFormContentBuilder({
     schema,
     onChange,
-}: ExtensionFormBuilderProps) {
+}: ExtensionFormContentBuilderProps) {
     const yupSchema = useMemo(() => buildYup(schema), [schema]);
 
     const formMethods = useForm({

@@ -1,2 +1,2 @@
-export * from './ExtensionFormBuilder';
+export * from './ExtensionFormContentBuilder';
 export * from './PagerFormBuilder';

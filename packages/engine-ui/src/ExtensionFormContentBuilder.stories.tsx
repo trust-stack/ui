@@ -1,11 +1,11 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { View } from '@truststack/ui';
 import { extensionSchema } from './__mocks__';
-import { ExtensionFormBuilder } from './ExtensionFormBuilder';
+import { ExtensionFormContentBuilder } from './ExtensionFormContentBuilder';
 
 export default {
-    title: 'engine/ExtensionFormBuilder',
-    component: ExtensionFormBuilder,
+    title: 'engine/ExtensionFormContentBuilder',
+    component: ExtensionFormContentBuilder,
     decorators: [
         (Story) => (
             <View maxWidth={800}>
@@ -13,9 +13,9 @@ export default {
             </View>
         ),
     ],
-} as Meta<typeof ExtensionFormBuilder>;
+} as Meta<typeof ExtensionFormContentBuilder>;
 
-type Story = StoryObj<typeof ExtensionFormBuilder>;
+type Story = StoryObj<typeof ExtensionFormContentBuilder>;
 
 export const Default: Story = {
     args: {
