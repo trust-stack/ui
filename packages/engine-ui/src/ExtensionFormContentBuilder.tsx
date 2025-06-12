@@ -1,4 +1,4 @@
-import { YStack, toCapitalCase } from '@truststack/ui';
+import { YStack, toCapitalCase, Grid } from '@truststack/ui';
 import {
     FormCheckbox,
     FormInput,
@@ -39,13 +39,20 @@ export function ExtensionFormContentBuilder({
     return (
         <FormProvider formMethods={formMethods} submitHandler={() => {}}>
             <YStack gap={4}>
-                {Object.entries(schema.properties).map(([key, value]) => (
-                    <FormField
-                        key={key}
-                        property={{ key, value }}
-                        required={schema.required}
-                    />
-                ))}
+                <Grid>
+                    {Object.entries(schema.properties).map(([key, value]) => (
+                        <Grid.Item
+                            key={key}
+                            exp={value.expanded}
+                            compact={value.compact}
+                        >
+                            <FormField
+                                property={{ key, value }}
+                                required={schema.required}
+                            />
+                        </Grid.Item>
+                    ))}
+                </Grid>
             </YStack>
         </FormProvider>
     );
@@ -94,13 +101,17 @@ function FormField({ property, required }: FormFieldProps) {
                 />
             );
         default:
-            <></>;
+            return null;
     }
 }
+
+type GridValue = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
 
 type Property = {
     type: 'number' | 'string' | 'boolean';
     description?: string;
+    expanded?: GridValue;
+    compact?: GridValue;
 };
 
 type Properties = {

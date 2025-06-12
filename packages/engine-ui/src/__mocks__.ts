@@ -254,9 +254,22 @@ export const extensionSchema = {
     $schema: 'https://json-schema.org/draft/2020-12/schema',
     type: 'object',
     properties: {
-        thisIsANumber: { type: 'number' },
-        thisIsAString: { type: 'string' },
-        thisIsACheckbox: { type: 'boolean', description: 'This is a checkbox' },
+        thisIsANumber: {
+            type: 'number',
+            expanded: 6,
+            compact: 12,
+        },
+        thisIsAString: {
+            type: 'string',
+            expanded: 6,
+            compact: 12,
+        },
+        thisIsACheckbox: {
+            type: 'boolean',
+            description: 'This is a checkbox',
+            expanded: 12,
+            compact: 12,
+        },
     },
     required: ['thisIsAString'],
 };
