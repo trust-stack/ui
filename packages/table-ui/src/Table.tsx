@@ -9,20 +9,22 @@ import {
   Row as TanstackRow,
   Table as TanstackTable,
 } from "@tanstack/react-table";
-import {Fragment, useContext, useState} from "react";
+import { Fragment, useContext, useState } from "react";
 import {
+  Body,
+  Chip,
   createStyledContext,
   GetProps,
+  IconButton,
+  Label,
   ScrollView,
+  Spinner,
   styled,
   ThemeableStack,
+  Title,
   withStaticProperties,
   XStack,
-} from "tamagui";
-import {Chip} from "./Chip";
-import {IconButton} from "./IconButton";
-import {Spinner} from "./Spinner";
-import {Body, Label, Title} from "./typography";
+} from "@truststack/ui";
 
 const TableContext = createStyledContext<{}>({
   density: "0",
@@ -61,7 +63,7 @@ const Row = styled(ThemeableStack, {
   defaultVariants: {
     outline: true,
   },
-});
+}) as unknown as typeof ThemeableStack;
 
 const Cell = styled(ThemeableStack, {
   flexDirection: "row",
@@ -107,13 +109,13 @@ const Cell = styled(ThemeableStack, {
       false: {},
     },
   } as const,
-});
+}) as unknown as typeof ThemeableStack;
 
 const Text = styled(Body, {
   name: "TableText",
   numberOfLines: 1,
   adjustsFontSizeToFit: true,
-});
+}) as unknown as typeof Body;
 
 const HeaderCell = styled(ThemeableStack, {
   flexDirection: "row",
@@ -159,20 +161,20 @@ const HeaderCell = styled(ThemeableStack, {
       false: {},
     },
   } as const,
-});
+}) as unknown as typeof ThemeableStack;
 
 const HeaderLabel = styled(Label, {
   name: "HeaderLabel",
   size: "large",
   numberOfLines: 1,
   adjustsFontSizeToFit: true,
-});
+}) as unknown as typeof Label;
 
 const TableBody = styled(ThemeableStack, {
   flexDirection: "column",
   context: TableContext,
   flexShrink: 1,
-});
+}) as unknown as typeof ThemeableStack;
 
 const TableHead = styled(ThemeableStack, {
   flexDirection: "column",
@@ -188,7 +190,7 @@ const TableHead = styled(ThemeableStack, {
       },
     },
   },
-});
+}) as unknown as typeof ThemeableStack;
 
 const TableComp = styled(ThemeableStack, {
   context: TableContext,
@@ -227,12 +229,12 @@ const TableComp = styled(ThemeableStack, {
   defaultVariants: {
     transparent: false,
   },
-});
+}) as unknown as typeof ThemeableStack;
 
 const TableTitle = styled(Title, {
   name: "TableTitle",
   textAlign: "center",
-});
+}) as unknown as typeof Title;
 
 function TableSpinner(): JSX.Element {
   return (
@@ -241,7 +243,7 @@ function TableSpinner(): JSX.Element {
       flexDirection="row"
       justifyContent="center"
       alignItems="center"
-      p={12}
+      padding={12}
     >
       <Spinner />
     </Row>
@@ -262,7 +264,7 @@ function NoResults({
       flexDirection="row"
       justifyContent="center"
       alignItems="center"
-      p={12}
+      padding={12}
       {...props}
     >
       <Text>{message}</Text>
@@ -283,7 +285,7 @@ function Pagination({
   page,
   onPageChange,
 }: PaginationProps): JSX.Element {
-  const {density} = useContext(TableContext as any) as any;
+  const { density } = useContext(TableContext as any) as any;
 
   const padding =
     density === "0" ? 16 : density === "-1" ? 12 : density === "-2" ? 8 : 4;
@@ -294,7 +296,7 @@ function Pagination({
       alignItems="center"
       justifyContent="flex-end"
       width={"100%"}
-      p={padding}
+      padding={padding}
     >
       <Text>
         Showing {page * rowsPerPage + 1} - {page * rowsPerPage + rowsPerPage}
@@ -352,21 +354,21 @@ function Pagination({
   );
 }
 
-const TextCell = Cell.styleable(({children, ...props}, ref) => {
+const TextCell = Cell.styleable(({ children, ...props }, ref) => {
   return (
     <Cell {...props} ref={ref}>
       <Text>{children}</Text>
     </Cell>
   );
-});
+}) as unknown as typeof Cell;
 
-const HeaderTextCell = HeaderCell.styleable(({children, ...props}, ref) => {
+const HeaderTextCell = HeaderCell.styleable(({ children, ...props }, ref) => {
   return (
     <HeaderCell {...props} ref={ref}>
       <HeaderLabel>{children}</HeaderLabel>
     </HeaderCell>
   );
-});
+}) as unknown as typeof HeaderCell;
 
 export const Table = withStaticProperties(TableComp, {
   props: TableContext.Provider,
@@ -383,7 +385,21 @@ export const Table = withStaticProperties(TableComp, {
   Text,
   TextCell,
   Title: TableTitle,
-});
+}) as typeof TableComp & {
+  Body: typeof TableBody;
+  Cell: typeof Cell;
+  Head: typeof TableHead;
+  HeaderCell: typeof HeaderCell;
+  HeaderLabel: typeof HeaderLabel;
+  HeaderTextCell: typeof HeaderTextCell;
+  NoResults: typeof NoResults;
+  Pagination: typeof Pagination;
+  Row: typeof Row;
+  Spinner: typeof TableSpinner;
+  Text: typeof Text;
+  TextCell: typeof TextCell;
+  Title: typeof TableTitle;
+};
 
 export type TableProps = GetProps<typeof Table>;
 export type TableHeadProps = GetProps<typeof TableHead>;
@@ -468,7 +484,7 @@ type UsePaginationProps = {
 };
 
 export const usePagination = (
-  {rowsPerPage: defaultRowsPerPage}: UsePaginationProps = {
+  { rowsPerPage: defaultRowsPerPage }: UsePaginationProps = {
     rowsPerPage: 10,
   }
 ) => {

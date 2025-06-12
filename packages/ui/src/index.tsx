@@ -1,29 +1,28 @@
-import {View, XStack, YStack} from "tamagui";
-import {Alert, AlertProps} from "./Alert";
-import {Button} from "./Button";
-import {Card, CardProps} from "./Card";
-import {Checkbox, CheckboxLabel} from "./Checkbox";
-import type {DialogProps} from "./Dialog";
-import {Dialog} from "./Dialog";
-import {Divider} from "./Divider";
-import {Icon, IconProps} from "./Icon";
-import {Input, InputProps} from "./Input";
-import {ListItem} from "./List";
-import {Popover} from "./Popover";
-import {Progress} from "./Progress";
-import {RadiantCircle} from "./RadiantCircle";
-import type {RadioGroupProps, RadioProps} from "./Radio";
-import {Radio, RadioGroup} from "./Radio";
-import type {SelectProps} from "./Select";
-import {Select} from "./Select";
-import {Sheet, SheetContent} from "./Sheet";
-import {Spinner} from "./Spinner";
-import {Switch} from "./Switch";
-import {DataTable} from "./Table";
-import {TabItem, Tabs, TabsContent} from "./Tabs";
-import {Tooltip} from "./Tooltip";
-import {Body, Display, Headline, Hero, Label, Title} from "./typography";
-import {useDebounce} from "./utils";
+import { View, XStack, YStack } from "tamagui";
+import { Alert, AlertProps } from "./Alert";
+import { Button } from "./Button";
+import { Card, CardProps } from "./Card";
+import { Checkbox, CheckboxLabel } from "./Checkbox";
+import type { DialogProps } from "./Dialog";
+import { Dialog } from "./Dialog";
+import { Divider } from "./Divider";
+import { Icon, IconProps } from "./Icon";
+import { Input, InputProps } from "./Input";
+import { ListItem } from "./List";
+import { Popover } from "./Popover";
+import { Progress } from "./Progress";
+import { RadiantCircle } from "./RadiantCircle";
+import type { RadioGroupProps, RadioProps } from "./Radio";
+import { Radio, RadioGroup } from "./Radio";
+import type { SelectProps } from "./Select";
+import { Select } from "./Select";
+import { Sheet, SheetContent } from "./Sheet";
+import { Spinner } from "./Spinner";
+import { Switch } from "./Switch";
+import { TabItem, Tabs, TabsContent } from "./Tabs";
+import { Tooltip } from "./Tooltip";
+import { Body, Display, Headline, Hero, Label, Title } from "./typography";
+import { useDebounce } from "./utils";
 export * from "@tamagui/helpers-icon";
 export * from "tamagui";
 export * from "./Badge";
@@ -58,9 +57,8 @@ export * from "./Search";
 export * from "./SearchList";
 export * from "./SegmentButton";
 export * from "./SideSheet";
-export * from "./Table";
 export * from "./TagChip";
-export {config} from "./tamagui.config";
+export { config } from "./tamagui.config";
 export * from "./TextField";
 export * from "./TextInput";
 export * from "./Tooltip";
@@ -76,7 +74,6 @@ export {
   Card,
   Checkbox,
   CheckboxLabel,
-  DataTable,
   Dialog,
   Display,
   Divider,
