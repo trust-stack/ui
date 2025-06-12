@@ -460,6 +460,52 @@ importers:
         specifier: ^3.1.1
         version: 3.1.1(@types/node@22.14.0)(@vitest/browser@3.1.1)(jiti@2.4.2)(lightningcss@1.27.0)(terser@5.39.0)(yaml@2.7.0)
 
+  packages/table-ui:
+    dependencies:
+      '@tamagui/lucide-icons':
+        specifier: 1.126.4
+        version: 1.126.4(react-dom@18.3.1(react@18.3.1))(react-native-svg@15.2.0(react-native@0.74.5(@babel/core@7.26.9)(@babel/preset-env@7.26.9(@babel/core@7.26.9))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1))(react-native@0.74.5(@babel/core@7.26.9)(@babel/preset-env@7.26.9(@babel/core@7.26.9))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)
+      '@tanstack/react-table':
+        specifier: ^8.16.0
+        version: 8.21.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@truststack/icons-ui':
+        specifier: workspace:*
+        version: link:../icons-ui
+      '@truststack/ui':
+        specifier: workspace:*
+        version: link:../ui
+      react:
+        specifier: 18.3.1
+        version: 18.3.1
+      react-dom:
+        specifier: 18.3.1
+        version: 18.3.1(react@18.3.1)
+      react-native:
+        specifier: 0.74.5
+        version: 0.74.5(@babel/core@7.26.9)(@babel/preset-env@7.26.9(@babel/core@7.26.9))(@types/react@18.3.1)(react@18.3.1)
+      react-native-web:
+        specifier: ~0.19.6
+        version: 0.19.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      react-native-webview:
+        specifier: ^13.13.2
+        version: 13.13.2(react-native@0.74.5(@babel/core@7.26.9)(@babel/preset-env@7.26.9(@babel/core@7.26.9))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)
+      tamagui:
+        specifier: 1.126.4
+        version: 1.126.4(@types/react@18.3.1)(react-dom@18.3.1(react@18.3.1))(react-native@0.74.5(@babel/core@7.26.9)(@babel/preset-env@7.26.9(@babel/core@7.26.9))(@types/react@18.3.1)(react@18.3.1))(react@18.3.1)
+    devDependencies:
+      '@storybook/react':
+        specifier: ^8.6.12
+        version: 8.6.12(@storybook/test@8.6.12(storybook@8.6.12(prettier@2.8.8)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.6.12(prettier@2.8.8))(typescript@5.8.2)
+      '@tamagui/build':
+        specifier: 1.126.4
+        version: 1.126.4(@swc/helpers@0.5.15)
+      '@types/react':
+        specifier: 18.3.1
+        version: 18.3.1
+      '@types/react-dom':
+        specifier: 18.3.1
+        version: 18.3.1
+
   packages/theme-ui:
     dependencies:
       '@storybook/react':
@@ -569,6 +615,9 @@ importers:
       '@truststack/schema':
         specifier: workspace:*
         version: link:../schema
+      '@truststack/table-ui':
+        specifier: workspace:*
+        version: link:../table-ui
       '@truststack/theme-ui':
         specifier: workspace:*
         version: link:../theme-ui
