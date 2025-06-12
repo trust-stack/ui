@@ -1,4 +1,4 @@
-import { YStack, toCapitalCase, Grid } from '@truststack/ui';
+import { Grid, YStack } from '@truststack/ui';
 import {
     FormCheckbox,
     FormInput,
@@ -78,7 +78,7 @@ function FormField({ property, required }: FormFieldProps) {
                 <FormNumericalInput
                     id={property.key}
                     key={property.key}
-                    label={toCapitalCase(property.key)}
+                    label={property.value.description}
                     required={isRequired}
                 />
             );
@@ -87,7 +87,7 @@ function FormField({ property, required }: FormFieldProps) {
                 <FormInput
                     id={property.key}
                     key={property.key}
-                    label={toCapitalCase(property.key)}
+                    label={property.value.description}
                     required={isRequired}
                 />
             );

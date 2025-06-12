@@ -6,11 +6,13 @@ export declare const extensionSchema: {
     properties: {
         thisIsANumber: {
             type: string;
+            description: string;
             expanded: number;
             compact: number;
         };
         thisIsAString: {
             type: string;
+            description: string;
             expanded: number;
             compact: number;
         };

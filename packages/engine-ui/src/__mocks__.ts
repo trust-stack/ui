@@ -256,11 +256,13 @@ export const extensionSchema = {
     properties: {
         thisIsANumber: {
             type: 'number',
+            description: 'This is a number',
             expanded: 6,
             compact: 12,
         },
         thisIsAString: {
             type: 'string',
+            description: 'This is a string',
             expanded: 6,
             compact: 12,
         },
