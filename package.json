@@ -15,12 +15,20 @@
     "version-packages": "changeset version"
   },
   "resolutions": {
-    "@tamagui/core": "1.125.32",
-    "@tamagui/web": "1.125.32",
-    "@types/react": "^18.2.0",
-    "@types/react-dom": "^18.2.0",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "tamagui": "1.126.4",
+    "@tamagui/core": "1.126.4",
+    "@tamagui/web": "1.126.4",
+    "@tamagui/build": "1.126.4",
+    "@tamagui/lucide-icons": "1.126.4",
+    "@tamagui/helpers-icons": "1.126.4",
+    "@tamagui/next-plugin": "1.126.4",
+    "@tamagui/next-theme": "1.126.4",
+    "@tamagui/animations-react-native": "1.126.4",
+    "@types/react": "18.3.1",
+    "@types/react-dom": "18.3.1",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-native": "0.74.5"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.11",

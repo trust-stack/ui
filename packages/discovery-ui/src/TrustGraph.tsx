@@ -1,4 +1,4 @@
-import {Minus, Plus, Square} from "@tamagui/lucide-icons";
+import {Minus, Plus, Square} from "@truststack/icons-ui";
 import {TrustGraph as TTrustGraph} from "@truststack/schema";
 import {IconButton, View, ViewProps, XStack} from "@truststack/ui";
 import {useEffect} from "react";

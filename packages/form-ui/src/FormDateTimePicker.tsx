@@ -1,7 +1,12 @@
-import {Clock} from "@tamagui/lucide-icons";
-import {DateTimePicker, DateTimePickerProps, IconButton} from "@truststack/ui";
+import {Clock} from "@truststack/icons-ui";
+import {
+  DateTimePicker,
+  DateTimePickerProps,
+  IconButton,
+  View,
+  XStack,
+} from "@truststack/ui";
 import {Controller, FieldValues, Path} from "react-hook-form";
-import {View, XStack} from "tamagui";
 import {useFormContext} from "./context";
 
 export type FormDateTimePickerProps<TFormFields extends FieldValues> = {
@@ -34,7 +39,7 @@ export function FormDateTimePicker<TFormFields extends FieldValues>({
       render={({field}) => {
         if (withNow)
           return (
-            <XStack gap="$spacing.form_gap" alignItems="center" f={1}>
+            <XStack gap="$spacing.form_gap" alignItems="center" flex={1}>
               <DateTimePicker
                 {...props}
                 disabled={disabled || props?.disabled}

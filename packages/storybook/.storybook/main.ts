@@ -5,6 +5,8 @@ const config: StorybookConfig = {
   stories: [
     "../../ui/src/**/*.stories.tsx",
     "../../discovery-ui/src/**/*.stories.tsx",
+    "../../object-ui/src/**/*.stories.tsx",
+    "../../engine-ui/src/**/*.stories.tsx",
   ],
   addons: [
     getAbsolutePath("@storybook/addon-links"),

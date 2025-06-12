@@ -1,4 +1,4 @@
-import {ChevronLeft, ChevronRight, Upload} from "@tamagui/lucide-icons";
+import {ChevronLeft, ChevronRight, Upload} from "@truststack/icons-ui";
 import {
   BottomAppBar,
   Button,
@@ -6,13 +6,15 @@ import {
   IconButton,
   Spinner,
   TopAppBar,
+  View,
+  XStack,
+  useWindowDimensions,
 } from "@truststack/ui";
 import {useEffect, useMemo, useRef, useState} from "react";
 import {FieldValues} from "react-hook-form";
 import {Animated, Dimensions, Pressable, ScrollView} from "react-native";
 import {KeyboardAwareScrollView} from "react-native-keyboard-aware-scroll-view";
 import {useSafeAreaInsets} from "react-native-safe-area-context";
-import {View, XStack, useWindowDimensions} from "tamagui";
 import {useFormContext} from "./context";
 import {PagerFormProps} from "./PagerForm.types";
 import {PaginationDot} from "./PaginationDot";
@@ -129,7 +131,7 @@ export function PagerForm<TFieldValues extends FieldValues>({
             <IconButton.Icon icon={ChevronLeft} />
           </IconButton>
 
-          <XStack ai={"center"} f={1} gap={22} pl={22}>
+          <XStack alignItems="center" flex={1} gap={22} paddingLeft={22}>
             {forms.map((f, index) => (
               <PaginationDot
                 key={`pagination-dot-${index}`}

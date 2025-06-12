@@ -1,7 +1,6 @@
-import {Button, Card, Title} from "@truststack/ui";
+import {Button, Card, Title, XStack, YStack} from "@truststack/ui";
 import {useEffect} from "react";
 import {FieldValues, useWatch} from "react-hook-form";
-import {XStack, YStack} from "tamagui";
 import {useFormContext} from "./context";
 import {PageFormProps, PagerFormProps} from "./PagerForm.types";
 
@@ -22,7 +21,7 @@ export function PagerForm<TFieldValues extends FieldValues>({
           <PagerCard key={`form-card-${index}`} {...f} />
         ))}
 
-      <XStack jc="flex-end">
+      <XStack justifyContent="flex-end">
         <Button
           variant="tonal-success"
           onPress={onSubmit}

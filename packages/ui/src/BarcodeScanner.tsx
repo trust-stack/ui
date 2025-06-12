@@ -1,6 +1,6 @@
-import {View, ViewProps} from "@tamagui/core";
 import {Html5Qrcode} from "html5-qrcode";
 import {useEffect} from "react";
+import {View, ViewProps} from "tamagui";
 
 export type BarcodeScannerProps = {
   readonly onScan: (code: string) => void;

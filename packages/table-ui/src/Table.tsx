@@ -1,14 +1,14 @@
 import {
-  ChevronFirst,
-  ChevronLast,
-  ChevronLeft,
-  ChevronRight,
-} from "@tamagui/lucide-icons";
-import {
   flexRender,
   Row as TanstackRow,
   Table as TanstackTable,
 } from "@tanstack/react-table";
+import {
+  ChevronFirst,
+  ChevronLast,
+  ChevronLeft,
+  ChevronRight,
+} from "@truststack/icons-ui";
 import { Fragment, useContext, useState } from "react";
 import {
   Body,

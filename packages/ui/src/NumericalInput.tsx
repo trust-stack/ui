@@ -12,8 +12,8 @@ export function NumericalInput({
 }: NumericalInputProps): JSX.Element {
     return (
         <TextField
-            {...props}
             keyboardType="decimal-pad"
+            {...props}
             onChangeText={(e) => {
                 const newValue = e
                     ?.replace(/[^0-9.]/g, '')

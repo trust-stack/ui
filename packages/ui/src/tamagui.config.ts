@@ -1,5 +1,5 @@
-import {createTamagui} from "@tamagui/core";
 import {shorthands} from "@tamagui/shorthands";
+import {createTamagui} from "tamagui";
 import {animations} from "./animations";
 import {fonts} from "./fonts";
 import {media} from "./media-queries";
