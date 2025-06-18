@@ -61,6 +61,7 @@
         "react": "*",
         "react-dom": "*",
         "react-hook-form": "^7.54.2",
+        "schema-to-yup": "^1.12.18",
         "yup": "^0.32.9"
     },
     "devDependencies": {
